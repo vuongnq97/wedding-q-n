@@ -11,7 +11,7 @@
     const CONFIG = {
         slideDuration: 7000,
         transitionDuration: 1200,
-        preloadAhead: 5,
+        preloadAhead: 3,
         autoPlay: true,
         quoteSlideEveryN: 10,  // insert a full quote-only slide every N slides
     };
@@ -21,6 +21,7 @@
     const COUPLE = `${GROOM} & ${BRIDE}`;
 
     // ─── Image list (unique only) ───
+    const IMAGE_BASE_PATH = 'images/';
     const IMAGE_FILES = [
         '1D4A6942.jpg','1D4A6930.jpg','1D4A6947.jpg','1D4A6968.jpg','1D4A6997.jpg',
         '1D4A7010.jpg','1D4A7013.jpg','1D4A7031.jpg','1D4A7035.jpg','1D4A7045.jpg',
@@ -32,7 +33,7 @@
         '1D4A7344.jpg','1D4A7365.jpg','1D4A7375.jpg','1D4A7400.jpg','1D4A7440.jpg',
         '1D4A7500.jpg','1D4A7511.jpg','1D4A7534.jpg','1D4A7545.jpg','1D4A7580.jpg',
         '1D4A7596.jpg','1D4A7607.jpg','1D4A7609.jpg','1D4A7693.jpg','1D4A7700.jpg',
-        '1D4A7721.jpg','1D4A7727.jpg','1D4A7730.jpg','1D4A7731.jpg','1D4A7734.jpg',
+        '1D4A7721.jpg','1D4A7727.jpg','1D4A7730.jpg','1D4A7734.jpg',
         '1D4A7736.jpg','1D4A7742.jpg','1D4A7743.jpg','1D4A7745.jpg','1D4A7753.jpg',
         '1D4A7755.jpg','1D4A7766.jpg','1D4A7778.jpg','1D4A7785.jpg','1D4A7788.jpg',
         '1D4A7805.jpg','1D4A7813.jpg','1D4A7827.jpg','1D4A7836.jpg','1D4A7840.jpg',
@@ -40,7 +41,7 @@
         '1D4A7883.jpg','1D4A7888.jpg','1D4A7902.jpg','1D4A7913.jpg','1D4A7918.jpg',
         '1D4A7926.jpg','1D4A7930.jpg','1D4A7942.jpg','1D4A7951.jpg','1D4A7954.jpg',
         '1D4A7956.jpg','1D4A7957.jpg','1D4A7959.jpg','1D4A7960.jpg',
-    ];
+    ].map(file => `${IMAGE_BASE_PATH}${file}`);
 
     // ─── Quotes for overlay / split panels ───
     const QUOTES = [
@@ -560,6 +561,7 @@
         return new Promise(resolve => {
             if (imageCache[src]) return resolve();
             const img = new Image();
+            img.decoding = 'async';
             img.onload = () => { imageCache[src] = true; resolve(); };
             img.onerror = () => resolve();
             img.src = src;
@@ -567,7 +569,7 @@
     }
 
     async function preloadInitialImages() {
-        const total = Math.min(10, IMAGE_FILES.length);
+        const total = Math.min(3, IMAGE_FILES.length);
         let loaded = 0;
         for (let i = 0; i < total; i++) {
             await preloadImage(IMAGE_FILES[i]);
@@ -615,6 +617,7 @@
         // Handle broken images — skip slide if images fail to load
         const imgs = newSlide.querySelectorAll('img');
         imgs.forEach(img => {
+            img.decoding = 'async';
             img.onerror = () => {
                 img.style.display = 'none';
             };
