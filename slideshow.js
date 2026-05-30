@@ -23,25 +23,29 @@
     // ─── Image list (unique only) ───
     const IMAGE_BASE_PATH = 'images/';
     const IMAGE_FILES = [
-        '1D4A6942.jpg','1D4A6930.jpg','1D4A6947.jpg','1D4A6968.jpg','1D4A6997.jpg',
-        '1D4A7010.jpg','1D4A7013.jpg','1D4A7031.jpg','1D4A7035.jpg','1D4A7045.jpg',
-        '1D4A7060.jpg','1D4A7070.jpg','1D4A7076.jpg','1D4A7080.jpg','1D4A7089.jpg',
-        '1D4A7101.jpg','1D4A7114.jpg','1D4A7123.jpg','1D4A7125.jpg','1D4A7154.jpg',
-        '1D4A7172.jpg','1D4A7178.jpg','1D4A7189.jpg','1D4A7207.jpg','1D4A7222.jpg',
-        '1D4A7230.jpg','1D4A7244.jpg','1D4A7251.jpg','1D4A7253.jpg','1D4A7260.jpg',
-        '1D4A7287.jpg','1D4A7299.jpg','1D4A7308.jpg','1D4A7312.jpg','1D4A7328.jpg',
-        '1D4A7344.jpg','1D4A7365.jpg','1D4A7375.jpg','1D4A7400.jpg','1D4A7440.jpg',
-        '1D4A7500.jpg','1D4A7511.jpg','1D4A7534.jpg','1D4A7545.jpg','1D4A7580.jpg',
-        '1D4A7596.jpg','1D4A7607.jpg','1D4A7609.jpg','1D4A7693.jpg','1D4A7700.jpg',
-        '1D4A7721.jpg','1D4A7727.jpg','1D4A7730.jpg','1D4A7734.jpg',
-        '1D4A7736.jpg','1D4A7742.jpg','1D4A7743.jpg','1D4A7745.jpg','1D4A7753.jpg',
-        '1D4A7755.jpg','1D4A7766.jpg','1D4A7778.jpg','1D4A7785.jpg','1D4A7788.jpg',
-        '1D4A7805.jpg','1D4A7813.jpg','1D4A7827.jpg','1D4A7836.jpg','1D4A7840.jpg',
-        '1D4A7853.jpg','1D4A7861.jpg','1D4A7864.jpg','1D4A7868.jpg','1D4A7877.jpg',
-        '1D4A7883.jpg','1D4A7888.jpg','1D4A7902.jpg','1D4A7913.jpg','1D4A7918.jpg',
-        '1D4A7926.jpg','1D4A7930.jpg','1D4A7942.jpg','1D4A7951.jpg','1D4A7954.jpg',
-        '1D4A7956.jpg','1D4A7957.jpg','1D4A7959.jpg','1D4A7960.jpg',
+        '1D4A6942.jpg', '1D4A6930.jpg', '1D4A6947.jpg', '1D4A6968.jpg', '1D4A6997.jpg',
+        '1D4A7010.jpg', '1D4A7013.jpg', '1D4A7031.jpg', '1D4A7035.jpg', '1D4A7045.jpg',
+        '1D4A7060.jpg', '1D4A7070.jpg', '1D4A7076.jpg', '1D4A7080.jpg', '1D4A7089.jpg',
+        '1D4A7101.jpg', '1D4A7114.jpg', '1D4A7123.jpg', '1D4A7125.jpg', '1D4A7154.jpg',
+        '1D4A7172.jpg', '1D4A7178.jpg', '1D4A7189.jpg', '1D4A7207.jpg', '1D4A7222.jpg',
+        '1D4A7230.jpg', '1D4A7244.jpg', '1D4A7251.jpg', '1D4A7253.jpg', '1D4A7260.jpg',
+        '1D4A7287.jpg', '1D4A7299.jpg', '1D4A7308.jpg', '1D4A7312.jpg', '1D4A7328.jpg',
+        '1D4A7344.jpg', '1D4A7365.jpg', '1D4A7375.jpg', '1D4A7400.jpg', '1D4A7440.jpg',
+        '1D4A7500.jpg', '1D4A7511.jpg', '1D4A7534.jpg', '1D4A7545.jpg', '1D4A7580.jpg',
+        '1D4A7596.jpg', '1D4A7607.jpg', '1D4A7693.jpg', '1D4A7609.jpg', '1D4A7700.jpg',
+        '1D4A7721.jpg', '1D4A7727.jpg', '1D4A7730.jpg', '1D4A7734.jpg',
+        '1D4A7736.jpg', '1D4A7742.jpg', '1D4A7743.jpg', '1D4A7745.jpg', '1D4A7753.jpg',
+        '1D4A7755.jpg', '1D4A7766.jpg', '1D4A7778.jpg', '1D4A7785.jpg', '1D4A7788.jpg',
+        '1D4A7805.jpg', '1D4A7813.jpg', '1D4A7827.jpg', '1D4A7836.jpg', '1D4A7840.jpg',
+        '1D4A7853.jpg', '1D4A7861.jpg', '1D4A7864.jpg', '1D4A7868.jpg', '1D4A7877.jpg',
+        '1D4A7888.jpg', '1D4A7960.jpg', '1D4A7960.jpg', '1D4A7913.jpg', '1D4A7918.jpg',
+        '1D4A7926.jpg', '1D4A7930.jpg', '1D4A7942.jpg', '1D4A7951.jpg', '1D4A7954.jpg',
+        '1D4A7956.jpg', '1D4A7957.jpg', '1D4A7959.jpg', '1D4A7902.jpg',
     ].map(file => `${IMAGE_BASE_PATH}${file}`);
+
+    // ─── Image orientation detection ───
+    const imageOrientations = {};
+    function isPortrait(src) { return imageOrientations[src] === 'portrait'; }
 
     // ─── Quotes for overlay / split panels ───
     const QUOTES = [
@@ -139,7 +143,6 @@
     const preloader = $('#preloader');
     const preloaderBar = $('#preloaderBar');
     const introScreen = $('#intro-screen');
-    const startBtn = $('#startBtn');
     const slideshowEl = $('#slideshow');
     const slideContainer = $('#slideContainer');
     const slideCounter = $('#slideCounter');
@@ -152,7 +155,6 @@
     const pauseIcon = $('#pauseIcon');
     const fullscreenBtn = $('#fullscreenBtn');
     const endingScreen = $('#ending-screen');
-    const replayBtn = $('#replayBtn');
 
     // ─────────────────────────────────
     //  TEMPLATE RENDERERS
@@ -174,6 +176,25 @@
                     <div class="slide-inner">
                         <div class="photo-main">
                             <img src="${img}" alt="Wedding">
+                        </div>
+                    </div>
+                `
+            };
+        },
+
+        // --- 1b. Portrait Blur Background (portrait image + blurred bg fill) ---
+        portraitBlur(images) {
+            const img = images[0];
+            const kb = pickKB();
+            return {
+                classes: ['tpl-portrait-blur', pickAnim()],
+                topBarMode: 'light',
+                html: `
+                    <div class="slide-inner">
+                        <div class="pb-blur" style="background-image: url('${img}')"></div>
+                        <div class="pb-overlay"></div>
+                        <div class="pb-photo">
+                            <img src="${img}" alt="Wedding" class="${kb}">
                         </div>
                     </div>
                 `
@@ -321,8 +342,10 @@
             const caption = nextPolaroid();
             return {
                 classes: ['tpl-polaroid', bg, pickAnim()],
-                topBarMode: 'dark',
+                topBarMode: 'light',
                 html: `
+                    <div class="tpl-bg-fill" style="background-image: url('${img}')"></div>
+                    <div class="tpl-bg-fill-overlay"></div>
                     <div class="slide-inner">
                         <div class="polaroid-frame stagger-1">
                             <img src="${img}" alt="Wedding">
@@ -376,8 +399,10 @@
             const bg = pickBG();
             return {
                 classes: ['tpl-framed', bg, pickAnim()],
-                topBarMode: 'dark',
+                topBarMode: 'light',
                 html: `
+                    <div class="tpl-bg-fill" style="background-image: url('${img}')"></div>
+                    <div class="tpl-bg-fill-overlay"></div>
                     <div class="slide-inner">
                         <div class="frame-outer stagger-1">
                             <img src="${img}" alt="Wedding">
@@ -455,6 +480,10 @@
     // ─── Template schedule: defines which templates to use and in what order ───
     // Templates requiring 1 image
     const TPL_SINGLE = ['heroContain', 'splitLeftText', 'splitRightText', 'topPhotoBottomText', 'fullOverlay', 'polaroid', 'framed', 'cinematic'];
+    // Portrait-friendly single-image templates (no landscape-only layouts)
+    const TPL_SINGLE_PORTRAIT = ['portraitBlur', 'splitLeftText', 'splitRightText', 'polaroid', 'framed'];
+    // Landscape-friendly single-image templates (all work well)
+    const TPL_SINGLE_LANDSCAPE = ['heroContain', 'splitLeftText', 'splitRightText', 'topPhotoBottomText', 'fullOverlay', 'polaroid', 'framed', 'cinematic'];
     // Templates requiring 2 images
     const TPL_DUO = ['asymDuo', 'vertDuo', 'duoEqual'];
     // Templates requiring 3 images
@@ -475,11 +504,14 @@
         // Shuffle template order per category to keep it fresh
         const shuffled = {
             single: [...TPL_SINGLE].sort(() => Math.random() - 0.5),
+            singlePortrait: [...TPL_SINGLE_PORTRAIT].sort(() => Math.random() - 0.5),
+            singleLandscape: [...TPL_SINGLE_LANDSCAPE].sort(() => Math.random() - 0.5),
             duo: [...TPL_DUO].sort(() => Math.random() - 0.5),
             trio: [...TPL_TRIO].sort(() => Math.random() - 0.5),
             quad: [...TPL_QUAD].sort(() => Math.random() - 0.5),
         };
         let sIdx = 0, dIdx = 0, tIdx = 0, qIdx = 0;
+        let spIdx = 0, slIdx = 0;
 
         // Planned template sequence pattern for visual variety
         // Pattern repeats: single, single, duo, single, trio, single, quad, single, single, quote
@@ -523,8 +555,14 @@
 
             switch (templateType) {
                 case 'single':
-                    tplName = shuffled.single[sIdx % shuffled.single.length];
-                    sIdx++;
+                    // Pick template based on image orientation
+                    if (isPortrait(IMAGE_FILES[imgIdx])) {
+                        tplName = shuffled.singlePortrait[spIdx % shuffled.singlePortrait.length];
+                        spIdx++;
+                    } else {
+                        tplName = shuffled.singleLandscape[slIdx % shuffled.singleLandscape.length];
+                        slIdx++;
+                    }
                     imageCount = 1;
                     break;
                 case 'duo':
@@ -568,14 +606,27 @@
         });
     }
 
-    async function preloadInitialImages() {
-        const total = Math.min(3, IMAGE_FILES.length);
+    async function detectAllOrientations() {
         let loaded = 0;
-        for (let i = 0; i < total; i++) {
-            await preloadImage(IMAGE_FILES[i]);
-            loaded++;
-            preloaderBar.style.width = `${(loaded / total) * 100}%`;
-        }
+        const total = IMAGE_FILES.length;
+        const promises = IMAGE_FILES.map(src => new Promise(resolve => {
+            const img = new Image();
+            img.onload = () => {
+                imageOrientations[src] = img.naturalHeight > img.naturalWidth ? 'portrait' : 'landscape';
+                imageCache[src] = true;
+                loaded++;
+                preloaderBar.style.width = `${(loaded / total) * 100}%`;
+                resolve();
+            };
+            img.onerror = () => {
+                imageOrientations[src] = 'landscape';
+                loaded++;
+                preloaderBar.style.width = `${(loaded / total) * 100}%`;
+                resolve();
+            };
+            img.src = src;
+        }));
+        await Promise.all(promises);
     }
 
     function preloadUpcoming() {
@@ -706,7 +757,7 @@
                 startProgress();
                 scheduleNext();
             } else {
-                pause();
+                // Show ending screen, then auto-restart
                 showEnding();
             }
         }, CONFIG.slideDuration);
@@ -717,7 +768,6 @@
             showSlide(currentSlideIndex + 1);
             if (isPlaying) { clearTimeout(slideTimer); startProgress(); scheduleNext(); }
         } else {
-            pause();
             showEnding();
         }
     }
@@ -729,11 +779,43 @@
         }
     }
 
-    // ─── Ending ───
+    // ─── Ending + Auto Restart ───
     function showEnding() {
+        pause();
         slideshowEl.style.display = 'none';
         endingScreen.style.display = 'flex';
         createParticles($('#endingParticles'), 30);
+
+        // Auto-restart after 8 seconds → go back to intro screen
+        setTimeout(() => {
+            endingScreen.style.opacity = '0';
+            endingScreen.style.transition = 'opacity 1.2s ease';
+            setTimeout(() => {
+                endingScreen.style.display = 'none';
+                endingScreen.style.opacity = '1';
+                endingScreen.style.transition = '';
+
+                // Show intro screen again
+                introScreen.style.display = 'flex';
+                introScreen.style.opacity = '1';
+                createParticles($('#introParticles'), 25);
+
+                // Auto-start from intro after 3 seconds
+                setTimeout(() => {
+                    introScreen.style.opacity = '0';
+                    introScreen.style.transition = 'opacity 1.2s ease';
+                    setTimeout(() => {
+                        introScreen.style.display = 'none';
+                        introScreen.style.transition = '';
+                        slideshowEl.style.display = 'block';
+                        buildSlides();
+                        slideContainer.innerHTML = '';
+                        showSlide(0);
+                        setTimeout(() => play(), 500);
+                    }, 1200);
+                }, 3000);
+            }, 1200);
+        }, 8000);
     }
 
     // ─── Particles ───
@@ -755,9 +837,9 @@
     // ─── Fullscreen ───
     function toggleFullscreen() {
         if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch(() => {});
+            document.documentElement.requestFullscreen().catch(() => { });
         } else {
-            document.exitFullscreen().catch(() => {});
+            document.exitFullscreen().catch(() => { });
         }
     }
 
@@ -778,11 +860,12 @@
     // ─── Init ───
     async function init() {
         createParticles($('#introParticles'), 25);
-        await preloadInitialImages();
+        await detectAllOrientations();
         preloader.classList.add('hidden');
         buildSlides();
 
-        startBtn.addEventListener('click', () => {
+        // Auto-start: show intro briefly then start slideshow
+        setTimeout(() => {
             introScreen.style.opacity = '0';
             introScreen.style.transition = 'opacity 1.2s ease';
             setTimeout(() => {
@@ -791,22 +874,12 @@
                 showSlide(0);
                 setTimeout(() => play(), 500);
             }, 1200);
-        });
+        }, 3000);
 
         prevBtn.addEventListener('click', goPrev);
         nextBtn.addEventListener('click', goNext);
         playPauseBtn.addEventListener('click', () => { isPlaying ? pause() : play(); });
         fullscreenBtn.addEventListener('click', toggleFullscreen);
-
-        replayBtn.addEventListener('click', () => {
-            endingScreen.style.display = 'none';
-            slideshowEl.style.display = 'block';
-            currentSlideIndex = 0;
-            buildSlides();
-            slideContainer.innerHTML = '';
-            showSlide(0);
-            setTimeout(() => play(), 500);
-        });
 
         document.addEventListener('keydown', handleKeydown);
 

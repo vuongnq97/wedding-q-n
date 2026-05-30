@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,19 @@
     <meta name="description" content="Slideshow đám cưới Quang Quốc & Quỳnh Như - Tình yêu vĩnh cửu">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
+
 <body>
 
     <!-- Preloader -->
     <div id="preloader">
         <div class="preloader-content">
             <div class="preloader-ornament">✦</div>
-            <div class="preloader-names">Q & Q</div>
+            <div class="preloader-names">Q & N</div>
             <div class="preloader-bar-track">
                 <div class="preloader-bar" id="preloaderBar"></div>
             </div>
@@ -31,10 +35,10 @@
         <div class="intro-content">
             <div class="intro-ornament-top">
                 <svg viewBox="0 0 200 30" class="ornament-svg">
-                    <path d="M0,15 Q50,0 100,15 Q150,30 200,15" stroke="currentColor" fill="none" stroke-width="0.8"/>
-                    <circle cx="100" cy="15" r="3" fill="currentColor"/>
-                    <circle cx="70" cy="10" r="1.5" fill="currentColor"/>
-                    <circle cx="130" cy="10" r="1.5" fill="currentColor"/>
+                    <path d="M0,15 Q50,0 100,15 Q150,30 200,15" stroke="currentColor" fill="none" stroke-width="0.8" />
+                    <circle cx="100" cy="15" r="3" fill="currentColor" />
+                    <circle cx="70" cy="10" r="1.5" fill="currentColor" />
+                    <circle cx="130" cy="10" r="1.5" fill="currentColor" />
                 </svg>
             </div>
             <div class="intro-pre-title">The Wedding of</div>
@@ -43,17 +47,14 @@
             <h1 class="intro-bride">Quỳnh Như</h1>
             <div class="intro-ornament-bottom">
                 <svg viewBox="0 0 200 30" class="ornament-svg">
-                    <path d="M0,15 Q50,30 100,15 Q150,0 200,15" stroke="currentColor" fill="none" stroke-width="0.8"/>
-                    <circle cx="100" cy="15" r="3" fill="currentColor"/>
-                    <circle cx="70" cy="20" r="1.5" fill="currentColor"/>
-                    <circle cx="130" cy="20" r="1.5" fill="currentColor"/>
+                    <path d="M0,15 Q50,30 100,15 Q150,0 200,15" stroke="currentColor" fill="none" stroke-width="0.8" />
+                    <circle cx="100" cy="15" r="3" fill="currentColor" />
+                    <circle cx="70" cy="20" r="1.5" fill="currentColor" />
+                    <circle cx="130" cy="20" r="1.5" fill="currentColor" />
                 </svg>
             </div>
             <div class="intro-quote">"Hai trái tim, một tình yêu, mãi mãi bên nhau"</div>
-            <button id="startBtn" class="intro-start-btn">
-                <span>Bắt Đầu</span>
-                <div class="btn-shimmer"></div>
-            </button>
+
         </div>
     </div>
 
@@ -62,7 +63,7 @@
 
         <!-- Top ornament bar -->
         <div class="top-bar dark-text">
-            <div class="top-bar-left">Q & Q</div>
+            <div class="top-bar-left">Q & N</div>
             <div class="top-bar-center">
                 <div class="top-bar-line"></div>
                 <div class="top-bar-diamond">◇</div>
@@ -82,17 +83,28 @@
         <!-- Controls -->
         <div class="controls" id="controls">
             <button class="ctrl-btn" id="prevBtn" title="Trước">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
             </button>
             <button class="ctrl-btn ctrl-play" id="playPauseBtn" title="Phát / Dừng">
-                <svg viewBox="0 0 24 24" fill="currentColor" id="playIcon"><polygon points="6,4 20,12 6,20"/></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor" id="pauseIcon" style="display:none;"><rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" id="playIcon">
+                    <polygon points="6,4 20,12 6,20" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" id="pauseIcon" style="display:none;">
+                    <rect x="5" y="4" width="4" height="16" />
+                    <rect x="15" y="4" width="4" height="16" />
+                </svg>
             </button>
             <button class="ctrl-btn" id="nextBtn" title="Tiếp">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
             </button>
             <button class="ctrl-btn" id="fullscreenBtn" title="Toàn màn hình">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" />
+                </svg>
             </button>
         </div>
     </div>
@@ -104,31 +116,30 @@
         <div class="ending-content">
             <div class="ending-ornament">
                 <svg viewBox="0 0 200 30" class="ornament-svg">
-                    <path d="M0,15 Q50,0 100,15 Q150,30 200,15" stroke="currentColor" fill="none" stroke-width="0.8"/>
-                    <circle cx="100" cy="15" r="3" fill="currentColor"/>
+                    <path d="M0,15 Q50,0 100,15 Q150,30 200,15" stroke="currentColor" fill="none" stroke-width="0.8" />
+                    <circle cx="100" cy="15" r="3" fill="currentColor" />
                 </svg>
             </div>
             <div class="ending-thanks">Cảm Ơn</div>
-            <div class="ending-message">Cảm ơn tất cả những người thân yêu đã đến chung vui cùng chúng tôi trong ngày trọng đại này.</div>
+            <div class="ending-message">Cảm ơn tất cả những người thân yêu đã đến chung vui cùng chúng tôi trong ngày
+                trọng đại này.</div>
             <div class="ending-names">
                 <span class="ending-name-groom">Quang Quốc</span>
                 <span class="ending-heart">♥</span>
                 <span class="ending-name-bride">Quỳnh Như</span>
             </div>
-            <div class="ending-message-sub">"Tình yêu không làm cho thế giới quay tròn.<br>Tình yêu là thứ khiến chuyến đi trở nên đáng giá."</div>
+            <div class="ending-message-sub">"Tình yêu không làm cho thế giới quay tròn.<br>Tình yêu là thứ khiến chuyến
+                đi trở nên đáng giá."</div>
             <div class="ending-ornament">
                 <svg viewBox="0 0 200 30" class="ornament-svg">
-                    <path d="M0,15 Q50,30 100,15 Q150,0 200,15" stroke="currentColor" fill="none" stroke-width="0.8"/>
-                    <circle cx="100" cy="15" r="3" fill="currentColor"/>
+                    <path d="M0,15 Q50,30 100,15 Q150,0 200,15" stroke="currentColor" fill="none" stroke-width="0.8" />
+                    <circle cx="100" cy="15" r="3" fill="currentColor" />
                 </svg>
             </div>
-            <button id="replayBtn" class="intro-start-btn" style="margin-top: 2rem;">
-                <span>Xem Lại</span>
-                <div class="btn-shimmer"></div>
-            </button>
         </div>
     </div>
 
-    <script src="slideshow.js?v=10"></script>
+    <script src="slideshow.js?v=16"></script>
 </body>
+
 </html>
