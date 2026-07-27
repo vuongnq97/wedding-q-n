@@ -2,3 +2,11 @@
 
 # Keep full-resolution originals local; GitHub Pages uses optimized images/.
 /*.jpg
+
+# Ignore RAW camera files
+*.RAF
+*.raf
+*.CR2
+*.cr2
+*.NEF
+*.nef

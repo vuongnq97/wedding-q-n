@@ -1,6 +1,6 @@
 /* ============================================
    WEDDING SLIDESHOW ENGINE v2
-   Quang Quốc & Quỳnh Như
+   Quang Vương & Như Quỳnh
    Multi-Template / Canva-Style
    ============================================ */
 
@@ -16,31 +16,124 @@
         quoteSlideEveryN: 10,  // insert a full quote-only slide every N slides
     };
 
-    const GROOM = 'Quang Quốc';
-    const BRIDE = 'Quỳnh Như';
+    const GROOM = 'Quang Vương';
+    const BRIDE = 'Như Quỳnh';
     const COUPLE = `${GROOM} & ${BRIDE}`;
 
-    // ─── Image list (unique only) ───
+    // ─── Image list: Hiện tại (mở đầu) → Flashback quá khứ → Hiện tại (ảnh cưới) ───
     const IMAGE_BASE_PATH = 'images/';
     const IMAGE_FILES = [
-        '1D4A6942.jpg', '1D4A6930.jpg', '1D4A6947.jpg', '1D4A6968.jpg', '1D4A6997.jpg',
-        '1D4A7010.jpg', '1D4A7013.jpg', '1D4A7031.jpg', '1D4A7035.jpg', '1D4A7045.jpg',
-        '1D4A7060.jpg', '1D4A7070.jpg', '1D4A7076.jpg', '1D4A7080.jpg', '1D4A7089.jpg',
-        '1D4A7101.jpg', '1D4A7114.jpg', '1D4A7123.jpg', '1D4A7125.jpg', '1D4A7154.jpg',
-        '1D4A7172.jpg', '1D4A7178.jpg', '1D4A7189.jpg', '1D4A7207.jpg', '1D4A7222.jpg',
-        '1D4A7230.jpg', '1D4A7244.jpg', '1D4A7251.jpg', '1D4A7253.jpg', '1D4A7260.jpg',
-        '1D4A7287.jpg', '1D4A7299.jpg', '1D4A7308.jpg', '1D4A7312.jpg', '1D4A7328.jpg',
-        '1D4A7344.jpg', '1D4A7365.jpg', '1D4A7375.jpg', '1D4A7400.jpg', '1D4A7440.jpg',
-        '1D4A7500.jpg', '1D4A7511.jpg', '1D4A7534.jpg', '1D4A7545.jpg', '1D4A7580.jpg',
-        '1D4A7596.jpg', '1D4A7607.jpg', '1D4A7693.jpg', '1D4A7609.jpg', '1D4A7700.jpg',
-        '1D4A7721.jpg', '1D4A7727.jpg', '1D4A7730.jpg', '1D4A7734.jpg',
-        '1D4A7736.jpg', '1D4A7742.jpg', '1D4A7743.jpg', '1D4A7745.jpg', '1D4A7753.jpg',
-        '1D4A7755.jpg', '1D4A7766.jpg', '1D4A7778.jpg', '1D4A7785.jpg', '1D4A7788.jpg',
-        '1D4A7805.jpg', '1D4A7813.jpg', '1D4A7827.jpg', '1D4A7836.jpg', '1D4A7840.jpg',
-        '1D4A7853.jpg', '1D4A7861.jpg', '1D4A7864.jpg', '1D4A7868.jpg', '1D4A7877.jpg',
-        '1D4A7888.jpg', '1D4A7960.jpg', '1D4A7960.jpg', '1D4A7913.jpg', '1D4A7918.jpg',
-        '1D4A7926.jpg', '1D4A7930.jpg', '1D4A7942.jpg', '1D4A7951.jpg', '1D4A7954.jpg',
-        '1D4A7956.jpg', '1D4A7957.jpg', '1D4A7959.jpg', '1D4A7902.jpg',
+        // ══ Mở đầu: Khoảnh khắc hiện tại ══
+        'RIN_2670 copy 2 (1) (1).jpg',
+        // ── Chương 1: Giảng đường & thời sinh viên (2017) ──
+        '1784817768836_1844566805844982206_122909637720525971_3658652e6f718a27edbdbf864752313e.jpg',
+        '1783954136246_8088849262297663590_8088849262297663590_d41e5f237f245e12cce8f12daa06942e.jpg',
+        '1783954136007_8088849262297663590_8088849262297663590_c1ac0547f8de3468e428a309bc40e6c4.jpg',
+        '81358037_1033650053650577_4257643072420052992_n.jpg',
+        // ── Chương 2: Thanh xuân rực rỡ ──
+        '1783954088561_8088849262297663590_8088849262297663590_5842347e728256b8c6792647d23d4623.jpg',
+        '1783954088727_8088849262297663590_8088849262297663590_0d22176cc2d7e312f3dae5423936ee3e.jpg',
+        '72766678_956583084690608_1486030440711061504_n.jpg',
+        '1783954087096_8088849262297663590_8088849262297663590_3580d560897832a5ecf3f4bcdf55e054.jpg',
+        '1783957752083_8088849262297663590_8088849262297663590_4d0b5c2f5e9b616ce20b0331709a9809.jpg',
+        'IMG_1191.JPG',
+        // ── Chương 3: Những chuyến đi ──
+        '49028206_776187262730192_141684124917170176_n.jpg',
+        '1783957744615_8088849262297663590_8088849262297663590_b41b5494221561ed2586a1aa181f7a0c.jpg',
+        '1783957745123_8088849262297663590_8088849262297663590_ff9b10cfc8472db949b0c96a3e04a9b7.jpg',
+        'DSCF1130.JPG',
+        'DSCF1309.JPG',
+        'DSCF1396.JPG',
+        'DSCF1463.JPG',
+        'DSCF1512.JPG',
+        'DSCF1536.JPG',
+        'DSCF1589.JPG',
+        'DSCF1638.JPG',
+        'DSCF1772.JPG',
+        'DSCF1851.JPG',
+        'DSCF1932.JPG',
+        'DSCF1963.JPG',
+        'DSCF1984.JPG',
+        'DSCF1997.JPG',
+        'DSCF2049.JPG',
+        'DSCF2071.JPG',
+        'DSCF2076.JPG',
+        '1783957751326_8088849262297663590_8088849262297663590_9379779fca83cb4038bd459852cc4980.jpg',
+        '166048388_1385823598433219_5417758899403869636_n.jpg',
+        '1783954089742_8088849262297663590_8088849262297663590_1c2c0dd8feb4b53033b58d069b5294e1.jpg',
+        '1783954135732_8088849262297663590_8088849262297663590_16d15ccf5f44449e8d7628d9ab73f7b8.jpg',
+        '1783954088361_8088849262297663590_8088849262297663590_8e23eb801b80d675f38940b68ac3cc9f.jpg',
+        '1783954087698_8088849262297663590_8088849262297663590_581b98f0755fe1d0e66e3b7d1b4f20e6.jpg',
+        '1783954089226_8088849262297663590_8088849262297663590_15bb02825cb542c88203984004a02122.jpg',
+        '1783957741694_8088849262297663590_8088849262297663590_1f1493002abebcbef159e95494512819.jpg',
+        '1783957742409_8088849262297663590_8088849262297663590_416c640ea7e6f9e4dfc6427ab4eb0e47.jpg',
+        '1783957743011_8088849262297663590_8088849262297663590_62f11b6d1afb831973c7d5bae69e6676.jpg',
+        '1783957743581_8088849262297663590_8088849262297663590_eeb0a083a1256694ebb48540c72f4a17.jpg',
+        '1783957750070_8088849262297663590_8088849262297663590_46119c59d7b95f06d3a402d558db41dd.jpg',
+        '1783957751790_8088849262297663590_8088849262297663590_583945dd9eee04899b502af905783c97.jpg',
+        'IMG_4535.JPG',
+        'IMG_4536.JPG',
+        'IMG_4537.JPG',
+        'IMG_4682.JPG',
+        'IMG_4683.JPG',
+        'IMG_5586.JPG',
+        // ── Hà Giang & Tây Bắc ──
+        'DSCF3654.JPG',
+        'DSCF3748.JPG',
+        'DSCF3863.JPG',
+        'DSCF3943.JPG',
+        'DSCF3992.JPG',
+        'DSCF4006.JPG',
+        'DSCF4044.JPG',
+        // ── Bè tre & dòng sông ──
+        'DSCF4074.JPG',
+        'DSCF4089.JPG',
+        'DSCF4129.JPG',
+        'IMG_2238.JPG',
+        // ── Camping & Glamping ──
+        'IMG_2855.JPG',
+        'IMG_4109.JPG',
+        'IMG_4183.JPG',
+        'IMG_4189.JPG',
+        // ── Ven biển ──
+        'IMG_5555.JPG',
+        // ── Chương 4: Cùng nhau chinh phục – Marathon ──
+        '1783954086793_8088849262297663590_8088849262297663590_2219796d4f47ccc772bc2680b87cc94a.jpg',
+        '1783954086475_8088849262297663590_8088849262297663590_03cbe6488970cfe9a09c08d948b4d908.jpg',
+        '1783954088128_8088849262297663590_8088849262297663590_d33dbf7a9c8c567b960e92ec60685e3a.jpg',
+        '1783954084340_8088849262297663590_8088849262297663590_a6df9560017b02cdabdb8e0e6e160804.jpg',
+        '1783954085950_8088849262297663590_8088849262297663590_c718517c886cb34d47f120bcb726dc71.jpg',
+        // ── Chương 5: Lễ dạm ngõ & Áo dài ──
+        '1783957749525_8088849262297663590_8088849262297663590_ee85a3fe324a38fca984195afbf80b59.jpg',
+        '1783954084619_8088849262297663590_8088849262297663590_238ae70d7ebea882b139ef8de6929c7f.jpg',
+        '1783954084934_8088849262297663590_8088849262297663590_25c772126bf080e50caa355e5fd2ebe1.jpg',
+        '1783954085361_8088849262297663590_8088849262297663590_b0833d4f8a712baf351038f54bac1d5f.jpg',
+        // ── Chương 6: Ảnh cưới studio ──
+        'RIN_2165-3.jpg',
+        'RIN_2179.jpg',
+        'RIN_2197.jpg',
+        'RIN_2198.jpg',
+        'RIN_2204.jpg',
+        'RIN_2213.jpg',
+        'RIN_2239 copy (1).jpg',
+        'RIN_2250 copy (3).jpg',
+        'RIN_2254.jpg',
+        'RIN_2289.jpg',
+        'RIN_2303.jpg',
+        'RIN_2314.jpg',
+        'RIN_2323.jpg',
+        'RIN_2338 copy (1).jpg',
+        'RIN_2349.jpg',
+        'RIN_2364.jpg',
+        'RIN_2704.jpg',
+        'RIN_2714 copy (1).jpg',
+        'RIN_2725.jpg',
+        'RIN_2751.jpg',
+        'RIN_2769 copy (1).jpg',
+        'RIN_2775 copy 2 (1) (1).jpg',
+        'RIN_2798.jpg',
+        'RIN_2802.jpg',
+        'RIN_2833.jpg',
     ].map(file => `${IMAGE_BASE_PATH}${file}`);
 
     // ─── Image orientation detection ───
@@ -53,45 +146,105 @@
         '"Tình yêu không cần hoàn hảo, chỉ cần chân thành."',
         '"Từ khi gặp em, mọi con đường đều dẫn về nhà."',
         '"Hạnh phúc đơn giản là được ở bên nhau mỗi ngày."',
-        '"Em là câu trả lời cho mọi lời cầu nguyện của anh."',
+        '"Thanh xuân đẹp nhất là khi có em bên cạnh."',
         '"Yêu em là điều tuyệt vời nhất anh từng làm."',
-        '"Mỗi khoảnh khắc bên em đều là một món quà."',
-        '"Tình yêu của chúng ta viết nên câu chuyện đẹp nhất."',
+        '"Mỗi chuyến đi bên em đều là một kỷ niệm đẹp."',
+        '"Cùng nhau chinh phục mọi cung đường cuộc đời."',
         '"Bên em, anh tìm thấy ý nghĩa của cuộc đời."',
         '"Hai trái tim, một nhịp đập, mãi mãi bên nhau."',
-        '"Em là mùa xuân vĩnh cửu trong trái tim anh."',
+        '"9 năm yêu thương, một đời gắn kết."',
         '"Cảm ơn em đã chọn anh, chọn tình yêu này."',
         '"Nơi nào có em, nơi đó là nhà."',
-        '"Anh hứa sẽ yêu em hôm nay, ngày mai, và mãi mãi."',
-        '"Tình yêu chân thật không bao giờ có kết thúc."',
+        '"42km cũng không dài bằng hành trình yêu em."',
+        '"Từ giảng đường đến lễ đường, luôn có nhau."',
     ];
 
-    // ─── Full Quote Slides (inserted periodically) ───
+    // ─── Full Quote Slides (inserted periodically, aligned with chapter flow) ───
+    // Slide 0: Mở đầu (RIN_2670 – hiện tại)
+    // Quote 1 (~slide 11): Chuyển từ Chương 2 → Chương 3 (thanh xuân → chuyến đi)
+    // Quote 2 (~slide 21): Giữa Chương 3 (đang trong các chuyến đi)
+    // Quote 3 (~slide 31): Giữa/cuối Chương 3 (núi, sông, trekking)
+    // Quote 4 (~slide 41): Cuối Chương 3 / Chương 4 (camping → marathon, chinh phục)
+    // Quote 5 (~slide 51): Chương 5–6 (áo dài → ảnh cưới, tri ân)
     const FULL_QUOTES = [
-        { text: '"Cảm ơn Ba Mẹ đã nuôi dạy chúng con,\ncho chúng con tình yêu thương vô bờ,\nvà dẫn lối chúng con đến ngày hôm nay."', author: 'Với tất cả lòng biết ơn' },
-        { text: '"Cảm ơn những người bạn thân yêu\nđã luôn bên cạnh, chia sẻ niềm vui,\nvà cùng chúng tôi đi qua mọi thử thách."', author: 'Tình bạn quý giá' },
-        { text: '"Hôm nay chúng tôi bắt đầu\nmột chương mới trong cuộc đời,\nvới trái tim tràn đầy yêu thương\nvà niềm tin vào tương lai."', author: COUPLE },
-        { text: '"Cảm ơn tất cả quan khách\nđã dành thời gian đến chung vui\ntrong ngày trọng đại của chúng tôi.\nSự hiện diện của quý vị\nlà món quà ý nghĩa nhất."', author: 'Trân trọng' },
-        { text: '"Tình yêu là hành trình dài,\nvà chúng tôi biết ơn vì được\nchia sẻ hành trình ấy bên nhau."', author: COUPLE },
+        { text: '"Thanh xuân đẹp nhất\nlà khi có em bên cạnh.\nTừ những ngày còn ngồi giảng đường,\nchúng mình đã bắt đầu\nviết nên câu chuyện của riêng mình."', author: 'Khởi đầu hành trình' },
+        { text: '"Mỗi chuyến đi bên em\nđều là một kỷ niệm đẹp.\nMỗi cung đường là một câu chuyện,\nmỗi điểm đến là một lời hứa."', author: 'Những chuyến đi' },
+        { text: '"Từ đỉnh núi cao đến dòng sông dài,\ntừ con đường mây phủ\nđến phố cổ yên bình.\nBên nhau, không có gì là không thể."', author: 'Đường xa có nhau' },
+        { text: '"Cùng nhau chinh phục mọi cung đường,\nnắm tay nhau vượt qua mọi giới hạn.\nBởi vì bên nhau,\ntình yêu là sức mạnh lớn nhất."', author: 'Chinh phục' },
+        { text: '"Cảm ơn Ba Mẹ đã nuôi dạy chúng con,\ncho chúng con tình yêu thương vô bờ.\nCảm ơn gia đình, bạn bè, quan khách\nđã đồng hành và chúc phúc\ncho hành trình yêu thương của chúng tôi."', author: 'Tri ân' },
+    ];
+
+    // ─── Opening Intro (before any images) ───
+    const OPENING_INTRO = {
+        line1: 'Có những cuộc gặp gỡ\nchỉ kéo dài trong khoảnh khắc.',
+        line2: 'Nhưng cũng có những cuộc gặp gỡ\ntrở thành khởi đầu\ncủa một hành trình dài.',
+        line3: 'Xin mời quý vị cùng nhìn lại\nhành trình chín năm yêu thương\ncủa cô dâu và chú rể.',
+    };
+
+    // ─── Chapter Intro Slides (inserted before each chapter's first image) ───
+    // imageIndex = index in IMAGE_FILES where each chapter starts
+    const CHAPTER_INTROS = [
+        {
+            imageIndex: 0,    // Mở đầu: ảnh hiện tại
+            chapter: '',
+            title: 'Khoảnh khắc hiện tại',
+            quote: '"Hôm nay,\nhai trái tim chính thức\nnắm tay bước vào\nchặng đường mới của cuộc đời.\nNhưng trước đó...\nhãy cùng nhìn lại\nnhững tháng năm đã qua."',
+        },
+        {
+            imageIndex: 1,    // Chương 1
+            chapter: 'Chương 1',
+            title: 'Bắt đầu từ giảng đường',
+            quote: '"Chín năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nchương đầu tiên\nđã bắt đầu như thế."',
+        },
+        {
+            imageIndex: 5,    // Chương 2
+            chapter: 'Chương 2',
+            title: 'Thanh xuân rực rỡ',
+            quote: '"Thanh xuân là khoảng thời gian\nđẹp nhất của mỗi người.\nVà thanh xuân ấy càng ý nghĩa hơn\nkhi có một người cùng sẻ chia."',
+        },
+        {
+            imageIndex: 11,   // Chương 3
+            chapter: 'Chương 3',
+            title: 'Những chuyến đi',
+            quote: '"Suốt chín năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
+        },
+        {
+            imageIndex: 66,   // Chương 4
+            chapter: 'Chương 4',
+            title: 'Cùng nhau chinh phục',
+            quote: '"Nắm tay nhau\nvượt qua mọi giới hạn.\nCùng nhau chinh phục\nmọi cung đường cuộc đời.\nBởi vì bên nhau,\nkhông có gì là không thể."',
+        },
+        {
+            imageIndex: 71,   // Chương 5
+            chapter: 'Chương 5',
+            title: 'Lễ dạm ngõ & Áo dài',
+            quote: '"Sau bao nhiêu chuyến đi,\nmột lời hứa đã được trao.\nÁo dài đỏ rực bên hoa baby trắng.\nMột hành trình mới\nchính thức bắt đầu."',
+        },
+        {
+            imageIndex: 75,   // Chương 6
+            chapter: 'Chương 6',
+            title: 'Ngày hôm nay',
+            quote: '"Hôm nay,\ntrước sự chứng kiến\ncủa gia đình và người thân,\nhai con người đã cùng nhau\nđi qua gần một thập kỷ\nchính thức bước vào\nchặng đường mới của cuộc đời."',
+        },
     ];
 
     // ─── Section headings for collage slides ───
     const SECTION_HEADINGS = [
-        { heading: 'Our Story', sub: 'Câu chuyện tình yêu' },
-        { heading: 'Forever', sub: 'Mãi mãi bên nhau' },
-        { heading: 'Love', sub: 'Tình yêu đích thực' },
-        { heading: 'Together', sub: 'Hạnh phúc trọn vẹn' },
+        { heading: 'Our Story', sub: 'Bắt đầu từ giảng đường' },
+        { heading: 'Adventures', sub: 'Những chuyến đi khắp nơi' },
+        { heading: 'Together', sub: 'Cùng nhau chinh phục' },
+        { heading: 'Love', sub: '9 năm yêu thương' },
         { heading: 'Moments', sub: 'Những khoảnh khắc đẹp' },
-        { heading: 'Blessed', sub: 'Phước lành từ trái tim' },
+        { heading: 'Forever', sub: 'Mãi mãi bên nhau' },
     ];
 
     const POLAROID_CAPTIONS = [
         'Yêu thương mãi mãi ♥',
-        'Ngày hạnh phúc nhất',
+        'Thanh xuân của chúng ta',
         'Cùng nhau đến cuối đời',
-        'Khoảnh khắc vàng',
+        '42km – Nắm tay nhau về đích',
         `${GROOM} ♥ ${BRIDE}`,
-        'Forever & Always',
+        '9 năm & mãi mãi',
     ];
 
     // ─── Ken Burns effect classes ───
@@ -475,6 +628,79 @@
                 `
             };
         },
+
+        // --- 17. Opening Intro (narrative opening before any images) ---
+        openingIntro(introData) {
+            return {
+                classes: ['tpl-opening-intro', 'theme-dark', 'anim-fade-in'],
+                topBarMode: 'light',
+                html: `
+                    <div class="slide-inner">
+                        <div class="oi-ornament-top stagger-1">
+                            <svg viewBox="0 0 200 30" class="ornament-svg">
+                                <path d="M0,15 Q50,0 100,15 Q150,30 200,15" stroke="currentColor" fill="none" stroke-width="0.8" />
+                                <circle cx="100" cy="15" r="3" fill="currentColor" />
+                                <circle cx="70" cy="10" r="1.5" fill="currentColor" />
+                                <circle cx="130" cy="10" r="1.5" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="oi-line oi-line-1 stagger-2">${introData.line1.replace(/\n/g, '<br>')}</div>
+                        <div class="oi-line oi-line-2 stagger-3">${introData.line2.replace(/\n/g, '<br>')}</div>
+                        <div class="oi-line oi-line-3 stagger-4">${introData.line3.replace(/\n/g, '<br>')}</div>
+                        <div class="oi-ornament-bottom stagger-5">
+                            <svg viewBox="0 0 200 30" class="ornament-svg">
+                                <path d="M0,15 Q50,30 100,15 Q150,0 200,15" stroke="currentColor" fill="none" stroke-width="0.8" />
+                                <circle cx="100" cy="15" r="3" fill="currentColor" />
+                                <circle cx="70" cy="20" r="1.5" fill="currentColor" />
+                                <circle cx="130" cy="20" r="1.5" fill="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                `
+            };
+        },
+
+        // --- 18. Chapter Intro (chapter title card before each chapter) ---
+        chapterIntro(chapterData) {
+            return {
+                classes: ['tpl-chapter-intro', 'theme-dark', 'anim-fade-in'],
+                topBarMode: 'light',
+                html: `
+                    <div class="slide-inner">
+                        ${chapterData.chapter ? `<div class="ci-chapter stagger-1">${chapterData.chapter}</div>` : ''}
+                        <div class="ci-title stagger-2">${chapterData.title}</div>
+                        <div class="ci-ornament stagger-3"></div>
+                        <div class="ci-quote stagger-4">${chapterData.quote.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `
+            };
+        },
+
+        // --- 19. Film Strip (horizontal scrolling film reel, 6 images) ---
+        filmStrip(images) {
+            // Duplicate images for seamless infinite scroll effect
+            const allImgs = [...images, ...images];
+            const frames = allImgs.map((img, i) => `
+                <div class="fs-frame">
+                    <div class="fs-sprocket-top"></div>
+                    <div class="fs-photo"><img src="${img}" alt="Wedding"></div>
+                    <div class="fs-sprocket-bottom"></div>
+                </div>
+            `).join('');
+            return {
+                classes: ['tpl-film-strip', 'anim-fade-in'],
+                topBarMode: 'light',
+                html: `
+                    <div class="fs-bg"></div>
+                    <div class="fs-track">
+                        <div class="fs-reel">
+                            ${frames}
+                        </div>
+                    </div>
+                    <div class="fs-vignette"></div>
+                `
+            };
+        },
     };
 
     // ─── Template schedule: defines which templates to use and in what order ───
@@ -494,12 +720,14 @@
     // ─── Build Slides ───
     function buildSlides() {
         slides = [];
-        let imgIdx = 0;
         let slideNum = 0;
         quoteIndex = 0;
         fullQuoteIndex = 0;
         sectionIndex = 0;
         polaroidIndex = 0;
+
+        // Build a set of image indices that start each chapter
+        const chapterStartIndices = new Set(CHAPTER_INTROS.map(c => c.imageIndex));
 
         // Shuffle template order per category to keep it fresh
         const shuffled = {
@@ -514,13 +742,47 @@
         let spIdx = 0, slIdx = 0;
 
         // Planned template sequence pattern for visual variety
-        // Pattern repeats: single, single, duo, single, trio, single, quad, single, single, quote
-        const pattern = ['single', 'single', 'duo', 'single', 'trio', 'single', 'quad', 'single', 'single'];
+        const pattern = ['single', 'single', 'duo', 'single', 'trio', 'single', 'quad', 'single', 'film'];
+
+        // ── Opening sequence: Image first → then 2 intro text slides ──
+        // Slide 0: Opening image (RIN_2670 – present moment, hero shot)
+        slides.push({
+            type: 'portraitBlur',
+            images: [IMAGE_FILES[0]],
+        });
+        // Slide 1: Opening intro text
+        slides.push({
+            type: 'openingIntro',
+            introData: OPENING_INTRO,
+            images: [],
+        });
+        // Slide 2: "Khoảnh khắc hiện tại" chapter intro
+        const openingChapter = CHAPTER_INTROS.find(c => c.imageIndex === 0);
+        if (openingChapter) {
+            slides.push({
+                type: 'chapterIntro',
+                chapterData: openingChapter,
+                images: [],
+            });
+        }
+
+        // Start from image index 1 (RIN_2670 already used above)
+        let imgIdx = 1;
 
         while (imgIdx < IMAGE_FILES.length) {
             slideNum++;
 
-            // First slide is always splitLeftText
+            // ── Insert Chapter Intro before each chapter's first image ──
+            const chapterIntro = CHAPTER_INTROS.find(c => c.imageIndex === imgIdx);
+            if (chapterIntro) {
+                slides.push({
+                    type: 'chapterIntro',
+                    chapterData: chapterIntro,
+                    images: [],
+                });
+            }
+
+            // First image slide uses splitLeftText
             if (slideNum === 1) {
                 slides.push({
                     type: 'splitLeftText',
@@ -530,8 +792,8 @@
                 continue;
             }
 
-            // Insert quote slide periodically
-            if (slideNum > 1 && (slideNum - 1) % CONFIG.quoteSlideEveryN === 0 && fullQuoteIndex < FULL_QUOTES.length) {
+            // Insert periodic full-quote slides (between chapters, not at chapter boundaries)
+            if (slideNum > 1 && (slideNum - 1) % CONFIG.quoteSlideEveryN === 0 && fullQuoteIndex < FULL_QUOTES.length && !chapterStartIndices.has(imgIdx)) {
                 slides.push({
                     type: 'quoteOnly',
                     quoteData: FULL_QUOTES[fullQuoteIndex],
@@ -546,6 +808,7 @@
 
             // Check if we have enough images for this template type
             const remaining = IMAGE_FILES.length - imgIdx;
+            if (templateType === 'film' && remaining < 6) templateType = remaining >= 4 ? 'quad' : remaining >= 3 ? 'trio' : remaining >= 2 ? 'duo' : 'single';
             if (templateType === 'quad' && remaining < 4) templateType = remaining >= 3 ? 'trio' : remaining >= 2 ? 'duo' : 'single';
             if (templateType === 'trio' && remaining < 3) templateType = remaining >= 2 ? 'duo' : 'single';
             if (templateType === 'duo' && remaining < 2) templateType = 'single';
@@ -580,6 +843,10 @@
                     qIdx++;
                     imageCount = 4;
                     break;
+                case 'film':
+                    tplName = 'filmStrip';
+                    imageCount = 6;
+                    break;
             }
 
             const slideImages = IMAGE_FILES.slice(imgIdx, imgIdx + imageCount);
@@ -588,6 +855,7 @@
             slides.push({
                 type: tplName,
                 images: slideImages,
+                duration: tplName === 'filmStrip' ? 14000 : undefined,  // film strip gets longer duration
             });
         }
     }
@@ -646,6 +914,10 @@
         let rendered;
         if (slideData.type === 'quoteOnly') {
             rendered = templates.quoteOnly(slideData.quoteData);
+        } else if (slideData.type === 'openingIntro') {
+            rendered = templates.openingIntro(slideData.introData);
+        } else if (slideData.type === 'chapterIntro') {
+            rendered = templates.chapterIntro(slideData.chapterData);
         } else {
             rendered = templates[slideData.type](slideData.images);
         }
@@ -714,6 +986,8 @@
 
     // ─── Progress Bar ───
     function startProgress() {
+        const slideData = slides[currentSlideIndex];
+        const duration = (slideData && slideData.duration) || CONFIG.slideDuration;
         progressStart = Date.now();
         progressBar.style.transition = 'none';
         progressBar.style.width = '0%';
@@ -721,7 +995,7 @@
 
         function tick() {
             const elapsed = Date.now() - progressStart;
-            const pct = Math.min((elapsed / CONFIG.slideDuration) * 100, 100);
+            const pct = Math.min((elapsed / duration) * 100, 100);
             progressBar.style.width = `${pct}%`;
             if (pct < 100) progressTimer = requestAnimationFrame(tick);
         }
@@ -750,6 +1024,8 @@
 
     function scheduleNext() {
         clearTimeout(slideTimer);
+        const slideData = slides[currentSlideIndex];
+        const duration = (slideData && slideData.duration) || CONFIG.slideDuration;
         slideTimer = setTimeout(() => {
             if (!isPlaying) return;
             if (currentSlideIndex < slides.length - 1) {
@@ -760,7 +1036,7 @@
                 // Show ending screen, then auto-restart
                 showEnding();
             }
-        }, CONFIG.slideDuration);
+        }, duration);
     }
 
     function goNext() {
