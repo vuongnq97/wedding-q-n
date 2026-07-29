@@ -7,6 +7,19 @@
 (function () {
     'use strict';
 
+    // ─── Mobile Viewport Height Fix ───
+    // On mobile browsers, 100vh includes the address bar area.
+    // This sets a CSS variable --vh to the actual visible viewport height.
+    function setVH() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setVH();
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(setVH, 150); // delay to let browser finish layout
+    });
+
     // ─── Configuration ───
     const CONFIG = {
         slideDuration: 7000,
@@ -27,21 +40,19 @@
         'RIN_2670 copy 2 (1) (1).jpg',
         // ── Chương 1: Giảng đường & thời sinh viên (2017) ──
         '1784817768836_1844566805844982206_122909637720525971_3658652e6f718a27edbdbf864752313e.jpg',
-        '1783954136246_8088849262297663590_8088849262297663590_d41e5f237f245e12cce8f12daa06942e.jpg',
-        '1783954136007_8088849262297663590_8088849262297663590_c1ac0547f8de3468e428a309bc40e6c4.jpg',
-        '81358037_1033650053650577_4257643072420052992_n.jpg',
-        // ── Chương 2: Thanh xuân rực rỡ ──
         '1783954088561_8088849262297663590_8088849262297663590_5842347e728256b8c6792647d23d4623.jpg',
         '1783954088727_8088849262297663590_8088849262297663590_0d22176cc2d7e312f3dae5423936ee3e.jpg',
+        'ChatGPT Image Jul 29, 2026, 10_48_37 PM.png',
+        // ── Chương 2: Thanh xuân rực rỡ ──
         '72766678_956583084690608_1486030440711061504_n.jpg',
         '1783954087096_8088849262297663590_8088849262297663590_3580d560897832a5ecf3f4bcdf55e054.jpg',
         '1783957752083_8088849262297663590_8088849262297663590_4d0b5c2f5e9b616ce20b0331709a9809.jpg',
-        'IMG_1191.JPG',
+        'Jul 29, 2026, 08_37_43 PM.jpg',
         // ── Chương 3: Những chuyến đi ──
         '49028206_776187262730192_141684124917170176_n.jpg',
         '1783957744615_8088849262297663590_8088849262297663590_b41b5494221561ed2586a1aa181f7a0c.jpg',
-        '1783957745123_8088849262297663590_8088849262297663590_ff9b10cfc8472db949b0c96a3e04a9b7.jpg',
         'DSCF1130.JPG',
+        '1783957745123_8088849262297663590_8088849262297663590_ff9b10cfc8472db949b0c96a3e04a9b7.jpg',
         'DSCF1309.JPG',
         'DSCF1396.JPG',
         'DSCF1463.JPG',
@@ -67,7 +78,7 @@
         '1783954089226_8088849262297663590_8088849262297663590_15bb02825cb542c88203984004a02122.jpg',
         '1783957741694_8088849262297663590_8088849262297663590_1f1493002abebcbef159e95494512819.jpg',
         '1783957742409_8088849262297663590_8088849262297663590_416c640ea7e6f9e4dfc6427ab4eb0e47.jpg',
-        '1783957743011_8088849262297663590_8088849262297663590_62f11b6d1afb831973c7d5bae69e6676.jpg',
+
         '1783957743581_8088849262297663590_8088849262297663590_eeb0a083a1256694ebb48540c72f4a17.jpg',
         '1783957750070_8088849262297663590_8088849262297663590_46119c59d7b95f06d3a402d558db41dd.jpg',
         '1783957751790_8088849262297663590_8088849262297663590_583945dd9eee04899b502af905783c97.jpg',
@@ -78,8 +89,8 @@
         'IMG_4683.JPG',
         'IMG_5586.JPG',
         // ── Hà Giang & Tây Bắc ──
-        'DSCF3654.JPG',
-        'DSCF3748.JPG',
+        'DSCF3748.jpg',
+        'Edit_outfits_for_trekking_theme_202607292216.png',
         'DSCF3863.JPG',
         'DSCF3943.JPG',
         'DSCF3992.JPG',
@@ -114,14 +125,10 @@
         'RIN_2197.jpg',
         'RIN_2198.jpg',
         'RIN_2204.jpg',
-        'RIN_2213.jpg',
         'RIN_2239 copy (1).jpg',
         'RIN_2250 copy (3).jpg',
-        'RIN_2254.jpg',
-        'RIN_2289.jpg',
-        'RIN_2303.jpg',
+        'RIN_2303.png',
         'RIN_2314.jpg',
-        'RIN_2323.jpg',
         'RIN_2338 copy (1).jpg',
         'RIN_2349.jpg',
         'RIN_2364.jpg',
@@ -134,6 +141,8 @@
         'RIN_2798.jpg',
         'RIN_2802.jpg',
         'RIN_2833.jpg',
+        'RIN_2323.png',
+        'ChatGPT Image Jul 29, 2026, 08_58_15 PM.png',
     ].map(file => `${IMAGE_BASE_PATH}${file}`);
 
     // ─── Image orientation detection ───
@@ -178,7 +187,7 @@
     const OPENING_INTRO = {
         line1: 'Có những cuộc gặp gỡ\nchỉ kéo dài trong khoảnh khắc.',
         line2: 'Nhưng cũng có những cuộc gặp gỡ\ntrở thành khởi đầu\ncủa một hành trình dài.',
-        line3: 'Xin mời quý vị cùng nhìn lại\nhành trình chín năm yêu thương\ncủa cô dâu và chú rể.',
+        line3: 'Xin mời quý vị cùng nhìn lại\nhành trình 9 năm yêu thương\ncủa cô dâu và chú rể.',
     };
 
     // ─── Chapter Intro Slides (inserted before each chapter's first image) ───
@@ -194,7 +203,7 @@
             imageIndex: 1,    // Chương 1
             chapter: 'Chương 1',
             title: 'Bắt đầu từ giảng đường',
-            quote: '"Chín năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nchương đầu tiên\nđã bắt đầu như thế."',
+            quote: '"9 năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nchương đầu tiên\nđã bắt đầu như thế."',
         },
         {
             imageIndex: 5,    // Chương 2
@@ -203,25 +212,25 @@
             quote: '"Thanh xuân là khoảng thời gian\nđẹp nhất của mỗi người.\nVà thanh xuân ấy càng ý nghĩa hơn\nkhi có một người cùng sẻ chia."',
         },
         {
-            imageIndex: 11,   // Chương 3
+            imageIndex: 9,    // Chương 3
             chapter: 'Chương 3',
             title: 'Những chuyến đi',
-            quote: '"Suốt chín năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
+            quote: '"Suốt 9 năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
         },
         {
-            imageIndex: 66,   // Chương 4
+            imageIndex: 63,   // Chương 4
             chapter: 'Chương 4',
             title: 'Cùng nhau chinh phục',
             quote: '"Nắm tay nhau\nvượt qua mọi giới hạn.\nCùng nhau chinh phục\nmọi cung đường cuộc đời.\nBởi vì bên nhau,\nkhông có gì là không thể."',
         },
         {
-            imageIndex: 71,   // Chương 5
+            imageIndex: 68,   // Chương 5
             chapter: 'Chương 5',
             title: 'Lễ dạm ngõ & Áo dài',
             quote: '"Sau bao nhiêu chuyến đi,\nmột lời hứa đã được trao.\nÁo dài đỏ rực bên hoa baby trắng.\nMột hành trình mới\nchính thức bắt đầu."',
         },
         {
-            imageIndex: 75,   // Chương 6
+            imageIndex: 72,   // Chương 6
             chapter: 'Chương 6',
             title: 'Ngày hôm nay',
             quote: '"Hôm nay,\ntrước sự chứng kiến\ncủa gia đình và người thân,\nhai con người đã cùng nhau\nđi qua gần một thập kỷ\nchính thức bước vào\nchặng đường mới của cuộc đời."',
@@ -277,18 +286,18 @@
 
     // ─── Helpers ───
     const $ = (sel) => document.querySelector(sel);
-    const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
-    const pickKB = () => pick(KB_EFFECTS);
-    const pickBG = () => pick(BG_THEMES);
-    const pickAnim = () => pick(ENTRY_ANIMS);
+    // Deterministic cycling instead of random pick
+    let _kbIdx = 0, _bgIdx = 0, _animIdx = 0, _transIdx = 0;
+    const pickKB = () => { const v = KB_EFFECTS[_kbIdx % KB_EFFECTS.length]; _kbIdx++; return v; };
+    const pickBG = () => { const v = BG_THEMES[_bgIdx % BG_THEMES.length]; _bgIdx++; return v; };
+    const pickAnim = () => { const v = ENTRY_ANIMS[_animIdx % ENTRY_ANIMS.length]; _animIdx++; return v; };
     const nextQuote = () => { const q = QUOTES[quoteIndex % QUOTES.length]; quoteIndex++; return q; };
     const nextSection = () => { const s = SECTION_HEADINGS[sectionIndex % SECTION_HEADINGS.length]; sectionIndex++; return s; };
     const nextPolaroid = () => { const p = POLAROID_CAPTIONS[polaroidIndex % POLAROID_CAPTIONS.length]; polaroidIndex++; return p; };
 
     function pickTransition() {
-        let t;
-        do { t = pick(TRANSITIONS); } while (t === lastTransition);
-        lastTransition = t;
+        const t = TRANSITIONS[_transIdx % TRANSITIONS.length];
+        _transIdx++;
         return t;
     }
 
@@ -615,7 +624,7 @@
 
         // --- 16. Quote Only ---
         quoteOnly(quoteData) {
-            const theme = Math.random() > 0.5 ? 'theme-dark' : 'theme-light';
+            const theme = 'theme-dark';
             return {
                 classes: ['tpl-quote-only', theme, pickAnim()],
                 topBarMode: theme === 'theme-dark' ? 'light' : 'dark',
@@ -729,17 +738,13 @@
         // Build a set of image indices that start each chapter
         const chapterStartIndices = new Set(CHAPTER_INTROS.map(c => c.imageIndex));
 
-        // Shuffle template order per category to keep it fresh
-        const shuffled = {
-            single: [...TPL_SINGLE].sort(() => Math.random() - 0.5),
-            singlePortrait: [...TPL_SINGLE_PORTRAIT].sort(() => Math.random() - 0.5),
-            singleLandscape: [...TPL_SINGLE_LANDSCAPE].sort(() => Math.random() - 0.5),
-            duo: [...TPL_DUO].sort(() => Math.random() - 0.5),
-            trio: [...TPL_TRIO].sort(() => Math.random() - 0.5),
-            quad: [...TPL_QUAD].sort(() => Math.random() - 0.5),
-        };
-        let sIdx = 0, dIdx = 0, tIdx = 0, qIdx = 0;
-        let spIdx = 0, slIdx = 0;
+        // Fixed template cycling order (deterministic, no randomness)
+        const FIXED_SINGLE_PORTRAIT = ['portraitBlur', 'splitLeftText', 'splitRightText', 'polaroid', 'framed'];
+        const FIXED_SINGLE_LANDSCAPE = ['heroContain', 'splitLeftText', 'splitRightText', 'topPhotoBottomText', 'fullOverlay', 'cinematic', 'polaroid', 'framed'];
+        const FIXED_DUO = ['asymDuo', 'vertDuo', 'duoEqual'];
+        const FIXED_TRIO = ['threeRow', 'collage1L2S'];
+        const FIXED_QUAD = ['bgTrio', 'mosaic'];
+        let spIdx = 0, slIdx = 0, dIdx = 0, tIdx = 0, qIdx = 0;
 
         // Planned template sequence pattern for visual variety
         const pattern = ['single', 'single', 'duo', 'single', 'trio', 'single', 'quad', 'single', 'film'];
@@ -818,28 +823,28 @@
 
             switch (templateType) {
                 case 'single':
-                    // Pick template based on image orientation
+                    // Fixed template based on image orientation
                     if (isPortrait(IMAGE_FILES[imgIdx])) {
-                        tplName = shuffled.singlePortrait[spIdx % shuffled.singlePortrait.length];
+                        tplName = FIXED_SINGLE_PORTRAIT[spIdx % FIXED_SINGLE_PORTRAIT.length];
                         spIdx++;
                     } else {
-                        tplName = shuffled.singleLandscape[slIdx % shuffled.singleLandscape.length];
+                        tplName = FIXED_SINGLE_LANDSCAPE[slIdx % FIXED_SINGLE_LANDSCAPE.length];
                         slIdx++;
                     }
                     imageCount = 1;
                     break;
                 case 'duo':
-                    tplName = shuffled.duo[dIdx % shuffled.duo.length];
+                    tplName = FIXED_DUO[dIdx % FIXED_DUO.length];
                     dIdx++;
                     imageCount = 2;
                     break;
                 case 'trio':
-                    tplName = shuffled.trio[tIdx % shuffled.trio.length];
+                    tplName = FIXED_TRIO[tIdx % FIXED_TRIO.length];
                     tIdx++;
                     imageCount = 3;
                     break;
                 case 'quad':
-                    tplName = shuffled.quad[qIdx % shuffled.quad.length];
+                    tplName = FIXED_QUAD[qIdx % FIXED_QUAD.length];
                     qIdx++;
                     imageCount = 4;
                     break;

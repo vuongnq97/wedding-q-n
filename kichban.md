@@ -207,14 +207,14 @@
 
 ---
 
-## Thống kê ảnh: 100 ảnh tổng cộng
+## Thống kê ảnh: 97 ảnh tổng cộng
 
 | Chương | Số ảnh | Nội dung |
 |--------|--------|----------|
 | Mở đầu: Hiện tại | 1 | RIN_2670 – Khoảnh khắc hiện tại |
-| 1. Giảng đường | 4 | FB 2017, bãi biển, tình nguyện, tốt nghiệp |
-| 2. Thanh xuân | 6 | Karaoke, selfie, backdrop, café, kayak, casual |
-| 3. Những chuyến đi | 55 | Đà Lạt, Quy Nhơn/DSCF, Hà Giang/Tây Bắc, camping/glamping, bè tre/dòng sông, ven biển, trekking, IMG |
+| 1. Giảng đường | 3 | FB 2017, sinh viên, tốt nghiệp |
+| 2. Thanh xuân | 7 | Karaoke, selfie, backdrop, café, kayak, casual |
+| 3. Những chuyến đi | 53 | Quy Nhơn/DSCF, Hà Giang/Tây Bắc, trekking, camping/glamping, bè tre/dòng sông, ven biển, IMG |
 | 4. Marathon | 5 | Chạy bộ, về đích, 42km Finisher |
 | 5. Lễ dạm ngõ & Áo dài | 4 | Dạm ngõ, áo dài đỏ, hoa baby |
-| 6. Ảnh cưới studio | 25 | RIN series (bao gồm 7 ảnh mới) |
+| 6. Ảnh cưới studio | 23 | RIN series + studio IT theme (bride/groom, merge request, loading wedding) |
