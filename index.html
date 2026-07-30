@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
     <title>Quang Vương & Như Quỳnh - Wedding</title>
     <meta name="description" content="Slideshow đám cưới Quang Vương & Như Quỳnh - Tình yêu vĩnh cửu">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +16,127 @@
 </head>
 
 <body>
+
+    <!-- Rotate Phone Overlay (portrait mobile only) -->
+    <div id="rotateOverlay">
+        <div class="rotate-content">
+            <div class="rotate-icon">📱</div>
+            <div class="rotate-arrow">↻</div>
+            <p class="rotate-text">Vui lòng xoay ngang điện thoại<br>để xem slideshow</p>
+        </div>
+    </div>
+
+    <!-- Netflix-Style Intro -->
+    <div id="netflixIntro">
+
+        <!-- ══ Phase 1: Netflix N Logo Video ══ -->
+        <div class="nf-phase nf-logo-phase" id="nfLogoPhase">
+            <video id="nfLogoVideo" autoplay muted playsinline>
+                <source src="introN.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- ══ Phase 2: Profile Selection ══ -->
+        <div class="nf-phase nf-profile-screen" id="nfProfileScreen" style="display:none;">
+            <div class="nf-bg-photo" style="background-image: url('images/RIN_2670 copy 2 (1) (1).jpg')"></div>
+            <div class="nf-bg-overlay"></div>
+
+            <div class="nf-logo">NETFLIX</div>
+            <div class="nf-channel">VUONG VA QUYNH WEDDING</div>
+            <h1 class="nf-title">Ai đang xem ?</h1>
+
+            <div class="nf-profiles">
+                <div class="nf-profile" id="nfProfile1">
+                    <div class="nf-avatar nf-avatar-icon nf-green">
+                        <div class="nf-smiley"><span class="nf-eye"></span><span class="nf-eye"></span><span class="nf-mouth"></span></div>
+                    </div>
+                    <span class="nf-name">Người dùng</span>
+                </div>
+                <div class="nf-profile" id="nfProfile2">
+                    <div class="nf-avatar"><img src="images/RIN_2165-3.jpg" alt="Ngày Chung Đôi"></div>
+                    <span class="nf-name">Ngày Chung Đôi</span>
+                </div>
+                <div class="nf-profile" id="nfProfile3">
+                    <div class="nf-avatar"><img src="images/RIN_2204.jpg" alt="Vương & Quỳnh"></div>
+                    <span class="nf-name">Vương & Quỳnh</span>
+                </div>
+                <div class="nf-profile" id="nfProfile4">
+                    <div class="nf-avatar nf-avatar-icon nf-blue">
+                        <div class="nf-smiley"><span class="nf-eye"></span><span class="nf-eye"></span><span class="nf-mouth"></span></div>
+                    </div>
+                    <span class="nf-name">Người dùng</span>
+                </div>
+            </div>
+
+            <button class="nf-manage-btn">QUẢN LÝ</button>
+        </div>
+
+        <!-- ══ Phase 3: Netflix Homepage ══ -->
+        <div class="nf-phase nf-home" id="nfHome" style="display:none;">
+            <!-- Navbar -->
+            <nav class="nf-navbar">
+                <div class="nf-nav-left">
+                    <span class="nf-nav-logo">NETFLIX</span>
+                    <a class="nf-nav-link nf-nav-active">Trang Chủ</a>
+                    <a class="nf-nav-link">TV</a>
+                    <a class="nf-nav-link">Phim</a>
+                    <a class="nf-nav-link">Vừa xem</a>
+                    <a class="nf-nav-link">Cá nhân</a>
+                </div>
+                <div class="nf-nav-right">
+                    <span class="nf-nav-icon">🔍</span>
+                    <span class="nf-nav-icon">🔔</span>
+                    <div class="nf-nav-avatar"><img src="images/RIN_2670 copy 2 (1) (1).jpg" alt=""></div>
+                </div>
+            </nav>
+
+            <!-- Hero Banner -->
+            <div class="nf-hero">
+                <div class="nf-hero-bg" id="nfHeroBg">
+                    <img src="images/RIN_2314.jpg" alt="" class="nf-hero-img nf-hero-active">
+                    <img src="images/RIN_2349.jpg" alt="" class="nf-hero-img">
+                    <img src="images/RIN_2704.jpg" alt="" class="nf-hero-img">
+                </div>
+                <div class="nf-hero-gradient"></div>
+                <div class="nf-hero-content">
+                    <div class="nf-hero-tag"><span class="nf-hero-n">N</span> PHIM BỘ</div>
+                    <h2 class="nf-hero-title">Ngày Chung Đôi:</h2>
+                    <h1 class="nf-hero-couple">Vương & Quỳnh</h1>
+                    <div class="nf-hero-stars">★ ★ ★ ★ ☆</div>
+                    <p class="nf-hero-desc">Hôn nhân không phải là kết thúc của tình yêu, mà là hành trình cùng nhau xây dựng. Nó cần sự kiên nhẫn, thấu hiểu và dũng cảm vượt qua thử thách, đồng thời luôn vun đắp tình yêu mỗi ngày.</p>
+                    <div class="nf-hero-buttons">
+                        <button class="nf-btn-play" id="nfBtnPlay">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><polygon points="5,3 19,12 5,21" fill="black"/></svg>
+                            CHIẾU
+                        </button>
+                        <button class="nf-btn-info">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/><text x="12" y="17" text-anchor="middle" fill="white" font-size="14" font-weight="bold">i</text></svg>
+                            XEM THÊM
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top 10 Row -->
+            <div class="nf-top10">
+                <h3 class="nf-top10-title">Top 10 Phim nổi trội tại Việt Nam hôm nay</h3>
+                <div class="nf-top10-row">
+                    <div class="nf-top10-item"><span class="nf-top10-num">1</span><img src="images/RIN_2165-3.jpg" alt=""></div>
+                    <div class="nf-top10-item"><span class="nf-top10-num">2</span><img src="images/RIN_2239 copy (1).jpg" alt=""></div>
+                    <div class="nf-top10-item"><span class="nf-top10-num">3</span><img src="images/RIN_2250 copy (3).jpg" alt=""></div>
+                    <div class="nf-top10-item"><span class="nf-top10-num">4</span><img src="images/RIN_2338 copy (1).jpg" alt=""></div>
+                    <div class="nf-top10-item"><span class="nf-top10-num">5</span><img src="images/RIN_2364.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auto hand cursor (shared across phases) -->
+        <div class="nf-cursor" id="nfCursor" style="display:none;">
+            <svg width="28" height="28" viewBox="0 0 24 24">
+                <path d="M6.5 1.5C7.3 1.5 8 2.2 8 3v7.5l.5-.3c.7-.4 1.5-.1 1.9.5l.1.3.5-.3c.7-.4 1.5-.1 1.9.5l.1.3.5-.3c.7-.4 1.5-.1 1.9.5V6c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v9.5c0 3-2.5 5.5-5.5 5.5h-1C8.5 21 6 18.5 5 16L3.5 12c-.3-.7 0-1.5.7-1.8.7-.3 1.5 0 1.8.7l.5 1.1V3c0-.8.7-1.5 1.5-1.5z" fill="white" stroke="#333" stroke-width="0.5"/>
+            </svg>
+        </div>
+    </div>
 
     <!-- Preloader -->
     <div id="preloader">

@@ -3,6 +3,529 @@
    Korean Elegant / Multi-Template / Canva-Style
    ============================================ */
 
+/* ============ NETFLIX INTRO ============ */
+#netflixIntro {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: #141414;
+}
+
+.nf-profile-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Background photo at bottom */
+.nf-bg-photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 0.25;
+    z-index: 0;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+}
+
+.nf-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #141414 0%, rgba(20,20,20,0.85) 50%, rgba(20,20,20,0.7) 100%);
+    z-index: 1;
+}
+
+/* Netflix Logo */
+.nf-logo {
+    position: absolute;
+    top: 24px;
+    left: 40px;
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: 2px;
+    z-index: 5;
+}
+
+/* Channel name */
+.nf-channel {
+    position: relative;
+    z-index: 5;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-style: italic;
+    color: #c9a96e;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+/* Title */
+.nf-title {
+    position: relative;
+    z-index: 5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: #e5e5e5;
+    margin-bottom: clamp(20px, 3vh, 40px);
+}
+
+/* Profiles */
+.nf-profiles {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    gap: clamp(14px, 2vw, 28px);
+    align-items: flex-start;
+    margin-bottom: clamp(24px, 4vh, 50px);
+}
+
+.nf-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Avatar */
+.nf-avatar {
+    width: clamp(90px, 12vw, 185px);
+    height: clamp(90px, 12vw, 185px);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #333;
+    border: 3px solid transparent;
+    transition: border-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.nf-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nf-profile:hover .nf-avatar,
+.nf-profile.nf-hovered .nf-avatar {
+    border-color: #e5e5e5;
+}
+
+/* Smiley face avatars */
+.nf-avatar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nf-green { background: #6aab5e; }
+.nf-blue { background: #5a7fc2; }
+
+.nf-smiley {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    gap: 18%;
+    padding-top: 5%;
+}
+
+.nf-eye {
+    width: 14%;
+    height: 14%;
+    background: #141414;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+}
+
+.nf-mouth {
+    width: 50%;
+    height: 0;
+    border-bottom: 3px solid #141414;
+    border-radius: 0 0 50% 50%;
+    margin-top: 4%;
+    aspect-ratio: 4/1;
+}
+
+/* Profile name */
+.nf-name {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+    color: #808080;
+    transition: color 0.2s;
+    text-align: center;
+}
+
+.nf-profile:hover .nf-name,
+.nf-profile.nf-hovered .nf-name {
+    color: #e5e5e5;
+}
+
+/* Manage button */
+.nf-manage-btn {
+    position: relative;
+    z-index: 5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+    color: #808080;
+    background: transparent;
+    border: 1px solid #808080;
+    padding: 0.5em 2em;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.nf-manage-btn:hover {
+    color: #e5e5e5;
+    border-color: #e5e5e5;
+}
+
+/* Hand cursor */
+.nf-cursor {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.6));
+    transition: none;
+}
+
+.nf-cursor.nf-cursor-click {
+    animation: cursorClick 0.25s ease;
+}
+
+@keyframes cursorClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+/* Zoom screen */
+.nf-zoom-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #141414;
+    z-index: 1;
+    opacity: 0;
+}
+
+.nf-zoom-screen.nf-active {
+    opacity: 1;
+    z-index: 3;
+}
+
+.nf-zoom-letter {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: 6px;
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+.nf-zoom-letter.nf-animate {
+    animation: nfZoomIn 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes nfZoomIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    15% { opacity: 1; transform: scale(1); }
+    60% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(50); }
+}
+
+/* ═══ Phase 1: Netflix N Logo Video ═══ */
+.nf-phase {
+    position: absolute;
+    inset: 0;
+}
+
+.nf-logo-phase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    z-index: 5;
+}
+
+.nf-logo-phase video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ═══ Phase 3: Netflix Homepage ═══ */
+.nf-home {
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Navbar */
+.nf-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 4%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.nf-nav-left {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 24px);
+}
+
+.nf-nav-logo {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.6rem);
+    font-weight: 900;
+    color: #e50914;
+    letter-spacing: 1px;
+    margin-right: 8px;
+}
+
+.nf-nav-link {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.65rem, 1vw, 0.9rem);
+    color: #e5e5e5;
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.nf-nav-active { font-weight: 700; color: #fff; }
+
+.nf-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nf-nav-icon { font-size: 1.1rem; cursor: pointer; }
+
+.nf-nav-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.nf-nav-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Hero */
+.nf-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 400px;
+}
+
+.nf-hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.nf-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.nf-hero-img.nf-hero-active { opacity: 1; }
+
+.nf-hero-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 70%),
+        linear-gradient(to top, #141414 0%, rgba(20,20,20,0.6) 20%, transparent 50%);
+    z-index: 2;
+}
+
+.nf-hero-content {
+    position: absolute;
+    bottom: 15%;
+    left: 4%;
+    z-index: 3;
+    max-width: 45%;
+}
+
+.nf-hero-tag {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.8rem, 1.3vw, 1.1rem);
+    color: #e5e5e5;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+}
+
+.nf-hero-n {
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    color: #e50914;
+    font-size: 1.3em;
+}
+
+.nf-hero-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.nf-hero-couple {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+.nf-hero-stars {
+    color: #e50914;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.nf-hero-desc {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    color: #d2d2d2;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.nf-hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.nf-btn-play {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 24px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nf-btn-play:hover { background: #e0e0e0; }
+
+.nf-btn-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(109,109,110,0.7);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 24px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nf-btn-info:hover { background: rgba(109,109,110,0.5); }
+
+/* Top 10 Row */
+.nf-top10 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 4% 2vh;
+    z-index: 5;
+}
+
+.nf-top10-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+    font-weight: 700;
+    color: #e5e5e5;
+    margin-bottom: 10px;
+}
+
+.nf-top10-row {
+    display: flex;
+    gap: clamp(4px, 0.8vw, 12px);
+    overflow: hidden;
+}
+
+.nf-top10-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(80px, 12vw, 160px);
+    display: flex;
+    align-items: flex-end;
+}
+
+.nf-top10-num {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 900;
+    color: #141414;
+    -webkit-text-stroke: 2px #808080;
+    line-height: 0.8;
+    position: relative;
+    z-index: 2;
+    margin-right: -10px;
+}
+
+.nf-top10-item img {
+    width: clamp(60px, 8vw, 110px);
+    height: clamp(80px, 12vw, 150px);
+    object-fit: cover;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+#netflixIntro.nf-done {
+    display: none;
+}
+
+
 /* ---------- Design Tokens ---------- */
 :root {
     --color-bg: #f8f4ef;
@@ -1233,33 +1756,57 @@ body {
     z-index: 2;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(12px, 2vw, 28px);
-    padding: 4vh 5vw;
 }
 
 .tpl-bg-trio .bgt-card {
-    flex: 0 1 auto;
-    max-height: 82vh;
-    max-width: 28%;
-    border-radius: 6px;
+    position: absolute;
+    width: 38%;
+    border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.25), 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2);
     background: white;
-    padding: 6px;
+    padding: 8px;
 }
 
 .tpl-bg-trio .bgt-card img {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
+    width: 100%;
     height: auto;
+    max-height: 50vh;
     object-fit: contain;
-    object-position: center center;
-    border-radius: 3px;
+    border-radius: 2px;
+}
+
+/* Card 1: top-center-left */
+.tpl-bg-trio .bgt-card:nth-child(1) {
+    top: 6%;
+    left: 12%;
+    z-index: 1;
+    transform: rotate(-6deg);
+}
+
+/* Card 2: top-center-right, overlaps card 1 */
+.tpl-bg-trio .bgt-card:nth-child(2) {
+    top: 4%;
+    left: 48%;
+    z-index: 2;
+    transform: rotate(5deg);
+}
+
+/* Card 3: bottom-center-left, overlaps cards above */
+.tpl-bg-trio .bgt-card:nth-child(3) {
+    top: 42%;
+    left: 8%;
+    z-index: 3;
+    transform: rotate(3deg);
+}
+
+/* Card 4: bottom-center-right, overlaps all */
+.tpl-bg-trio .bgt-card:nth-child(4) {
+    top: 40%;
+    left: 45%;
+    z-index: 4;
+    transform: rotate(-4deg);
 }
 
 /* ===== TEMPLATE 8: Full Bleed + Text Overlay ===== */
@@ -2315,324 +2862,99 @@ body {
     }
 }
 
-/* ============ RESPONSIVE — Mobile ============ */
-@media (max-width: 768px) {
-    .top-bar {
-        padding: 0.8rem 1.2rem;
-    }
+/* ============ ROTATE PHONE OVERLAY ============ */
+/* Hidden by default */
+#rotateOverlay {
+    display: none;
+}
 
-    .top-bar-center {
-        display: none;
-    }
-
-    .controls {
-        bottom: 2rem;
-        right: 50%;
-        transform: translateX(50%);
-        gap: 0.8rem;
-    }
-
-    .controls button {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* ── Split templates: stack vertically ── */
-    .tpl-split-left-text,
-    .tpl-split-right-text {
-        flex-direction: column;
-    }
-
-    .tpl-split-left-text .text-panel,
-    .tpl-split-right-text .text-panel {
-        flex: 0 0 30%;
-        padding: 1.2rem;
-    }
-
-    .tpl-split-left-text .photo-panel img,
-    .tpl-split-right-text .photo-panel img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* ── Asym Duo: stack vertically, image fills ── */
-    .tpl-asym-duo {
+/* Show overlay ONLY on portrait mobile/tablet */
+@media (max-width: 1024px) and (orientation: portrait) {
+    #rotateOverlay {
         display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
-        gap: 4px;
-        padding: 2vh 2vw;
     }
 
-    .tpl-asym-duo .ad-large {
-        flex: 2;
-        grid-column: unset;
-        grid-row: unset;
+    .rotate-content {
+        text-align: center;
+        color: white;
+        animation: rotateFloat 3s ease-in-out infinite;
     }
 
-    .tpl-asym-duo .ad-large img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+    .rotate-icon {
+        font-size: 4rem;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        animation: rotatePhone 2s ease-in-out infinite;
     }
 
-    .tpl-asym-duo .ad-small {
-        flex: 1;
-        grid-column: unset;
-        grid-row: unset;
+    .rotate-arrow {
+        font-size: 3rem;
+        color: var(--color-gold, #c9a96e);
+        margin-bottom: 1rem;
+        animation: rotateArrowPulse 1.5s ease-in-out infinite;
     }
 
-    .tpl-asym-duo .ad-small img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+    .rotate-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: #e8ddd0;
+        margin-bottom: 0.8rem;
     }
 
-    .tpl-asym-duo .ad-text {
-        flex: 0 0 auto;
-        grid-column: unset;
-        grid-row: unset;
-        padding: 0.8rem;
-    }
-
-    .tpl-asym-duo .ad-text .adt-quote {
+    .rotate-subtext {
+        font-family: 'Quicksand', sans-serif;
         font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 0.3rem;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 1px;
     }
 
-    .tpl-asym-duo .ad-text .adt-names {
-        font-size: 0.9rem;
+    @keyframes rotatePhone {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(90deg); }
     }
 
-    /* ── Vertical Duo: reduce padding, fill images ── */
-    .tpl-vert-duo {
-        padding: 2vh 3vw;
-        gap: 4px;
+    @keyframes rotateArrowPulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.2); }
     }
 
-    .tpl-vert-duo .vd-cell img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+    @keyframes rotateFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
     }
 
-    /* ── Duo Equal: stack vertically on mobile ── */
-    .tpl-duo-equal {
-        flex-direction: column;
-        padding: 2vh 3vw;
-        gap: 4px;
-    }
-
-    .tpl-duo-equal .de-cell img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* ── Three Row: stack vertically ── */
-    .tpl-three-row {
-        flex-direction: column;
-        padding: 2vh 3vw;
-        gap: 4px;
-    }
-
-    .tpl-three-row .photo-cell img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* ── Collage 1L2S: simplify grid ── */
-    .tpl-collage-1L2S {
-        grid-template-columns: 1fr;
-        grid-template-rows: 2fr 1fr 1fr auto;
-        gap: 4px;
-        padding: 2vh 2vw;
-    }
-
-    .tpl-collage-1L2S .col-large {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .tpl-collage-1L2S .col-small-top {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .tpl-collage-1L2S .col-small-bottom {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .tpl-collage-1L2S .col-text {
-        grid-column: 1;
-        grid-row: 4;
-        padding: 0.8rem;
-    }
-
-    .tpl-collage-1L2S img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* ── BG Trio: cascading stacked cards on mobile ── */
-    .tpl-bg-trio .bgt-container {
-        position: relative;
-        display: block;
-        padding: 0;
-        gap: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .tpl-bg-trio .bgt-card {
-        position: absolute;
-        width: 68vw;
-        height: auto;
-        max-width: none;
-        max-height: none;
-        border-radius: 8px;
-        padding: 5px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .tpl-bg-trio .bgt-card img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        aspect-ratio: 3 / 4;
-        border-radius: 5px;
-    }
-
-    /* Card 1: top-left, slight tilt */
-    .tpl-bg-trio .bgt-card:nth-child(3) {
-        top: 4vh;
-        left: 6vw;
-        z-index: 1;
-        transform: rotate(-3deg);
-    }
-
-    /* Card 2: center-right, overlaps card 1's bottom */
-    .tpl-bg-trio .bgt-card:nth-child(4) {
-        top: 28vh;
-        right: 6vw;
-        left: auto;
-        z-index: 2;
-        transform: rotate(2deg);
-    }
-
-    /* Card 3: bottom-left, overlaps card 2's bottom */
-    .tpl-bg-trio .bgt-card:nth-child(5) {
-        bottom: 8vh;
-        left: 12vw;
-        top: auto;
-        z-index: 3;
-        transform: rotate(-1.5deg);
-    }
-
-    /* ── Mosaic: 2-column grid, images fill ── */
-    .tpl-mosaic {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr auto;
-        gap: 4px;
-        padding: 2vh 2vw;
-    }
-
-    .tpl-mosaic .mos-1 {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .tpl-mosaic .mos-2 {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .tpl-mosaic .mos-3 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .tpl-mosaic .mos-4 {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .tpl-mosaic .mos-text {
-        grid-column: 1 / 3;
-        grid-row: 3;
-        padding: 0.6rem;
-    }
-
-    .tpl-mosaic .mos-cell img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* ── Polaroid: smaller frame on mobile ── */
-    .tpl-polaroid .pol-frame {
-        max-width: 80vw;
-        max-height: 75vh;
-    }
-
-    /* ── Framed: reduce border ── */
-    .tpl-framed .fr-inner {
-        padding: 12px;
-    }
-
-    /* ── Portrait Blur: ensure fill ── */
-    .tpl-portrait-blur .pb-sharp img {
-        object-fit: contain;
-        max-height: 90vh;
-        max-height: 90dvh;
-    }
-
-    /* ── Hero Contain: fill on mobile ── */
-    .tpl-hero-contain .hc-photo img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* ── Cinematic: reduce bars ── */
-    .tpl-cinematic .cine-bar {
-        flex: 0 0 5%;
-    }
-
-    /* ── Film Strip: adjust for mobile ── */
-    .tpl-film-strip .fs-reel {
-        height: 60vh;
-        height: 60dvh;
-    }
-
-    /* ── Top Photo Bottom Text: adjust split ── */
-    .tpl-top-photo-bottom-text .tpbt-photo {
-        flex: 2;
-    }
-
-    .tpl-top-photo-bottom-text .tpbt-text {
-        flex: 0 0 auto;
-        padding: 1rem;
-    }
-
-    /* ── Full Overlay: text sizing ── */
-    .tpl-full-overlay .fo-text .fo-quote {
-        font-size: 1rem;
-    }
-
-    .tpl-full-overlay .fo-text .fo-names {
-        font-size: 1.2rem;
+    /* Hide slideshow content behind overlay */
+    .slideshow,
+    #preloader,
+    .top-bar,
+    .controls {
+        /* Keep them in DOM but behind overlay */
     }
 }
 
-/* ============ Misc ============ */
-::selection {
-    background: var(--color-gold-soft);
-    color: var(--color-text);
+/* ============ LANDSCAPE MOBILE — keep PC layout, minor tweaks ============ */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .top-bar {
+        padding: 0.5rem 1rem;
+    }
+
+    .controls {
+        bottom: 0.5rem;
+        gap: 0.6rem;
+    }
+
+    .controls button {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 ::-webkit-scrollbar {
