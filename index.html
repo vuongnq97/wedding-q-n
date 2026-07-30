@@ -7,12 +7,17 @@
         content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
     <title>Quang Vương & Như Quỳnh - Wedding</title>
     <meta name="description" content="Slideshow đám cưới Quang Vương & Như Quỳnh - Tình yêu vĩnh cửu">
+    <meta name="theme-color" content="#0a0806">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="V & Q Wedding">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=22">
+    <link rel="stylesheet" href="style.css?v=23">
 </head>
 
 <body>
@@ -245,6 +250,12 @@
                 </svg>
             </button>
         </div>
+
+        <div class="fullscreen-hint" id="fullscreenHint" role="status" aria-live="polite" aria-hidden="true">
+            <button class="fullscreen-hint-close" id="fullscreenHintClose" type="button" aria-label="Đóng">×</button>
+            <p class="fullscreen-hint-title" id="fullscreenHintTitle"></p>
+            <p class="fullscreen-hint-text" id="fullscreenHintText"></p>
+        </div>
     </div>
 
     <!-- Thank You / Ending Screen -->
@@ -277,7 +288,7 @@
         </div>
     </div>
 
-    <script src="slideshow.js?v=22"></script>
+    <script src="slideshow.js?v=23"></script>
 </body>
 
 </html>

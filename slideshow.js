@@ -395,7 +395,12 @@
     const playIcon = $('#playIcon');
     const pauseIcon = $('#pauseIcon');
     const fullscreenBtn = $('#fullscreenBtn');
+    const fullscreenHint = $('#fullscreenHint');
+    const fullscreenHintTitle = $('#fullscreenHintTitle');
+    const fullscreenHintText = $('#fullscreenHintText');
+    const fullscreenHintClose = $('#fullscreenHintClose');
     const endingScreen = $('#ending-screen');
+    let fullscreenHintTimer = null;
 
     // ─────────────────────────────────
     //  TEMPLATE RENDERERS
@@ -1166,11 +1171,121 @@
     }
 
     // ─── Fullscreen ───
-    function toggleFullscreen() {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch(() => { });
+    function asPromise(value) {
+        return value && typeof value.then === 'function' ? value : Promise.resolve(value);
+    }
+
+    function isIOSDevice() {
+        const ua = navigator.userAgent || '';
+        const platform = navigator.platform || '';
+        const iOSByUA = /iPad|iPhone|iPod/.test(ua);
+        const iPadOSDesktopMode = platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+        return iOSByUA || iPadOSDesktopMode;
+    }
+
+    function isStandaloneDisplay() {
+        const standaloneMQ = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+        const fullscreenMQ = window.matchMedia && window.matchMedia('(display-mode: fullscreen)').matches;
+        return Boolean(window.navigator.standalone || standaloneMQ || fullscreenMQ);
+    }
+
+    function getFullscreenElement() {
+        return document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.msFullscreenElement ||
+            (document.webkitIsFullScreen ? document.documentElement : null);
+    }
+
+    function syncFullscreenButton() {
+        if (!fullscreenBtn) return;
+        fullscreenBtn.classList.toggle('is-active', Boolean(getFullscreenElement()));
+    }
+
+    function hideFullscreenHint() {
+        if (!fullscreenHint) return;
+        fullscreenHint.classList.remove('visible');
+        fullscreenHint.setAttribute('aria-hidden', 'true');
+        if (fullscreenHintTimer) {
+            clearTimeout(fullscreenHintTimer);
+            fullscreenHintTimer = null;
+        }
+    }
+
+    function showFullscreenHint() {
+        if (!fullscreenHint || !fullscreenHintTitle || !fullscreenHintText) return;
+
+        if (isIOSDevice() && !isStandaloneDisplay()) {
+            fullscreenHintTitle.textContent = 'Safari iPhone/iPad không cho bật fullscreen trực tiếp.';
+            fullscreenHintText.textContent = 'Cách gần nhất: bấm Chia sẻ, chọn Thêm vào Màn hình chính, bật Mở dưới dạng ứng dụng nếu có, rồi mở lại từ biểu tượng V & Q Wedding.';
+        } else if (isIOSDevice()) {
+            fullscreenHintTitle.textContent = 'Đang ở chế độ gần toàn màn hình.';
+            fullscreenHintText.textContent = 'iOS vẫn có thể giữ lại thanh trạng thái. Xoay ngang và mở từ biểu tượng trên Màn hình chính để có khung xem rộng nhất.';
         } else {
-            document.exitFullscreen().catch(() => { });
+            fullscreenHintTitle.textContent = 'Trình duyệt đang chặn toàn màn hình.';
+            fullscreenHintText.textContent = 'Hãy mở trang bằng HTTPS hoặc trình duyệt hỗ trợ Fullscreen API, rồi chạm trực tiếp vào nút toàn màn hình.';
+        }
+
+        fullscreenHint.classList.add('visible');
+        fullscreenHint.setAttribute('aria-hidden', 'false');
+
+        if (fullscreenHintTimer) clearTimeout(fullscreenHintTimer);
+        fullscreenHintTimer = setTimeout(hideFullscreenHint, 11000);
+    }
+
+    async function enterFullscreen() {
+        const target = slideshowEl || document.documentElement;
+
+        if (target.requestFullscreen) {
+            await asPromise(target.requestFullscreen({ navigationUI: 'hide' }));
+            return;
+        }
+
+        if (target.webkitRequestFullscreen) {
+            await asPromise(target.webkitRequestFullscreen());
+            return;
+        }
+
+        if (target.msRequestFullscreen) {
+            await asPromise(target.msRequestFullscreen());
+            return;
+        }
+
+        throw new Error('Fullscreen API is not available.');
+    }
+
+    async function exitFullscreenMode() {
+        if (document.exitFullscreen) {
+            await asPromise(document.exitFullscreen());
+            return;
+        }
+
+        if (document.webkitExitFullscreen) {
+            await asPromise(document.webkitExitFullscreen());
+            return;
+        }
+
+        if (document.webkitCancelFullScreen) {
+            await asPromise(document.webkitCancelFullScreen());
+            return;
+        }
+
+        if (document.msExitFullscreen) {
+            await asPromise(document.msExitFullscreen());
+        }
+    }
+
+    async function toggleFullscreen() {
+        try {
+            if (getFullscreenElement()) {
+                await exitFullscreenMode();
+            } else {
+                await enterFullscreen();
+            }
+            hideFullscreenHint();
+            syncFullscreenButton();
+            setVH();
+        } catch (error) {
+            showFullscreenHint();
         }
     }
 
@@ -1364,8 +1479,13 @@
         nextBtn.addEventListener('click', goNext);
         playPauseBtn.addEventListener('click', () => { isPlaying ? pause() : play(); });
         fullscreenBtn.addEventListener('click', toggleFullscreen);
+        if (fullscreenHintClose) fullscreenHintClose.addEventListener('click', hideFullscreenHint);
 
         document.addEventListener('keydown', handleKeydown);
+        document.addEventListener('fullscreenchange', syncFullscreenButton);
+        document.addEventListener('webkitfullscreenchange', syncFullscreenButton);
+        document.addEventListener('msfullscreenchange', syncFullscreenButton);
+        syncFullscreenButton();
 
         // Touch swipe
         let touchStartX = 0;

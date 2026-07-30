@@ -1,0 +1,16 @@
+{
+    "name": "Quang Vuong & Nhu Quynh Wedding",
+    "short_name": "V & Q Wedding",
+    "description": "Wedding slideshow for Quang Vuong and Nhu Quynh",
+    "start_url": "./",
+    "scope": "./",
+    "display": "fullscreen",
+    "display_override": [
+        "fullscreen",
+        "standalone",
+        "browser"
+    ],
+    "orientation": "landscape",
+    "background_color": "#0a0806",
+    "theme_color": "#0a0806"
+}

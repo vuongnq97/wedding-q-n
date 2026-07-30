@@ -2729,8 +2729,8 @@ body {
 /* ============ CONTROLS ============ */
 .controls {
     position: absolute;
-    bottom: 2rem;
-    right: 2.5rem;
+    bottom: calc(2rem + env(safe-area-inset-bottom));
+    right: calc(2.5rem + env(safe-area-inset-right));
     z-index: 30;
     display: flex;
     align-items: center;
@@ -2765,6 +2765,13 @@ body {
     box-shadow: 0 0 20px var(--color-gold-glow);
 }
 
+.ctrl-btn.is-active {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-white);
+    box-shadow: 0 0 20px var(--color-gold-glow);
+}
+
 .ctrl-btn svg {
     width: 15px;
     height: 15px;
@@ -2778,6 +2785,67 @@ body {
 .ctrl-play svg {
     width: 17px;
     height: 17px;
+}
+
+.fullscreen-hint {
+    position: absolute;
+    right: calc(2.5rem + env(safe-area-inset-right));
+    bottom: calc(5.75rem + env(safe-area-inset-bottom));
+    z-index: 35;
+    width: min(360px, calc(100vw - 2rem));
+    padding: 1rem 2.6rem 1rem 1rem;
+    border: 1px solid rgba(201, 169, 110, 0.35);
+    border-radius: 8px;
+    background: rgba(10, 8, 6, 0.86);
+    backdrop-filter: blur(16px);
+    color: var(--color-text);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+}
+
+.fullscreen-hint.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.fullscreen-hint-title {
+    margin-bottom: 0.35rem;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.25;
+    color: var(--color-gold-light);
+}
+
+.fullscreen-hint-text {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.fullscreen-hint-close {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.fullscreen-hint-close:hover {
+    background: rgba(201, 169, 110, 0.25);
+    color: var(--color-white);
 }
 
 /* ============ ENDING SCREEN ============ */
@@ -3015,17 +3083,25 @@ body {
 /* ============ LANDSCAPE MOBILE — keep PC layout, minor tweaks ============ */
 @media (max-width: 1024px) and (orientation: landscape) {
     .top-bar {
-        padding: 0.5rem 1rem;
+        padding: calc(0.5rem + env(safe-area-inset-top)) calc(1rem + env(safe-area-inset-right)) 0.5rem calc(1rem + env(safe-area-inset-left));
     }
 
     .controls {
-        bottom: 0.5rem;
+        bottom: calc(0.5rem + env(safe-area-inset-bottom));
+        right: calc(1rem + env(safe-area-inset-right));
         gap: 0.6rem;
+        opacity: 1;
     }
 
     .controls button {
         width: 36px;
         height: 36px;
+    }
+
+    .fullscreen-hint {
+        right: calc(1rem + env(safe-area-inset-right));
+        bottom: calc(3.4rem + env(safe-area-inset-bottom));
+        width: min(340px, calc(100vw - 2rem));
     }
 }
 
