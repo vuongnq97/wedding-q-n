@@ -29,14 +29,14 @@
     background-position: center bottom;
     opacity: 0.25;
     z-index: 0;
-    mask-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .nf-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, #141414 0%, rgba(20,20,20,0.85) 50%, rgba(20,20,20,0.7) 100%);
+    background: linear-gradient(to bottom, #141414 0%, rgba(20, 20, 20, 0.85) 50%, rgba(20, 20, 20, 0.7) 100%);
     z-index: 1;
 }
 
@@ -125,8 +125,13 @@
     justify-content: center;
 }
 
-.nf-green { background: #6aab5e; }
-.nf-blue { background: #5a7fc2; }
+.nf-green {
+    background: #6aab5e;
+}
+
+.nf-blue {
+    background: #5a7fc2;
+}
 
 .nf-smiley {
     display: flex;
@@ -197,7 +202,7 @@
     left: 30%;
     z-index: 10;
     pointer-events: none;
-    filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.6));
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.6));
     transition: none;
 }
 
@@ -206,9 +211,17 @@
 }
 
 @keyframes cursorClick {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.8); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Zoom screen */
@@ -243,10 +256,25 @@
 }
 
 @keyframes nfZoomIn {
-    0% { opacity: 0; transform: scale(0.3); }
-    15% { opacity: 1; transform: scale(1); }
-    60% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(50); }
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    15% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(50);
+    }
 }
 
 /* ═══ Phase 1: Netflix N Logo Video ═══ */
@@ -284,7 +312,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px 4%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
     position: absolute;
     top: 0;
     left: 0;
@@ -316,7 +344,10 @@
     cursor: pointer;
 }
 
-.nf-nav-active { font-weight: 700; color: #fff; }
+.nf-nav-active {
+    font-weight: 700;
+    color: #fff;
+}
 
 .nf-nav-right {
     display: flex;
@@ -324,7 +355,10 @@
     gap: 16px;
 }
 
-.nf-nav-icon { font-size: 1.1rem; cursor: pointer; }
+.nf-nav-icon {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
 
 .nf-nav-avatar {
     width: 28px;
@@ -332,7 +366,12 @@
     border-radius: 4px;
     overflow: hidden;
 }
-.nf-nav-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.nf-nav-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* Hero */
 .nf-hero {
@@ -357,14 +396,16 @@
     transition: opacity 1.5s ease;
 }
 
-.nf-hero-img.nf-hero-active { opacity: 1; }
+.nf-hero-img.nf-hero-active {
+    opacity: 1;
+}
 
 .nf-hero-gradient {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 40%, transparent 70%),
-        linear-gradient(to top, #141414 0%, rgba(20,20,20,0.6) 20%, transparent 50%);
+        linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 70%),
+        linear-gradient(to top, #141414 0%, rgba(20, 20, 20, 0.6) 20%, transparent 50%);
     z-index: 2;
 }
 
@@ -448,13 +489,15 @@
     transition: background 0.2s;
 }
 
-.nf-btn-play:hover { background: #e0e0e0; }
+.nf-btn-play:hover {
+    background: #e0e0e0;
+}
 
 .nf-btn-info {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(109,109,110,0.7);
+    background: rgba(109, 109, 110, 0.7);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -466,7 +509,9 @@
     transition: background 0.2s;
 }
 
-.nf-btn-info:hover { background: rgba(109,109,110,0.5); }
+.nf-btn-info:hover {
+    background: rgba(109, 109, 110, 0.5);
+}
 
 /* Top 10 Row */
 .nf-top10 {
@@ -574,9 +619,12 @@
 html,
 body {
     width: 100%;
-    height: 100vh; /* fallback */
-    height: 100dvh; /* dynamic viewport height — adjusts for mobile address bar */
-    height: calc(var(--vh, 1vh) * 100); /* JS-based fallback for older browsers */
+    height: 100vh;
+    /* fallback */
+    height: 100dvh;
+    /* dynamic viewport height — adjusts for mobile address bar */
+    height: calc(var(--vh, 1vh) * 100);
+    /* JS-based fallback for older browsers */
     overflow: hidden;
     background: #0a0806;
     font-family: var(--font-sans);
@@ -2397,6 +2445,7 @@ body {
     0% {
         transform: translateX(10%);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -2917,18 +2966,41 @@ body {
     }
 
     @keyframes rotatePhone {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(90deg); }
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(90deg);
+        }
     }
 
     @keyframes rotateArrowPulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.6; transform: scale(1.2); }
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
     }
 
     @keyframes rotateFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
     }
 
     /* Hide slideshow content behind overlay */
