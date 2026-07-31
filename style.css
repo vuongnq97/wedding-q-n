@@ -3138,6 +3138,81 @@ body {
     margin-top: 0.5rem;
 }
 
+/* Large screens / TV projection: let text-only slides scale past desktop caps */
+@media (min-width: 1800px) {
+    .tpl-opening-intro .slide-inner,
+    .tpl-chapter-intro .slide-inner {
+        max-width: 1040px;
+        padding: 4rem 3rem;
+    }
+
+    .tpl-quote-only .slide-inner {
+        max-width: 1120px;
+        padding: 4rem 3rem;
+    }
+
+    .tpl-opening-intro .oi-line {
+        line-height: 1.8;
+    }
+
+    .tpl-opening-intro .oi-line-1 {
+        font-size: clamp(1.4rem, 1.7vw, 2.4rem);
+    }
+
+    .tpl-opening-intro .oi-line-2 {
+        font-size: clamp(1.6rem, 1.9vw, 2.75rem);
+    }
+
+    .tpl-opening-intro .oi-line-3 {
+        font-size: clamp(1.25rem, 1.5vw, 2.1rem);
+    }
+
+    .tpl-chapter-intro .ci-title {
+        font-size: clamp(2.4rem, 3.2vw, 5rem);
+    }
+
+    .tpl-chapter-intro .ci-ornament {
+        width: 76px;
+        margin: 1.35rem auto;
+    }
+
+    .tpl-chapter-intro .ci-quote {
+        max-width: 900px;
+        font-size: clamp(1.35rem, 1.8vw, 2.35rem);
+        line-height: 1.85;
+    }
+
+    .tpl-quote-only .qo-text {
+        font-size: clamp(1.8rem, 2.25vw, 3.25rem);
+        line-height: 1.85;
+    }
+
+    .tpl-quote-only .qo-author {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 2560px) {
+    .tpl-opening-intro .slide-inner,
+    .tpl-chapter-intro .slide-inner,
+    .tpl-quote-only .slide-inner {
+        max-width: 1280px;
+    }
+
+    .tpl-chapter-intro .ci-title {
+        font-size: clamp(3rem, 3vw, 5.8rem);
+    }
+
+    .tpl-chapter-intro .ci-quote {
+        max-width: 1040px;
+        font-size: clamp(1.7rem, 1.55vw, 2.75rem);
+    }
+
+    .tpl-quote-only .qo-text {
+        font-size: clamp(2.25rem, 2vw, 3.8rem);
+    }
+}
+
 /* Chapter intro: top-to-bottom stagger animation */
 .slide.active.tpl-chapter-intro .stagger-1 {
     animation: anim-fade-down 0.9s var(--ease-cinematic) 0.15s both;
