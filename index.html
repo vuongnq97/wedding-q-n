@@ -17,7 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=25">
+    <link rel="stylesheet" href="style.css?v=26">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 
         <!-- ══ Phase 1: Netflix N Logo Video ══ -->
         <div class="nf-phase nf-logo-phase" id="nfLogoPhase">
-            <video id="nfLogoVideo" autoplay muted playsinline>
+            <video id="nfLogoVideo" muted playsinline preload="auto">
                 <source src="introN.mp4" type="video/mp4">
             </video>
         </div>
@@ -149,12 +149,12 @@
             </div>
         </div>
 
-        <!-- Auto hand cursor (shared across phases) -->
+        <!-- Auto pointer cursor (shared across phases) -->
         <div class="nf-cursor" id="nfCursor" style="display:none;">
-            <svg width="28" height="28" viewBox="0 0 24 24">
+            <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
                 <path
-                    d="M6.5 1.5C7.3 1.5 8 2.2 8 3v7.5l.5-.3c.7-.4 1.5-.1 1.9.5l.1.3.5-.3c.7-.4 1.5-.1 1.9.5l.1.3.5-.3c.7-.4 1.5-.1 1.9.5V6c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v9.5c0 3-2.5 5.5-5.5 5.5h-1C8.5 21 6 18.5 5 16L3.5 12c-.3-.7 0-1.5.7-1.8.7-.3 1.5 0 1.8.7l.5 1.1V3c0-.8.7-1.5 1.5-1.5z"
-                    fill="white" stroke="#333" stroke-width="0.5" />
+                    d="M4 2.75L19.5 11l-6.6 1.9 4.1 7.1-3.5 2-4.05-7L4 20.55V2.75z"
+                    fill="white" stroke="#1f1f1f" stroke-width="1.25" stroke-linejoin="round" />
             </svg>
         </div>
     </div>
@@ -288,7 +288,7 @@
         </div>
     </div>
 
-    <script src="slideshow.js?v=23"></script>
+    <script src="slideshow.js?v=24"></script>
 </body>
 
 </html>

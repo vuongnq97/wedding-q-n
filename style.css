@@ -195,7 +195,7 @@
     border-color: #e5e5e5;
 }
 
-/* Hand cursor */
+/* Pointer cursor */
 .nf-cursor {
     position: absolute;
     top: 70%;
@@ -3492,7 +3492,7 @@ body {
         display: flex;
         position: fixed;
         inset: 0;
-        z-index: 99999;
+        z-index: 2147483647;
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         align-items: center;
         justify-content: center;
@@ -3574,6 +3574,7 @@ body {
 
     /* Hide slideshow content behind overlay */
     .slideshow,
+    #netflixIntro,
     #preloader,
     .top-bar,
     .controls {
@@ -3603,6 +3604,101 @@ body {
         right: calc(1rem + env(safe-area-inset-right));
         bottom: calc(3.4rem + env(safe-area-inset-bottom));
         width: min(340px, calc(100vw - 2rem));
+    }
+
+    .tpl-opening-intro,
+    .tpl-chapter-intro,
+    .tpl-quote-only {
+        padding: calc(2.25rem + env(safe-area-inset-top)) calc(1rem + env(safe-area-inset-right)) calc(3.8rem + env(safe-area-inset-bottom)) calc(1rem + env(safe-area-inset-left));
+    }
+
+    .tpl-opening-intro .slide-inner,
+    .tpl-chapter-intro .slide-inner,
+    .tpl-quote-only .slide-inner {
+        max-height: 100%;
+        padding: 0 1rem;
+    }
+
+    .tpl-opening-intro .oi-line,
+    .tpl-chapter-intro .ci-quote,
+    .tpl-quote-only .qo-text {
+        line-height: 1.55;
+    }
+
+    .tpl-opening-intro .oi-ornament-top,
+    .tpl-opening-intro .oi-ornament-bottom {
+        margin: 0.45rem 0;
+    }
+
+    .tpl-chapter-intro .ci-title {
+        font-size: clamp(1.45rem, 5vw, 2.35rem);
+        margin-bottom: 0.25rem;
+    }
+
+    .tpl-chapter-intro .ci-ornament {
+        margin: 0.55rem auto;
+    }
+
+    .tpl-chapter-intro .ci-quote {
+        font-size: clamp(0.95rem, 3.2vw, 1.25rem);
+        margin-top: 0.25rem;
+    }
+
+    .tpl-quote-only .qo-text {
+        font-size: clamp(1.05rem, 3.4vw, 1.45rem);
+        margin-bottom: 0.85rem;
+    }
+
+    .tpl-quote-only .qo-ornament {
+        margin: 0.85rem auto;
+    }
+}
+
+@media (max-width: 1024px) and (max-height: 500px) and (orientation: landscape) {
+    .tpl-opening-intro,
+    .tpl-chapter-intro,
+    .tpl-quote-only {
+        padding-top: calc(2.8rem + env(safe-area-inset-top));
+        padding-bottom: calc(4.2rem + env(safe-area-inset-bottom));
+    }
+
+    .tpl-opening-intro .slide-inner,
+    .tpl-chapter-intro .slide-inner,
+    .tpl-quote-only .slide-inner {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .tpl-opening-intro .oi-line {
+        line-height: 1.45;
+        margin: 0.35rem 0;
+    }
+
+    .tpl-opening-intro .oi-line-1 {
+        font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    }
+
+    .tpl-opening-intro .oi-line-2 {
+        font-size: clamp(1rem, 2.8vw, 1.28rem);
+    }
+
+    .tpl-opening-intro .oi-line-3 {
+        font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+        margin-top: 0.45rem;
+    }
+
+    .tpl-chapter-intro .ci-title {
+        font-size: clamp(1.35rem, 4.6vw, 2.05rem);
+    }
+
+    .tpl-chapter-intro .ci-quote {
+        font-size: clamp(0.85rem, 2.75vw, 1.08rem);
+        line-height: 1.45;
+    }
+
+    .tpl-quote-only .qo-text {
+        font-size: clamp(0.95rem, 3vw, 1.2rem);
+        line-height: 1.45;
     }
 }
 

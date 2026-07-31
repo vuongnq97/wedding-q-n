@@ -45,7 +45,7 @@
         openingIntro: {
             line1: 'Có những cuộc gặp gỡ\nchỉ kéo dài trong khoảnh khắc.',
             line2: 'Nhưng cũng có những cuộc gặp gỡ\ntrở thành khởi đầu\ncủa một hành trình dài.',
-            line3: 'Xin mời quý vị cùng nhìn lại\nhành trình 9 năm yêu thương\ncủa cô dâu và chú rể.',
+            line3: 'Xin mời mọi người cùng nhìn lại\nhành trình 9 năm yêu thương\ncủa cô dâu và chú rể.',
         },
 
         chapters: [
@@ -65,11 +65,11 @@
             // CHƯƠNG 1: Bắt đầu từ giảng đường (2017)
             // ═══════════════════════════════════════════
             {
-                chapter: 'Chương 1',
+                chapter: '',
                 title: 'Bắt đầu từ giảng đường',
-                quote: '"9 năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nchương đầu tiên\nđã bắt đầu như thế."',
+                quote: '"9 năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nhành trình yêu thương\nđã bắt đầu như thế."',
                 slides: [
-                    { template: 'splitLeftText', images: ['1784817768836_1844566805844982206_122909637720525971_3658652e6f718a27edbdbf864752313e.jpg'], quote: '"Từ giảng đường đến lễ đường, luôn có nhau."' },
+                    { template: 'splitLeftText', images: ['1784817768836_1844566805844982206_122909637720525971_3658652e6f718a27edbdbf864752313e.jpg'], quote: '"Có những ngày rất trẻ,\nmình đã vô tình\nđi cạnh đời nhau."' },
                     {
                         template: 'duoEqual', images: [
                             '1783954088561_8088849262297663590_8088849262297663590_5842347e728256b8c6792647d23d4623.jpg',
@@ -84,7 +84,7 @@
             // CHƯƠNG 2: Thanh xuân rực rỡ
             // ═══════════════════════════════════════════
             {
-                chapter: 'Chương 2',
+                chapter: '',
                 title: 'Thanh xuân rực rỡ',
                 quote: '"Thanh xuân là khoảng thời gian\nđẹp nhất của mỗi người.\nVà thanh xuân ấy càng ý nghĩa hơn\nkhi có một người cùng sẻ chia."',
                 slides: [
@@ -94,18 +94,6 @@
                             '1783957752083_8088849262297663590_8088849262297663590_4d0b5c2f5e9b616ce20b0331709a9809.jpg',
                             '1783954087096_8088849262297663590_8088849262297663590_3580d560897832a5ecf3f4bcdf55e054.jpg'], quote: '"Yêu em là điều tuyệt vời nhất anh từng làm."'
                     },
-
-                ],
-            },
-
-            // ═══════════════════════════════════════════
-            // CHƯƠNG 3: Những chuyến đi
-            // ═══════════════════════════════════════════
-            {
-                chapter: 'Chương 3',
-                title: 'Những chuyến đi',
-                quote: '"Suốt 9 năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
-                slides: [
                     // ── Quy Nhơn & các chuyến đi đầu ──
                     { template: 'auto', images: ['49028206_776187262730192_141684124917170176_n.jpg'], quote: '"Mỗi chuyến đi bên em đều là một kỷ niệm đẹp."' },
                     { template: 'auto', images: ['1783957744615_8088849262297663590_8088849262297663590_b41b5494221561ed2586a1aa181f7a0c.jpg'] },
@@ -121,6 +109,18 @@
                     { template: 'auto', images: ['DSCF1589.JPG', 'DSCF1638.JPG', 'DSCF1772.JPG', 'DSCF1851.JPG'] },
                     { template: 'auto', images: ['DSCF1932.JPG'], quote: '"Bên em, anh tìm thấy ý nghĩa của cuộc đời."' },
                     { template: 'filmStrip', images: ['DSCF1963.JPG', 'DSCF1984.JPG', 'DSCF1997.JPG', 'DSCF2049.JPG', 'DSCF2071.JPG', 'DSCF2076.JPG'] },
+
+                ],
+            },
+
+            // ═══════════════════════════════════════════
+            // CHƯƠNG 3: Những chuyến đi
+            // ═══════════════════════════════════════════
+            {
+                chapter: '',
+                title: 'Những chuyến đi',
+                quote: '"Suốt 9 năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
+                slides: [
 
                     // ── Quote chuyển tiếp ──
                     { template: 'quoteOnly', quoteText: '"Mỗi chuyến đi bên em\nđều là một kỷ niệm đẹp.\nMỗi cung đường là một câu chuyện,\nmỗi điểm đến là một lời hứa."', quoteAuthor: 'Những chuyến đi' },
@@ -193,6 +193,13 @@
 
                     // ── Ven biển ──
                     { template: 'auto', images: ['IMG_5555.JPG'], quote: '"Hai trái tim, một nhịp đập, mãi mãi bên nhau."' },
+                    { template: 'auto', images: ['1783954084619_8088849262297663590_8088849262297663590_238ae70d7ebea882b139ef8de6929c7f.jpg'] },
+                    {
+                        template: 'auto', images: [
+                            '1783954084934_8088849262297663590_8088849262297663590_25c772126bf080e50caa355e5fd2ebe1.jpg',
+                            '1783954085361_8088849262297663590_8088849262297663590_b0833d4f8a712baf351038f54bac1d5f.jpg',
+                        ]
+                    },
                 ],
             },
 
@@ -200,13 +207,12 @@
             // CHƯƠNG 4: Cùng nhau chinh phục – Marathon
             // ═══════════════════════════════════════════
             {
-                chapter: 'Chương 4',
+                chapter: '',
                 title: 'Cùng nhau chinh phục',
                 quote: '"Nắm tay nhau\nvượt qua mọi giới hạn.\nCùng nhau chinh phục\nmọi cung đường cuộc đời.\nBởi vì bên nhau,\nkhông có gì là không thể."',
                 slides: [
                     // ── Quote mở đầu ──
-                    { template: 'quoteOnly', quoteText: '"Cùng nhau chinh phục mọi cung đường,\nnắm tay nhau vượt qua mọi giới hạn.\nBởi vì bên nhau,\ntình yêu là sức mạnh lớn nhất."', quoteAuthor: 'Chinh phục' },
-                    { template: 'auto', images: ['TK_01396.JPG'], quote: '"42km cũng không dài bằng hành trình yêu em."' },
+                    { template: 'auto', images: ['TK_01396.JPG'], quote: '"Có em bên cạnh, chặng đường nào cũng hóa nhẹ nhàng."' },
                     { template: 'auto', images: ['1783954086475_8088849262297663590_8088849262297663590_03cbe6488970cfe9a09c08d948b4d908.jpg'] },
                     {
                         template: 'auto', images: [
@@ -222,18 +228,11 @@
             // CHƯƠNG 5: Lễ dạm ngõ
             // ═══════════════════════════════════════════
             {
-                chapter: 'Chương 5',
+                chapter: '',
                 title: 'Lễ dạm ngõ',
-                quote: '"Sau bao nhiêu chuyến đi,\nmột lời hứa đã được trao.\nÁo dài đỏ rực bên hoa baby trắng.\nMột hành trình mới\nchính thức bắt đầu."',
+                quote: '"Sau bao nhiêu chuyến đi,\nmột lời hứa đã được trao.\nMột hành trình mới\nchính thức bắt đầu."',
                 slides: [
                     { template: 'auto', images: ['1783957749525_8088849262297663590_8088849262297663590_ee85a3fe324a38fca984195afbf80b59.jpg'], quote: '"Cảm ơn em đã chọn anh, chọn tình yêu này."' },
-                    { template: 'auto', images: ['1783954084619_8088849262297663590_8088849262297663590_238ae70d7ebea882b139ef8de6929c7f.jpg'] },
-                    {
-                        template: 'auto', images: [
-                            '1783954084934_8088849262297663590_8088849262297663590_25c772126bf080e50caa355e5fd2ebe1.jpg',
-                            '1783954085361_8088849262297663590_8088849262297663590_b0833d4f8a712baf351038f54bac1d5f.jpg',
-                        ]
-                    },
                 ],
             },
 
@@ -241,7 +240,7 @@
             // CHƯƠNG 6: Ngày hôm nay – Ảnh cưới studio
             // ═══════════════════════════════════════════
             {
-                chapter: 'Chương 6',
+                chapter: '',
                 title: 'Ngày hôm nay',
                 quote: '"Hôm nay,\ntrước sự chứng kiến\ncủa gia đình và người thân,\nhai con người đã cùng nhau\nđi qua gần một thập kỷ\nchính thức bước vào\nchặng đường mới của cuộc đời."',
                 slides: [
@@ -300,37 +299,37 @@
         return AUTO_SINGLE_LANDSCAPE[_autoCounters.sl++ % AUTO_SINGLE_LANDSCAPE.length];
     }
 
-    // ─── Fallback data (used when slide config doesn't provide explicit values) ───
+    // ─── Context-neutral fallback data (used when slide config doesn't provide explicit values) ───
     const FALLBACK_QUOTES = [
-        '"Anh muốn nắm tay em, đi qua mọi mùa trong đời."',
-        '"Tình yêu không cần hoàn hảo, chỉ cần chân thành."',
-        '"Từ khi gặp em, mọi con đường đều dẫn về nhà."',
-        '"Hạnh phúc đơn giản là được ở bên nhau mỗi ngày."',
-        '"Thanh xuân đẹp nhất là khi có em bên cạnh."',
-        '"Yêu em là điều tuyệt vời nhất anh từng làm."',
-        '"Mỗi chuyến đi bên em đều là một kỷ niệm đẹp."',
-        '"Cùng nhau chinh phục mọi cung đường cuộc đời."',
-        '"Bên em, anh tìm thấy ý nghĩa của cuộc đời."',
-        '"Hai trái tim, một nhịp đập, mãi mãi bên nhau."',
-        '"9 năm yêu thương, một đời gắn kết."',
-        '"Cảm ơn em đã chọn anh, chọn tình yêu này."',
-        '"Nơi nào có em, nơi đó là nhà."',
-        '"42km cũng không dài bằng hành trình yêu em."',
-        '"Từ giảng đường đến lễ đường, luôn có nhau."',
+        '"Có những yêu thương không cần gọi tên, chỉ cần cùng nhau đi tiếp."',
+        '"Một ánh mắt, một nụ cười, đủ làm ngày hôm ấy dịu dàng hơn."',
+        '"Thời gian đi qua, tình yêu ở lại trong từng điều nhỏ bé."',
+        '"Giữa rất nhiều đổi thay, mình vẫn chọn nắm tay nhau."',
+        '"Hạnh phúc là khi có một người để trở về."',
+        '"Mỗi ngày bên nhau là một trang mới của yêu thương."',
+        '"Chúng ta đã lớn lên cùng tình yêu này."',
+        '"Từ những điều giản dị, tình yêu viết nên câu chuyện rất riêng."',
+        '"Có người ở bên, mọi khoảnh khắc đều trở nên ấm áp."',
+        '"Điều đẹp nhất không phải là hoàn hảo, mà là luôn có nhau."',
+        '"Yêu thương không ồn ào, nhưng bền bỉ qua từng năm tháng."',
+        '"Mỗi kỷ niệm là một lời nhắc rằng mình đã thương nhau thật nhiều."',
+        '"Khi hai người cùng nhìn về một hướng, mọi ngày đều có ý nghĩa."',
+        '"Bình yên đôi khi chỉ là được đứng cạnh người mình thương."',
+        '"Tình yêu đẹp nhất là tình yêu được vun đắp mỗi ngày."',
     ];
     const FALLBACK_SECTIONS = [
-        { heading: 'Our Story', sub: 'Bắt đầu từ giảng đường' },
-        { heading: 'Adventures', sub: 'Những chuyến đi khắp nơi' },
-        { heading: 'Together', sub: 'Cùng nhau chinh phục' },
+        { heading: 'Our Story', sub: 'Câu chuyện của chúng mình' },
+        { heading: 'Together', sub: 'Những ngày bên nhau' },
+        { heading: 'Memory', sub: 'Kỷ niệm của chúng ta' },
         { heading: 'Love', sub: '9 năm yêu thương' },
-        { heading: 'Moments', sub: 'Những khoảnh khắc đẹp' },
+        { heading: 'Moments', sub: 'Khoảnh khắc yêu thương' },
         { heading: 'Forever', sub: 'Mãi mãi bên nhau' },
     ];
     const FALLBACK_CAPTIONS = [
         'Yêu thương mãi mãi ♥',
         'Thanh xuân của chúng ta',
         'Cùng nhau đến cuối đời',
-        '42km – Nắm tay nhau về đích',
+        'Khoảnh khắc bên nhau',
         `${GROOM} ♥ ${BRIDE}`,
         '9 năm & mãi mãi',
     ];
@@ -401,6 +400,78 @@
     const fullscreenHintClose = $('#fullscreenHintClose');
     const endingScreen = $('#ending-screen');
     let fullscreenHintTimer = null;
+    let orientationPausedSlideshow = false;
+    let activeNetflixLogoVideo = null;
+    const orientationWaiters = [];
+
+    function shouldBlockForOrientation() {
+        return window.matchMedia &&
+            window.matchMedia('(max-width: 1024px) and (orientation: portrait)').matches;
+    }
+
+    function waitForAllowedOrientation() {
+        if (!shouldBlockForOrientation()) return Promise.resolve();
+        return new Promise(resolve => orientationWaiters.push(resolve));
+    }
+
+    function resolveOrientationWaiters() {
+        if (shouldBlockForOrientation()) return;
+        const waiters = orientationWaiters.splice(0);
+        waiters.forEach(resolve => resolve());
+    }
+
+    async function orientationAwareDelay(ms) {
+        let remaining = ms;
+        while (remaining > 0) {
+            await waitForAllowedOrientation();
+            const started = Date.now();
+            const chunk = Math.min(remaining, 100);
+            await new Promise(resolve => setTimeout(resolve, chunk));
+            if (!shouldBlockForOrientation()) {
+                remaining -= Date.now() - started;
+            }
+        }
+        await waitForAllowedOrientation();
+    }
+
+    function syncOrientationGateState() {
+        const blocked = shouldBlockForOrientation();
+        document.documentElement.classList.toggle('orientation-blocked', blocked);
+
+        if (blocked) {
+            if (isPlaying) {
+                orientationPausedSlideshow = true;
+                pause();
+            }
+
+            if (activeNetflixLogoVideo && !activeNetflixLogoVideo.paused) {
+                activeNetflixLogoVideo.pause();
+            }
+            return;
+        }
+
+        resolveOrientationWaiters();
+
+        if (activeNetflixLogoVideo && activeNetflixLogoVideo.paused && !activeNetflixLogoVideo.ended) {
+            const playPromise = activeNetflixLogoVideo.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => { });
+            }
+        }
+
+        if (orientationPausedSlideshow && slideshowEl.style.display !== 'none') {
+            orientationPausedSlideshow = false;
+            play();
+        }
+    }
+
+    function setupOrientationGate() {
+        syncOrientationGateState();
+        window.addEventListener('resize', syncOrientationGateState);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(syncOrientationGateState, 200);
+        });
+    }
 
     // ─────────────────────────────────
     //  TEMPLATE RENDERERS
@@ -451,7 +522,7 @@
         splitLeftText(images, slideData) {
             const img = images[0];
             const bg = pickBG();
-            const quote = slideData?.quote || fallbackQuote();
+            const quote = slideData?.quote || '';
             return {
                 classes: ['tpl-split-left-text', pickAnim()],
                 topBarMode: 'dark',
@@ -473,7 +544,7 @@
         splitRightText(images, slideData) {
             const img = images[0];
             const bg = pickBG();
-            const quote = slideData?.quote || fallbackQuote();
+            const quote = slideData?.quote || '';
             return {
                 classes: ['tpl-split-right-text', pickAnim()],
                 topBarMode: 'dark',
@@ -515,7 +586,7 @@
         collage1L2S(images, slideData) {
             // needs 3 images
             const bg = pickBG();
-            const section = slideData?.heading ? { heading: slideData.heading, sub: slideData.sub || '' } : fallbackSection();
+            const section = { heading: slideData?.heading || '', sub: slideData?.sub || '' };
             return {
                 classes: ['tpl-collage-1L2S', pickAnim()],
                 topBarMode: 'dark',
@@ -564,7 +635,7 @@
         // --- 8. Full Bleed + Text Overlay ---
         fullOverlay(images, slideData) {
             const img = images[0];
-            const quote = slideData?.quote || fallbackQuote();
+            const quote = slideData?.quote || '';
             const bg = pickBG();
             return {
                 classes: ['tpl-full-overlay', bg, pickAnim()],
@@ -586,7 +657,7 @@
         polaroid(images, slideData) {
             const img = images[0];
             const bg = pickBG();
-            const caption = slideData?.caption || fallbackCaption();
+            const caption = slideData?.caption || '';
             return {
                 classes: ['tpl-polaroid', bg, pickAnim()],
                 topBarMode: 'light',
@@ -606,7 +677,7 @@
         // --- 10. Asymmetric Duo ---
         asymDuo(images, slideData) {
             const bg = pickBG();
-            const quote = slideData?.quote || fallbackQuote();
+            const quote = slideData?.quote || '';
             return {
                 classes: ['tpl-asym-duo', bg, pickAnim()],
                 topBarMode: 'dark',
@@ -689,7 +760,7 @@
         // --- 15. Cinematic Widescreen ---
         cinematic(images, slideData) {
             const img = images[0];
-            const quote = slideData?.quote || fallbackQuote();
+            const quote = slideData?.quote || '';
             const bg = pickBG();
             return {
                 classes: ['tpl-cinematic', bg, pickAnim()],
@@ -810,6 +881,9 @@
     const TPL_TRIO = ['threeRow', 'collage1L2S'];
     // Templates requiring 4 images
     const TPL_QUAD = ['bgTrio', 'mosaic'];
+    const TPL_NEEDS_QUOTE = new Set(['splitLeftText', 'splitRightText', 'fullOverlay', 'asymDuo', 'cinematic']);
+    const TPL_NEEDS_CAPTION = new Set(['polaroid']);
+    const TPL_NEEDS_SECTION = new Set(['collage1L2S']);
 
     // ─── Build Slides ───
     function buildSlides() {
@@ -834,12 +908,16 @@
         const openingTemplate = firstSlide.template === 'auto'
             ? autoPickTemplate(firstSlide.images)
             : firstSlide.template;
+        const openingFallbacks = resolveFallbacksForTemplate(firstSlide, openingTemplate);
 
         // Slide 0: Opening image
         slides.push({
             type: openingTemplate,
             images: openingImages,
-            quote: firstSlide.quote,
+            quote: openingFallbacks.quote,
+            caption: openingFallbacks.caption,
+            heading: openingFallbacks.heading,
+            sub: openingFallbacks.sub,
         });
 
         // Slide 1: Opening intro text
@@ -906,16 +984,42 @@
             const template = slideCfg.template === 'auto'
                 ? autoPickTemplate(slideCfg.images)
                 : slideCfg.template;
+            const fallbacks = resolveFallbacksForTemplate(slideCfg, template);
 
             slides.push({
                 type: template,
                 images: imageUrls,
+                quote: fallbacks.quote,
+                caption: fallbacks.caption,
+                heading: fallbacks.heading,
+                sub: fallbacks.sub,
+                duration: template === 'filmStrip' ? 14000 : undefined,
+            });
+        }
+
+        function resolveFallbacksForTemplate(slideCfg, template) {
+            const resolved = {
                 quote: slideCfg.quote,
                 caption: slideCfg.caption,
                 heading: slideCfg.heading,
                 sub: slideCfg.sub,
-                duration: template === 'filmStrip' ? 14000 : undefined,
-            });
+            };
+
+            if (!resolved.quote && TPL_NEEDS_QUOTE.has(template)) {
+                resolved.quote = fallbackQuote();
+            }
+
+            if (!resolved.caption && TPL_NEEDS_CAPTION.has(template)) {
+                resolved.caption = fallbackCaption();
+            }
+
+            if (!resolved.heading && TPL_NEEDS_SECTION.has(template)) {
+                const section = fallbackSection();
+                resolved.heading = section.heading;
+                resolved.sub = section.sub;
+            }
+
+            return resolved;
         }
     }
 
@@ -1008,7 +1112,7 @@
 
         slideContainer.appendChild(newSlide);
 
-        // Pick a random transition
+        // Pick the next transition in the deterministic cycle
         const trans = pickTransition();
         const enterClass = `trans-${trans}-enter`;
 
@@ -1115,43 +1219,48 @@
         }
     }
 
+    async function startIntroThenSlideshow({ rebuildSlides = false } = {}) {
+        await waitForAllowedOrientation();
+        introScreen.style.display = 'flex';
+        introScreen.style.opacity = '1';
+        introScreen.style.transition = '';
+        createParticles($('#introParticles'), 25);
+
+        await orientationAwareDelay(3000);
+        introScreen.style.opacity = '0';
+        introScreen.style.transition = 'opacity 1.2s ease';
+
+        await orientationAwareDelay(1200);
+        introScreen.style.display = 'none';
+        introScreen.style.transition = '';
+        slideshowEl.style.display = 'block';
+        if (rebuildSlides) buildSlides();
+        slideContainer.innerHTML = '';
+        showSlide(0);
+
+        await orientationAwareDelay(500);
+        play();
+    }
+
     // ─── Ending + Auto Restart ───
-    function showEnding() {
+    async function showEnding() {
         pause();
         slideshowEl.style.display = 'none';
         endingScreen.style.display = 'flex';
         createParticles($('#endingParticles'), 30);
 
-        // Auto-restart after 8 seconds → go back to intro screen
-        setTimeout(() => {
-            endingScreen.style.opacity = '0';
-            endingScreen.style.transition = 'opacity 1.2s ease';
-            setTimeout(() => {
-                endingScreen.style.display = 'none';
-                endingScreen.style.opacity = '1';
-                endingScreen.style.transition = '';
+        // Auto-restart after 8 seconds from the Netflix logo intro.
+        await orientationAwareDelay(8000);
+        endingScreen.style.opacity = '0';
+        endingScreen.style.transition = 'opacity 1.2s ease';
 
-                // Show intro screen again
-                introScreen.style.display = 'flex';
-                introScreen.style.opacity = '1';
-                createParticles($('#introParticles'), 25);
+        await orientationAwareDelay(1200);
+        endingScreen.style.display = 'none';
+        endingScreen.style.opacity = '1';
+        endingScreen.style.transition = '';
 
-                // Auto-start from intro after 3 seconds
-                setTimeout(() => {
-                    introScreen.style.opacity = '0';
-                    introScreen.style.transition = 'opacity 1.2s ease';
-                    setTimeout(() => {
-                        introScreen.style.display = 'none';
-                        introScreen.style.transition = '';
-                        slideshowEl.style.display = 'block';
-                        buildSlides();
-                        slideContainer.innerHTML = '';
-                        showSlide(0);
-                        setTimeout(() => play(), 500);
-                    }, 1200);
-                }, 3000);
-            }, 1200);
-        }, 8000);
+        await runNetflixIntro();
+        startIntroThenSlideshow({ rebuildSlides: true });
     }
 
     // ─── Particles ───
@@ -1304,6 +1413,61 @@
     }
 
     // ─── Netflix Intro Animation (3 Phases) ───
+    function resetNetflixIntroState() {
+        const intro = document.getElementById('netflixIntro');
+        const logoPhase = document.getElementById('nfLogoPhase');
+        const profileScreen = document.getElementById('nfProfileScreen');
+        const home = document.getElementById('nfHome');
+        const cursor = document.getElementById('nfCursor');
+        const targetProfile = document.getElementById('nfProfile2');
+        const btnPlay = document.getElementById('nfBtnPlay');
+        const video = document.getElementById('nfLogoVideo');
+        const heroImgs = document.querySelectorAll('.nf-hero-img');
+
+        if (intro) {
+            intro.classList.remove('nf-done');
+            intro.style.display = '';
+            intro.style.opacity = '1';
+            intro.style.transition = '';
+        }
+
+        if (logoPhase) {
+            logoPhase.style.display = '';
+            logoPhase.style.opacity = '1';
+            logoPhase.style.transition = '';
+        }
+
+        [profileScreen, home].forEach(el => {
+            if (!el) return;
+            el.style.display = 'none';
+            el.style.opacity = '1';
+            el.style.transition = '';
+        });
+
+        if (cursor) {
+            cursor.style.display = 'none';
+            cursor.style.opacity = '1';
+            cursor.style.transition = '';
+            cursor.classList.remove('nf-cursor-click');
+        }
+
+        if (targetProfile) targetProfile.classList.remove('nf-hovered');
+        if (btnPlay) btnPlay.style.background = '';
+
+        heroImgs.forEach((img, index) => {
+            img.classList.toggle('nf-hero-active', index === 0);
+        });
+
+        if (video) {
+            try {
+                video.pause();
+                video.currentTime = 0;
+            } catch (error) {
+                // The ended-listener fallback in runNetflixIntro will continue if replay is blocked.
+            }
+        }
+    }
+
     function runNetflixIntro() {
         return new Promise((resolve) => {
             const intro = document.getElementById('netflixIntro');
@@ -1315,36 +1479,27 @@
             const btnPlay = document.getElementById('nfBtnPlay');
 
             if (!intro) { resolve(); return; }
+            resetNetflixIntroState();
 
             // ── Utility: move cursor smoothly ──
             function moveCursor(x, y, duration) {
-                return new Promise(res => {
-                    cursor.style.transition = `top ${duration}ms cubic-bezier(0.25,0.46,0.45,0.94), left ${duration}ms cubic-bezier(0.25,0.46,0.45,0.94)`;
-                    cursor.style.top = y + 'px';
-                    cursor.style.left = x + 'px';
-                    setTimeout(res, duration);
-                });
+                cursor.style.transition = `top ${duration}ms cubic-bezier(0.25,0.46,0.45,0.94), left ${duration}ms cubic-bezier(0.25,0.46,0.45,0.94)`;
+                cursor.style.top = y + 'px';
+                cursor.style.left = x + 'px';
+                return orientationAwareDelay(duration);
             }
 
-            function clickCursor() {
-                return new Promise(res => {
-                    cursor.classList.add('nf-cursor-click');
-                    setTimeout(() => {
-                        cursor.classList.remove('nf-cursor-click');
-                        res();
-                    }, 250);
-                });
+            async function clickCursor() {
+                cursor.classList.add('nf-cursor-click');
+                await orientationAwareDelay(250);
+                cursor.classList.remove('nf-cursor-click');
             }
 
-            function fadeOut(el, duration) {
-                return new Promise(res => {
-                    el.style.transition = `opacity ${duration}ms ease`;
-                    el.style.opacity = '0';
-                    setTimeout(() => {
-                        el.style.display = 'none';
-                        res();
-                    }, duration);
-                });
+            async function fadeOut(el, duration) {
+                el.style.transition = `opacity ${duration}ms ease`;
+                el.style.opacity = '0';
+                await orientationAwareDelay(duration);
+                el.style.display = 'none';
             }
 
             function fadeIn(el, duration) {
@@ -1354,7 +1509,7 @@
                     requestAnimationFrame(() => {
                         el.style.transition = `opacity ${duration}ms ease`;
                         el.style.opacity = '1';
-                        setTimeout(res, duration);
+                        orientationAwareDelay(duration).then(res);
                     });
                 });
             }
@@ -1363,10 +1518,23 @@
                 // ═══ PHASE 1: Netflix N Logo Video ═══
                 const video = document.getElementById('nfLogoVideo');
                 if (video) {
+                    activeNetflixLogoVideo = video;
+                    await waitForAllowedOrientation();
                     await new Promise(res => {
-                        video.addEventListener('ended', res, { once: true });
-                        // Fallback timeout in case video fails
-                        setTimeout(res, 15000);
+                        let finished = false;
+                        const finish = () => {
+                            if (finished) return;
+                            finished = true;
+                            video.removeEventListener('ended', finish);
+                            activeNetflixLogoVideo = null;
+                            res();
+                        };
+                        video.addEventListener('ended', finish);
+                        const playPromise = video.play();
+                        if (playPromise && typeof playPromise.catch === 'function') {
+                            playPromise.catch(() => { });
+                        }
+                        orientationAwareDelay(15000).then(finish);
                     });
                 }
                 await fadeOut(logoPhase, 600);
@@ -1379,7 +1547,7 @@
                 cursor.style.left = '25%';
                 cursor.style.opacity = '1';
 
-                await new Promise(res => setTimeout(res, 800));
+                await orientationAwareDelay(800);
 
                 // Move cursor to target profile
                 const profRect = targetProfile.getBoundingClientRect();
@@ -1389,11 +1557,11 @@
 
                 // Hover effect
                 targetProfile.classList.add('nf-hovered');
-                await new Promise(res => setTimeout(res, 600));
+                await orientationAwareDelay(600);
 
                 // Click
                 await clickCursor();
-                await new Promise(res => setTimeout(res, 300));
+                await orientationAwareDelay(300);
 
                 // Fade profile screen
                 cursor.style.display = 'none';
@@ -1406,19 +1574,20 @@
                 const heroImgs = document.querySelectorAll('.nf-hero-img');
                 let heroIdx = 0;
                 const heroInterval = setInterval(() => {
+                    if (shouldBlockForOrientation()) return;
                     heroImgs[heroIdx].classList.remove('nf-hero-active');
                     heroIdx = (heroIdx + 1) % heroImgs.length;
                     heroImgs[heroIdx].classList.add('nf-hero-active');
                 }, 3000);
 
                 // Wait, then show cursor and move to CHIẾU
-                await new Promise(res => setTimeout(res, 2000));
+                await orientationAwareDelay(2000);
                 cursor.style.display = '';
                 cursor.style.top = '70%';
                 cursor.style.left = '20%';
                 cursor.style.opacity = '1';
 
-                await new Promise(res => setTimeout(res, 500));
+                await orientationAwareDelay(500);
 
                 // Move to CHIẾU button
                 const playRect = btnPlay.getBoundingClientRect();
@@ -1426,23 +1595,23 @@
                 const playY = playRect.top + playRect.height / 2;
                 await moveCursor(playX, playY, 1500);
 
-                await new Promise(res => setTimeout(res, 400));
+                await orientationAwareDelay(400);
 
                 // Hover play button
                 btnPlay.style.background = '#e0e0e0';
-                await new Promise(res => setTimeout(res, 300));
+                await orientationAwareDelay(300);
 
                 // Click CHIẾU
                 await clickCursor();
                 clearInterval(heroInterval);
 
-                await new Promise(res => setTimeout(res, 200));
+                await orientationAwareDelay(200);
 
                 // Fade entire Netflix intro to black
                 cursor.style.display = 'none';
                 intro.style.transition = 'opacity 0.8s ease';
                 intro.style.opacity = '0';
-                await new Promise(res => setTimeout(res, 800));
+                await orientationAwareDelay(800);
                 intro.classList.add('nf-done');
 
                 resolve();
@@ -1454,26 +1623,22 @@
 
     // ─── Init ───
     async function init() {
+        setupOrientationGate();
+        await waitForAllowedOrientation();
+
         // Run Netflix intro FIRST (while preloader is behind)
         await runNetflixIntro();
 
         // Now show preloader and load images
+        await waitForAllowedOrientation();
         createParticles($('#introParticles'), 25);
         await detectAllOrientations();
+        await waitForAllowedOrientation();
         preloader.classList.add('hidden');
         buildSlides();
 
         // Auto-start: show intro briefly then start slideshow
-        setTimeout(() => {
-            introScreen.style.opacity = '0';
-            introScreen.style.transition = 'opacity 1.2s ease';
-            setTimeout(() => {
-                introScreen.style.display = 'none';
-                slideshowEl.style.display = 'block';
-                showSlide(0);
-                setTimeout(() => play(), 500);
-            }, 1200);
-        }, 3000);
+        startIntroThenSlideshow();
 
         prevBtn.addEventListener('click', goPrev);
         nextBtn.addEventListener('click', goNext);
