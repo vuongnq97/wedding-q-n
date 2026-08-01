@@ -22,12 +22,15 @@
 
     // ─── Configuration ───
     const CONFIG = {
-        slideDuration: 7000,
+        slideDuration: 5000,
+        textSlideDuration: 7000,
         transitionDuration: 1200,
         preloadAhead: 3,
         autoPlay: true,
         quoteSlideEveryN: 10,  // insert a full quote-only slide every N slides
     };
+
+    const TEXT_ONLY_SLIDE_TYPES = new Set(['openingIntro', 'chapterIntro', 'quoteOnly']);
 
     const GROOM = 'Quang Vương';
     const BRIDE = 'Như Quỳnh';
@@ -97,14 +100,8 @@
                     // ── Quy Nhơn & các chuyến đi đầu ──
                     { template: 'auto', images: ['49028206_776187262730192_141684124917170176_n.jpg'], quote: '"Mỗi chuyến đi bên em đều là một kỷ niệm đẹp."' },
                     { template: 'auto', images: ['1783957744615_8088849262297663590_8088849262297663590_b41b5494221561ed2586a1aa181f7a0c.jpg'] },
-                    {
-                        template: 'auto', images: [
-                            'DSCF1130.JPG',
-                            '1783957745123_8088849262297663590_8088849262297663590_ff9b10cfc8472db949b0c96a3e04a9b7.jpg',
-                        ]
-                    },
-                    { template: 'auto', images: ['DSCF1309.JPG'], quote: '"Cùng nhau chinh phục mọi cung đường cuộc đời."' },
-                    { template: 'auto', images: ['DSCF1396.JPG', 'DSCF1463.JPG', 'DSCF1512.JPG'] },
+                    { template: 'auto', images: ['DSCF1130.JPG'] },
+                    { template: 'auto', images: ['DSCF1396.JPG', 'DSCF1463.JPG', 'DSCF1309.JPG'], quote: '"Cùng nhau chinh phục mọi cung đường cuộc đời."' },
                     { template: 'auto', images: ['DSCF1536.JPG'] },
                     { template: 'auto', images: ['DSCF1589.JPG', 'DSCF1638.JPG', 'DSCF1772.JPG', 'DSCF1851.JPG'] },
                     { template: 'auto', images: ['DSCF1932.JPG'], quote: '"Bên em, anh tìm thấy ý nghĩa của cuộc đời."' },
@@ -185,7 +182,7 @@
                     },
 
                     // ── Bè tre & dòng sông ──
-                    { template: 'auto', images: ['DSCF4074.JPG', 'DSCF4089.JPG', 'DSCF4129.JPG'] },
+                    { template: 'auto', images: ['DSCF4089.JPG', 'DSCF4074.JPG', 'DSCF4129.JPG'] },
                     { template: 'auto', images: ['IMG_2238.JPG'], quote: '"Nơi nào có em, nơi đó là nhà."' },
 
                     // ── Camping & Glamping ──
@@ -229,7 +226,7 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Lễ dạm ngõ',
+                title: '',
                 quote: '"Sau bao nhiêu chuyến đi,\nmột lời hứa đã được trao.\nMột hành trình mới\nchính thức bắt đầu."',
                 slides: [
                     { template: 'auto', images: ['1783957749525_8088849262297663590_8088849262297663590_ee85a3fe324a38fca984195afbf80b59.jpg'], quote: '"Cảm ơn em đã chọn anh, chọn tình yêu này."' },
@@ -248,8 +245,8 @@
                     { template: 'quoteOnly', quoteText: '"Cảm ơn Ba Mẹ đã nuôi dạy chúng con,\ncho chúng con tình yêu thương vô bờ.\nCảm ơn gia đình, bạn bè, quan khách\nđã đồng hành và chúc phúc\ncho hành trình yêu thương của chúng tôi."', quoteAuthor: 'Tri ân' },
 
                     { template: 'auto', images: ['RIN_2239 copy (1).jpg'] },
-                    { template: 'auto', images: ['RIN_2179.jpg', 'Jul 29, 2026, 08_37_43 PM.jpg'] },
-                    { template: 'auto', images: ['RIN_2197.jpg', 'RIN_2198.jpg'] },
+                    { template: 'auto', images: ['Jul 29, 2026, 08_37_43 PM.jpg'] },
+                    { template: 'auto', images: ['RIN_2179.jpg', 'RIN_2197.jpg', 'RIN_2198.jpg'] },
                     { template: 'auto', images: ['RIN_2204.jpg'], quote: '"Anh muốn nắm tay em, đi qua mọi mùa trong đời."' },
                     { template: 'auto', images: ['RIN_2165-3.jpg', 'RIN_2250 copy (3).jpg', 'RIN_2303.png'] },
                     { template: 'auto', images: ['RIN_2314.jpg'] },
@@ -363,6 +360,14 @@
 
     // ─── Helpers ───
     const $ = (sel) => document.querySelector(sel);
+    const urlParams = new URLSearchParams(window.location.search);
+    const isRecordingMode =
+        ['record', 'recording'].includes((urlParams.get('mode') || '').toLowerCase()) ||
+        urlParams.has('record');
+    if (isRecordingMode) {
+        document.documentElement.classList.add('recording-mode');
+        document.body.classList.add('recording-mode');
+    }
     // Deterministic cycling instead of random pick
     let _kbIdx = 0, _bgIdx = 0, _animIdx = 0, _transIdx = 0;
     const pickKB = () => { const v = KB_EFFECTS[_kbIdx % KB_EFFECTS.length]; _kbIdx++; return v; };
@@ -993,7 +998,7 @@
                 caption: fallbacks.caption,
                 heading: fallbacks.heading,
                 sub: fallbacks.sub,
-                duration: template === 'filmStrip' ? 14000 : undefined,
+                duration: template === 'filmStrip' ? 12000 : undefined,
             });
         }
 
@@ -1149,9 +1154,19 @@
     }
 
     // ─── Progress Bar ───
+    function getSlideDuration(slideData) {
+        if (slideData && Number.isFinite(slideData.duration)) {
+            return slideData.duration;
+        }
+        if (slideData && TEXT_ONLY_SLIDE_TYPES.has(slideData.type)) {
+            return CONFIG.textSlideDuration;
+        }
+        return CONFIG.slideDuration;
+    }
+
     function startProgress() {
         const slideData = slides[currentSlideIndex];
-        const duration = (slideData && slideData.duration) || CONFIG.slideDuration;
+        const duration = getSlideDuration(slideData);
         progressStart = Date.now();
         progressBar.style.transition = 'none';
         progressBar.style.width = '0%';
@@ -1189,7 +1204,7 @@
     function scheduleNext() {
         clearTimeout(slideTimer);
         const slideData = slides[currentSlideIndex];
-        const duration = (slideData && slideData.duration) || CONFIG.slideDuration;
+        const duration = getSlideDuration(slideData);
         slideTimer = setTimeout(() => {
             if (!isPlaying) return;
             if (currentSlideIndex < slides.length - 1) {

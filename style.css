@@ -70,10 +70,12 @@
 .nf-title {
     position: relative;
     z-index: 5;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    font-weight: 400;
-    color: #e5e5e5;
+    font-family: var(--font-sans);
+    font-size: clamp(1.45rem, 2.7vw, 2.35rem);
+    font-weight: 300;
+    line-height: 1.18;
+    letter-spacing: 0.015em;
+    color: rgba(245, 245, 245, 0.94);
     margin-bottom: clamp(20px, 3vh, 40px);
 }
 
@@ -111,6 +113,10 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+#nfProfile2 .nf-avatar img {
+    object-position: center 24%;
 }
 
 .nf-profile:hover .nf-avatar,
@@ -1071,6 +1077,16 @@
     }
 }
 
+.nf-hero-img.nf-hero-focus-upper {
+    object-position: center 43%;
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    .nf-hero-img.nf-hero-focus-upper {
+        object-position: 64% 34%;
+    }
+}
+
 
 /* ---------- Design Tokens ---------- */
 :root {
@@ -1141,7 +1157,9 @@ body {
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: var(--color-bg);
+    background:
+        radial-gradient(ellipse at 50% 42%, rgba(196, 162, 101, 0.14) 0%, transparent 38%),
+        linear-gradient(135deg, #fbf7f1 0%, #f1e8dc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1156,30 +1174,31 @@ body {
 
 .preloader-content {
     text-align: center;
+    padding: clamp(2rem, 4vw, 5rem);
 }
 
 .preloader-ornament {
-    font-size: 1.2rem;
+    font-size: clamp(1.5rem, 2.2vw, 2.8rem);
     color: var(--color-gold);
-    letter-spacing: 0.5em;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.55em;
+    margin-bottom: clamp(1.3rem, 2.4vh, 2.4rem);
     animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .preloader-names {
     font-family: var(--font-serif);
-    font-size: 2.5rem;
+    font-size: clamp(3.4rem, 5.2vw, 7rem);
     font-weight: 300;
-    color: var(--color-gold);
+    color: #8f6f32;
     letter-spacing: 0.4em;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(2rem, 3.6vh, 3.8rem);
 }
 
 .preloader-bar-track {
-    width: 200px;
-    height: 1px;
-    background: var(--color-beige);
-    margin: 0 auto 1.5rem;
+    width: clamp(260px, 20vw, 520px);
+    height: 2px;
+    background: rgba(196, 162, 101, 0.22);
+    margin: 0 auto clamp(1.4rem, 2.6vh, 2.8rem);
     overflow: hidden;
 }
 
@@ -1191,11 +1210,11 @@ body {
 }
 
 .preloader-text {
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 0.3em;
+    font-size: clamp(0.85rem, 1.05vw, 1.35rem);
+    font-weight: 400;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: #7a5f37;
 }
 
 /* ============ INTRO SCREEN ============ */
@@ -1258,7 +1277,8 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 2rem;
+    padding: clamp(2.5rem, 5vw, 6rem);
+    max-width: min(1500px, 90vw);
     animation: fade-in-up 2s var(--ease-cinematic) both;
 }
 
@@ -1270,15 +1290,15 @@ body {
 }
 
 .ornament-svg {
-    width: 180px;
-    height: 25px;
+    width: clamp(260px, 19vw, 460px);
+    height: auto;
     color: var(--color-gold);
     opacity: 0.6;
 }
 
 .intro-pre-title {
     font-family: var(--font-sans);
-    font-size: 0.65rem;
+    font-size: clamp(1.05rem, 1.05vw, 1.7rem);
     font-weight: 300;
     letter-spacing: 0.5em;
     text-transform: uppercase;
@@ -1290,7 +1310,7 @@ body {
 .intro-groom,
 .intro-bride {
     font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(4.5rem, 7vw, 9.5rem);
     font-weight: 300;
     color: var(--color-text);
     letter-spacing: 0.08em;
@@ -1307,7 +1327,7 @@ body {
 
 .intro-ampersand {
     font-family: var(--font-script);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(3.5rem, 6vw, 6.7rem);
     color: var(--color-gold);
     margin: 0.3rem 0;
     animation: fade-in-up 2s var(--ease-cinematic) 0.7s both;
@@ -1315,7 +1335,7 @@ body {
 
 .intro-quote {
     font-family: var(--font-serif);
-    font-size: 0.95rem;
+    font-size: clamp(1.4rem, 1.75vw, 2.3rem);
     font-style: italic;
     font-weight: 300;
     color: var(--color-text-light);
@@ -1961,8 +1981,8 @@ body {
 .tpl-portrait-blur .pb-photo img {
     max-height: 92vh;
     max-width: 55vw;
-    width: auto;
-    height: auto;
+    width: 55vw;
+    height: 92vh;
     object-fit: contain;
     border-radius: 4px;
     box-shadow:
@@ -1988,13 +2008,13 @@ body {
 
 .tpl-split-left-text .text-panel .panel-quote {
     font-family: var(--font-serif);
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
     font-style: italic;
     font-weight: 300;
-    line-height: 1.9;
+    line-height: 1.75;
     color: var(--color-text-light);
     margin-bottom: 2rem;
-    max-width: 320px;
+    max-width: 420px;
 }
 
 .tpl-split-left-text .text-panel .panel-names {
@@ -2079,13 +2099,13 @@ body {
 
 .tpl-split-right-text .text-panel .panel-quote {
     font-family: var(--font-serif);
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
     font-style: italic;
     font-weight: 300;
-    line-height: 1.9;
+    line-height: 1.75;
     color: var(--color-text-light);
     margin-bottom: 2rem;
-    max-width: 320px;
+    max-width: 420px;
 }
 
 .tpl-split-right-text .text-panel .panel-names {
@@ -2321,7 +2341,7 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 50vh;
+    max-height: 48vh;
     object-fit: contain;
     border-radius: 2px;
 }
@@ -2344,7 +2364,7 @@ body {
 
 /* Card 3: bottom-center-left, overlaps cards above */
 .tpl-bg-trio .bgt-card:nth-child(3) {
-    top: 42%;
+    top: 50%;
     left: 8%;
     z-index: 3;
     transform: rotate(3deg);
@@ -2352,7 +2372,7 @@ body {
 
 /* Card 4: bottom-center-right, overlaps all */
 .tpl-bg-trio .bgt-card:nth-child(4) {
-    top: 40%;
+    top: 48%;
     left: 45%;
     z-index: 4;
     transform: rotate(-4deg);
@@ -2380,8 +2400,8 @@ body {
 .tpl-full-overlay .photo-full img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     object-position: center;
 }
@@ -2406,17 +2426,21 @@ body {
     left: 5%;
     bottom: 8%;
     z-index: 2;
-    max-width: 400px;
+    max-width: 520px;
 }
 
 .tpl-full-overlay .overlay-text .ot-quote {
     font-family: var(--font-serif);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.45rem, 3vw, 2.3rem);
     font-style: italic;
     font-weight: 300;
     color: var(--color-cream);
-    line-height: 1.8;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    line-height: 1.65;
+    -webkit-text-stroke: 0.25px rgba(58, 48, 40, 0.55);
+    text-shadow:
+        0 1px 2px rgba(20, 14, 10, 0.85),
+        0 6px 16px rgba(20, 14, 10, 0.58),
+        0 16px 34px rgba(20, 14, 10, 0.42);
 }
 
 .tpl-full-overlay .overlay-text .ot-names {
@@ -2424,7 +2448,11 @@ body {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     color: var(--color-gold-light);
     margin-top: 1.5rem;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 0.2px rgba(58, 48, 40, 0.45);
+    text-shadow:
+        0 1px 2px rgba(20, 14, 10, 0.9),
+        0 6px 18px rgba(20, 14, 10, 0.62),
+        0 14px 32px rgba(20, 14, 10, 0.45);
 }
 
 /* ===== TEMPLATE 9: Polaroid on Colored BG ===== */
@@ -2496,8 +2524,8 @@ body {
 .tpl-asym-duo .ad-large img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -2516,8 +2544,8 @@ body {
 .tpl-asym-duo .ad-small img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -2534,17 +2562,17 @@ body {
 
 .tpl-asym-duo .ad-text .adt-quote {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: clamp(1.55rem, 2.1vw, 2.35rem);
     font-style: italic;
     font-weight: 300;
     color: var(--color-text-light);
-    line-height: 1.8;
-    margin-bottom: 1rem;
+    line-height: 1.58;
+    margin-bottom: 1.15rem;
 }
 
 .tpl-asym-duo .ad-text .adt-names {
     font-family: var(--font-display);
-    font-size: 1.1rem;
+    font-size: clamp(1.3rem, 1.55vw, 1.9rem);
     font-weight: 500;
     color: var(--color-text);
 }
@@ -2634,16 +2662,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5vh 8vw;
+    padding: 4vh 5vw;
 }
 
 .tpl-framed .frame-outer {
     position: relative;
-    max-width: 70vw;
-    max-height: 80vh;
+    width: min(82vw, calc(86vh * 1.55));
+    height: min(86vh, calc(82vw * 0.72));
     padding: 15px;
     border: 1px solid var(--color-gold);
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tpl-framed .frame-outer::before {
@@ -2657,9 +2688,9 @@ body {
 .tpl-framed .frame-outer img {
     display: block;
     max-width: 100%;
-    max-height: 72vh;
-    width: auto;
-    height: auto;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -2699,8 +2730,8 @@ body {
 .tpl-vert-duo .vd-cell img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -2725,8 +2756,8 @@ body {
 .tpl-duo-equal .de-cell img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -2754,8 +2785,8 @@ body {
 .tpl-cinematic .cine-photo img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -2768,10 +2799,14 @@ body {
 
 .tpl-cinematic .cine-text .cin-quote {
     font-family: var(--font-serif);
-    font-size: 1.1rem;
+    font-size: clamp(1.35rem, 2.3vw, 2rem);
     font-style: italic;
-    color: var(--color-text-light);
-    text-shadow: none;
+    color: rgba(255, 253, 248, 0.94);
+    -webkit-text-stroke: 0.25px rgba(58, 48, 40, 0.55);
+    text-shadow:
+        0 1px 2px rgba(20, 14, 10, 0.88),
+        0 6px 16px rgba(20, 14, 10, 0.62),
+        0 16px 34px rgba(20, 14, 10, 0.42);
 }
 
 /* ===== TEMPLATE 16: Quote-Only (text slide) ===== */
@@ -2783,16 +2818,16 @@ body {
 
 .tpl-quote-only .slide-inner {
     text-align: center;
-    max-width: 700px;
+    max-width: 860px;
     padding: 3rem;
 }
 
 .tpl-quote-only .qo-text {
     font-family: var(--font-serif);
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: clamp(1.6rem, 3.6vw, 2.5rem);
     font-weight: 300;
     font-style: italic;
-    line-height: 1.9;
+    line-height: 1.78;
     letter-spacing: 0.02em;
     margin-bottom: 1.5rem;
 }
@@ -2930,6 +2965,18 @@ body {
     display: block;
 }
 
+.tpl-film-strip .fs-photo img[src$="DSCF2071.JPG"] {
+    object-position: 35% center;
+}
+
+.tpl-film-strip .fs-photo img[src$="IMG_5586.JPG"] {
+    object-position: 35% center;
+}
+
+.tpl-film-strip .fs-photo img[src$="DSCF2076.JPG"] {
+    object-position: 88% center;
+}
+
 /* Fade edges (vignette) */
 .tpl-film-strip .fs-vignette {
     position: absolute;
@@ -2974,6 +3021,33 @@ body {
     }
 }
 
+@media (min-width: 1800px) {
+    .tpl-film-strip .fs-frame {
+        width: clamp(520px, 42vh, 900px);
+        border-left-width: 2px;
+        border-right-width: 2px;
+    }
+
+    .tpl-film-strip .fs-sprocket-top,
+    .tpl-film-strip .fs-sprocket-bottom {
+        flex-basis: clamp(30px, 2.2vh, 48px);
+        gap: clamp(24px, 2.5vh, 54px);
+    }
+
+    .tpl-film-strip .fs-sprocket-top::before,
+    .tpl-film-strip .fs-sprocket-top::after,
+    .tpl-film-strip .fs-sprocket-bottom::before,
+    .tpl-film-strip .fs-sprocket-bottom::after {
+        width: clamp(14px, 0.95vh, 20px);
+        height: clamp(11px, 0.75vh, 16px);
+        border-width: 2px;
+    }
+
+    .tpl-film-strip .fs-photo {
+        margin: clamp(8px, 0.7vh, 14px) clamp(10px, 0.9vh, 18px);
+    }
+}
+
 /* ===== Template 17: Opening Intro ===== */
 .tpl-opening-intro {
     position: absolute;
@@ -2988,7 +3062,7 @@ body {
 
 .tpl-opening-intro .slide-inner {
     text-align: center;
-    max-width: 700px;
+    max-width: 860px;
     width: 100%;
     padding: 3rem 2rem;
     display: flex;
@@ -3014,26 +3088,26 @@ body {
 .tpl-opening-intro .oi-line {
     font-family: var(--font-serif);
     font-style: italic;
-    line-height: 1.9;
+    line-height: 1.72;
     letter-spacing: 0.03em;
     color: var(--color-cream);
     margin: 0.6rem 0;
 }
 
 .tpl-opening-intro .oi-line-1 {
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-size: clamp(1.3rem, 3vw, 2rem);
     font-weight: 300;
     opacity: 0.85;
 }
 
 .tpl-opening-intro .oi-line-2 {
-    font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+    font-size: clamp(1.45rem, 3.3vw, 2.25rem);
     font-weight: 400;
     opacity: 0.95;
 }
 
 .tpl-opening-intro .oi-line-3 {
-    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-size: clamp(1.2rem, 2.7vw, 1.8rem);
     font-weight: 300;
     color: var(--color-gold-light);
     margin-top: 1rem;
@@ -3088,7 +3162,7 @@ body {
 
 .tpl-chapter-intro .slide-inner {
     text-align: center;
-    max-width: 700px;
+    max-width: 900px;
     width: 100%;
     padding: 3rem 2rem;
     display: flex;
@@ -3110,7 +3184,7 @@ body {
 
 .tpl-chapter-intro .ci-title {
     font-family: var(--font-display);
-    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4.8vw, 3.6rem);
     font-weight: 500;
     font-style: italic;
     color: var(--color-cream);
@@ -3128,26 +3202,27 @@ body {
 
 .tpl-chapter-intro .ci-quote {
     font-family: var(--font-serif);
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.3rem, 3.2vw, 2rem);
     font-weight: 300;
     font-style: italic;
-    line-height: 1.9;
+    line-height: 1.72;
     letter-spacing: 0.02em;
     color: rgba(250, 246, 240, 0.8);
-    max-width: 560px;
+    max-width: 720px;
     margin-top: 0.5rem;
 }
 
 /* Large screens / TV projection: let text-only slides scale past desktop caps */
 @media (min-width: 1800px) {
+
     .tpl-opening-intro .slide-inner,
     .tpl-chapter-intro .slide-inner {
-        max-width: 1040px;
+        max-width: 1240px;
         padding: 4rem 3rem;
     }
 
     .tpl-quote-only .slide-inner {
-        max-width: 1120px;
+        max-width: 1320px;
         padding: 4rem 3rem;
     }
 
@@ -3156,19 +3231,19 @@ body {
     }
 
     .tpl-opening-intro .oi-line-1 {
-        font-size: clamp(1.4rem, 1.7vw, 2.4rem);
+        font-size: clamp(1.8rem, 2.05vw, 3rem);
     }
 
     .tpl-opening-intro .oi-line-2 {
-        font-size: clamp(1.6rem, 1.9vw, 2.75rem);
+        font-size: clamp(2rem, 2.25vw, 3.35rem);
     }
 
     .tpl-opening-intro .oi-line-3 {
-        font-size: clamp(1.25rem, 1.5vw, 2.1rem);
+        font-size: clamp(1.6rem, 1.8vw, 2.7rem);
     }
 
     .tpl-chapter-intro .ci-title {
-        font-size: clamp(2.4rem, 3.2vw, 5rem);
+        font-size: clamp(3rem, 3.6vw, 5.8rem);
     }
 
     .tpl-chapter-intro .ci-ornament {
@@ -3177,14 +3252,14 @@ body {
     }
 
     .tpl-chapter-intro .ci-quote {
-        max-width: 900px;
-        font-size: clamp(1.35rem, 1.8vw, 2.35rem);
-        line-height: 1.85;
+        max-width: 1100px;
+        font-size: clamp(1.8rem, 2.1vw, 3rem);
+        line-height: 1.72;
     }
 
     .tpl-quote-only .qo-text {
-        font-size: clamp(1.8rem, 2.25vw, 3.25rem);
-        line-height: 1.85;
+        font-size: clamp(2.25rem, 2.55vw, 3.85rem);
+        line-height: 1.72;
     }
 
     .tpl-quote-only .qo-author {
@@ -3193,6 +3268,7 @@ body {
 }
 
 @media (min-width: 2560px) {
+
     .tpl-opening-intro .slide-inner,
     .tpl-chapter-intro .slide-inner,
     .tpl-quote-only .slide-inner {
@@ -3200,16 +3276,16 @@ body {
     }
 
     .tpl-chapter-intro .ci-title {
-        font-size: clamp(3rem, 3vw, 5.8rem);
+        font-size: clamp(3.8rem, 3.35vw, 6.5rem);
     }
 
     .tpl-chapter-intro .ci-quote {
-        max-width: 1040px;
-        font-size: clamp(1.7rem, 1.55vw, 2.75rem);
+        max-width: 1240px;
+        font-size: clamp(2.2rem, 1.85vw, 3.55rem);
     }
 
     .tpl-quote-only .qo-text {
-        font-size: clamp(2.25rem, 2vw, 3.8rem);
+        font-size: clamp(2.8rem, 2.25vw, 4.55rem);
     }
 }
 
@@ -3454,8 +3530,8 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 2rem;
-    max-width: 600px;
+    padding: clamp(2.5rem, 5vw, 6rem);
+    max-width: min(1260px, 88vw);
     animation: fade-in-up 2s var(--ease-cinematic) both;
 }
 
@@ -3467,19 +3543,19 @@ body {
 
 .ending-thanks {
     font-family: var(--font-script);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(5.8rem, 10vw, 10.5rem);
     color: var(--color-gold);
-    margin: 1rem 0;
+    margin: clamp(1.2rem, 2.5vh, 2.8rem) 0;
     animation: fade-in-up 2s var(--ease-cinematic) 0.3s both;
 }
 
 .ending-message {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: clamp(1.65rem, 1.95vw, 2.6rem);
     font-weight: 300;
     color: var(--color-text-light);
-    line-height: 1.8;
-    margin: 1.5rem 0;
+    line-height: 1.72;
+    margin: clamp(1.6rem, 3vh, 3rem) 0;
     animation: fade-in-up 2s var(--ease-cinematic) 0.5s both;
 }
 
@@ -3487,22 +3563,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
+    gap: clamp(1rem, 1.7vw, 2rem);
+    margin: clamp(2rem, 4vh, 4.2rem) 0;
     animation: fade-in-up 2s var(--ease-cinematic) 0.7s both;
 }
 
 .ending-name-groom,
 .ending-name-bride {
     font-family: var(--font-serif);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(2.8rem, 4.1vw, 4.8rem);
     font-weight: 400;
     color: var(--color-text);
     letter-spacing: 0.05em;
 }
 
 .ending-heart {
-    font-size: 1.2rem;
+    font-size: clamp(1.8rem, 2.6vw, 3rem);
     color: var(--color-gold);
     animation: pulse-heart 1.5s ease-in-out infinite;
 }
@@ -3521,12 +3597,12 @@ body {
 
 .ending-message-sub {
     font-family: var(--font-serif);
-    font-size: 0.9rem;
+    font-size: clamp(1.35rem, 1.55vw, 2.05rem);
     font-style: italic;
     font-weight: 300;
     color: var(--color-text-muted);
     line-height: 1.8;
-    margin: 1rem 0 2rem;
+    margin: clamp(1.2rem, 2.5vh, 2.6rem) 0 clamp(2rem, 4vh, 4.5rem);
     animation: fade-in-up 2s var(--ease-cinematic) 0.9s both;
 }
 
@@ -3730,6 +3806,7 @@ body {
 }
 
 @media (max-width: 1024px) and (max-height: 500px) and (orientation: landscape) {
+
     .tpl-opening-intro,
     .tpl-chapter-intro,
     .tpl-quote-only {
@@ -3785,4 +3862,553 @@ body {
 :-webkit-full-screen .slideshow {
     width: 100vw;
     height: 100vh;
+}
+
+/* ============ RECORDING MODE ============ */
+html.recording-mode,
+html.recording-mode body {
+    background: #000;
+}
+
+html.recording-mode body {
+    padding: 0;
+}
+
+html.recording-mode,
+html.recording-mode * {
+    cursor: none !important;
+}
+
+html.recording-mode #netflixIntro,
+html.recording-mode #preloader,
+html.recording-mode .intro-screen,
+html.recording-mode .slideshow,
+html.recording-mode .ending-screen {
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 50% !important;
+    width: min(100vw, calc(100vh * 1.77777778)) !important;
+    height: min(100vh, calc(100vw * 0.5625)) !important;
+    transform: translate(-50%, -50%) !important;
+    overflow: hidden;
+}
+
+html.recording-mode .top-bar,
+html.recording-mode .controls,
+html.recording-mode .fullscreen-hint {
+    display: none !important;
+}
+
+html.recording-mode .progress-bar-track {
+    display: block !important;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 50;
+}
+
+@media (min-width: 3000px) and (min-height: 1600px) {
+    html.recording-mode .preloader-ornament {
+        font-size: 4.2rem;
+        margin-bottom: 4rem;
+    }
+
+    html.recording-mode .preloader-names {
+        font-size: 9.2rem;
+        margin-bottom: 5rem;
+    }
+
+    html.recording-mode .preloader-bar-track {
+        width: 760px;
+        height: 4px;
+        margin-bottom: 4rem;
+    }
+
+    html.recording-mode .preloader-text {
+        font-size: 2rem;
+    }
+
+    html.recording-mode .nf-logo {
+        top: clamp(38px, 1.25vw, 48px);
+        left: clamp(64px, 2.08vw, 80px);
+        font-size: clamp(2.8rem, 1.7vw, 4.1rem);
+        letter-spacing: 4px;
+    }
+
+    html.recording-mode .nf-channel {
+        font-size: clamp(2.3rem, 1.7vw, 4.1rem);
+        letter-spacing: 6px;
+        margin-bottom: clamp(24px, 1.25vw, 48px);
+    }
+
+    html.recording-mode .nf-title {
+        font-size: clamp(3.6rem, 2.15vw, 5.3rem);
+        margin-bottom: clamp(48px, 2.6vw, 100px);
+    }
+
+    html.recording-mode .nf-profiles {
+        gap: clamp(44px, 1.46vw, 56px);
+        margin-bottom: clamp(48px, 2.6vw, 100px);
+    }
+
+    html.recording-mode .nf-avatar {
+        width: clamp(280px, 9.64vw, 370px);
+        height: clamp(280px, 9.64vw, 370px);
+        border-width: 6px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    html.recording-mode .nf-name {
+        font-size: clamp(1.75rem, 0.96vw, 2.3rem);
+    }
+
+    html.recording-mode .nf-manage-btn {
+        font-size: clamp(2rem, 1.08vw, 2.6rem);
+        border-width: 2px;
+        padding: 0.5em 2em;
+        letter-spacing: 6px;
+    }
+
+    html.recording-mode .nf-cursor svg {
+        width: clamp(48px, 1.56vw, 60px);
+        height: clamp(48px, 1.56vw, 60px);
+    }
+
+    html.recording-mode .nf-navbar {
+        padding: clamp(18px, 0.63vw, 24px) 4%;
+    }
+
+    html.recording-mode .nf-nav-left {
+        gap: clamp(36px, 1.25vw, 48px);
+    }
+
+    html.recording-mode .nf-nav-logo {
+        font-size: clamp(2.35rem, 1.55vw, 3.7rem);
+        margin-right: clamp(12px, 0.42vw, 16px);
+        letter-spacing: 2px;
+    }
+
+    html.recording-mode .nf-nav-link {
+        font-size: clamp(1.45rem, 0.86vw, 2.1rem);
+    }
+
+    html.recording-mode .nf-nav-right {
+        gap: clamp(24px, 0.83vw, 32px);
+    }
+
+    html.recording-mode .nf-nav-icon {
+        font-size: clamp(2rem, 1.08vw, 2.6rem);
+    }
+
+    html.recording-mode .nf-nav-avatar {
+        width: clamp(44px, 1.46vw, 56px);
+        height: clamp(44px, 1.46vw, 56px);
+        border-radius: 8px;
+    }
+
+    html.recording-mode .nf-hero {
+        min-height: 800px;
+    }
+
+    html.recording-mode .nf-hero-gradient {
+        background:
+            linear-gradient(to right, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.42) 40%, transparent 72%),
+            linear-gradient(to top, #141414 0%, rgba(20, 20, 20, 0.64) 20%, transparent 52%);
+    }
+
+    html.recording-mode .nf-hero-tag {
+        font-size: clamp(1.9rem, 1.08vw, 2.6rem);
+        letter-spacing: 8px;
+        margin-bottom: 12px;
+    }
+
+    html.recording-mode .nf-hero-title {
+        font-size: clamp(2.85rem, 1.9vw, 4.6rem);
+        margin-bottom: 4px;
+    }
+
+    html.recording-mode .nf-hero-couple {
+        font-size: clamp(5.6rem, 3.85vw, 9.3rem);
+        line-height: 0.95;
+        margin-bottom: 12px;
+    }
+
+    html.recording-mode .nf-hero-stars {
+        font-size: clamp(1.9rem, 0.96vw, 2.35rem);
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+
+    html.recording-mode .nf-hero-desc {
+        max-width: 920px;
+        font-size: clamp(1.65rem, 0.88vw, 2.1rem);
+        line-height: 1.5;
+        margin-bottom: 32px;
+    }
+
+    html.recording-mode .nf-hero-buttons {
+        gap: 24px;
+    }
+
+    html.recording-mode .nf-btn-play,
+    html.recording-mode .nf-btn-info {
+        min-height: 68px;
+        padding: 16px 48px;
+        gap: 16px;
+        border-radius: 8px;
+        font-size: clamp(2rem, 0.96vw, 2.35rem);
+    }
+
+    html.recording-mode .nf-btn-play svg,
+    html.recording-mode .nf-btn-info svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    html.recording-mode .nf-top10 {
+        padding: 0 4% clamp(32px, 2vh, 44px);
+    }
+
+    html.recording-mode .nf-top10-title {
+        font-size: clamp(1.9rem, 1.08vw, 2.6rem);
+        margin-bottom: 20px;
+    }
+
+    html.recording-mode .nf-top10-row {
+        gap: clamp(18px, 0.63vw, 24px);
+    }
+
+    html.recording-mode .nf-top10-item {
+        width: clamp(240px, 8.33vw, 320px);
+    }
+
+    html.recording-mode .nf-top10-num {
+        font-size: clamp(13.5rem, 7.4vw, 17.8rem);
+        -webkit-text-stroke-width: 4px;
+        margin-right: -20px;
+    }
+
+    html.recording-mode .nf-top10-item img {
+        width: clamp(168px, 5.73vw, 220px);
+        height: clamp(228px, 7.81vw, 300px);
+        border-radius: 8px;
+    }
+
+    html.recording-mode .tpl-bg-fill,
+    html.recording-mode .tpl-portrait-blur .pb-blur {
+        inset: -100px;
+        filter: blur(60px) brightness(0.58) saturate(0.68);
+    }
+
+    html.recording-mode .tpl-bg-trio .bgt-blur {
+        inset: -80px;
+        filter: blur(50px) brightness(0.75) saturate(0.65);
+    }
+
+    html.recording-mode .tpl-bg-trio .bgt-card img {
+        max-height: 46vh;
+    }
+
+    html.recording-mode .intro-content,
+    html.recording-mode .ending-content {
+        max-width: 1700px;
+        padding: 4rem;
+    }
+
+    html.recording-mode .ornament-svg {
+        width: 480px;
+        height: 70px;
+    }
+
+    html.recording-mode .intro-pre-title {
+        font-size: 2.1rem;
+        margin-bottom: 3.4rem;
+    }
+
+    html.recording-mode .intro-groom,
+    html.recording-mode .intro-bride {
+        font-size: clamp(7.4rem, 5.2vw, 12.5rem);
+    }
+
+    html.recording-mode .intro-ampersand {
+        font-size: clamp(5.7rem, 4.1vw, 9.8rem);
+        margin: 0.6rem 0;
+    }
+
+    html.recording-mode .intro-quote {
+        font-size: 3rem;
+        margin-top: 3.4rem;
+    }
+
+    html.recording-mode .intro-start-btn {
+        margin-top: 5rem;
+        padding: 1.8rem 6rem;
+        font-size: 1.65rem;
+        border-width: 2px;
+    }
+
+    html.recording-mode .ending-thanks {
+        font-size: clamp(11rem, 6.2vw, 15rem);
+        margin: 2rem 0;
+    }
+
+    html.recording-mode .ending-message {
+        font-size: 3.6rem;
+        margin: 3rem 0;
+    }
+
+    html.recording-mode .ending-names {
+        gap: 2rem;
+        margin: 4rem 0;
+    }
+
+    html.recording-mode .ending-name-groom,
+    html.recording-mode .ending-name-bride {
+        font-size: clamp(5.7rem, 3vw, 7rem);
+    }
+
+    html.recording-mode .ending-heart {
+        font-size: 4.1rem;
+    }
+
+    html.recording-mode .ending-message-sub {
+        font-size: 3.1rem;
+        margin: 2rem 0 4rem;
+    }
+
+    html.recording-mode .tpl-opening-intro .slide-inner,
+    html.recording-mode .tpl-chapter-intro .slide-inner,
+    html.recording-mode .tpl-quote-only .slide-inner {
+        max-width: clamp(1280px, 43vw, 1650px);
+        padding: 6rem 4rem;
+    }
+
+    html.recording-mode .tpl-opening-intro .oi-ornament-top,
+    html.recording-mode .tpl-opening-intro .oi-ornament-bottom {
+        width: 240px;
+        margin: 1.6rem 0;
+    }
+
+    html.recording-mode .tpl-opening-intro .oi-line {
+        line-height: 1.65;
+        margin: 1.2rem 0;
+    }
+
+    html.recording-mode .tpl-opening-intro .oi-line-1 {
+        font-size: clamp(3.1rem, 1.85vw, 4.45rem);
+    }
+
+    html.recording-mode .tpl-opening-intro .oi-line-2 {
+        font-size: clamp(3.4rem, 2.05vw, 4.9rem);
+    }
+
+    html.recording-mode .tpl-opening-intro .oi-line-3 {
+        font-size: clamp(2.85rem, 1.62vw, 3.9rem);
+    }
+
+    html.recording-mode .tpl-chapter-intro .ci-chapter {
+        font-size: 1.55rem;
+        margin-bottom: 1.6rem;
+    }
+
+    html.recording-mode .tpl-chapter-intro .ci-title {
+        font-size: clamp(6.1rem, 3.25vw, 7.8rem);
+        margin-bottom: 1rem;
+    }
+
+    html.recording-mode .tpl-chapter-intro .ci-ornament {
+        width: 100px;
+        margin: 2rem auto;
+    }
+
+    html.recording-mode .tpl-chapter-intro .ci-quote {
+        max-width: 1360px;
+        font-size: clamp(3.25rem, 1.72vw, 4.15rem);
+        line-height: 1.68;
+        margin-top: 1rem;
+    }
+
+    html.recording-mode .tpl-quote-only .qo-text {
+        font-size: clamp(4.2rem, 2.28vw, 5.55rem);
+        line-height: 1.68;
+        margin-bottom: 3rem;
+    }
+
+    html.recording-mode .tpl-quote-only .qo-ornament {
+        width: 80px;
+        height: 2px;
+        margin: 3rem auto;
+    }
+
+    html.recording-mode .tpl-quote-only .qo-author {
+        font-size: 1.55rem;
+    }
+
+    html.recording-mode .tpl-split-left-text .text-panel,
+    html.recording-mode .tpl-split-right-text .text-panel {
+        padding: 8rem 7rem;
+    }
+
+    html.recording-mode .tpl-split-left-text .text-panel .panel-quote,
+    html.recording-mode .tpl-split-right-text .text-panel .panel-quote {
+        max-width: 760px;
+        font-size: clamp(2.9rem, 1.62vw, 3.9rem);
+        line-height: 1.62;
+        margin-bottom: 4rem;
+    }
+
+    html.recording-mode .tpl-split-left-text .text-panel .panel-names,
+    html.recording-mode .tpl-split-right-text .text-panel .panel-names {
+        font-size: clamp(3.5rem, 2.12vw, 5.1rem);
+    }
+
+    html.recording-mode .tpl-split-left-text .text-panel .panel-ornament,
+    html.recording-mode .tpl-split-right-text .text-panel .panel-ornament {
+        width: 80px;
+        height: 2px;
+        margin: 3rem 0;
+    }
+
+    html.recording-mode .tpl-split-left-text .text-panel .panel-sub,
+    html.recording-mode .tpl-split-right-text .text-panel .panel-sub {
+        font-size: 2.8rem;
+    }
+
+    html.recording-mode .tpl-top-photo-bottom-text .text-bottom {
+        padding: 5rem 6rem;
+    }
+
+    html.recording-mode .tpl-top-photo-bottom-text .text-bottom .tb-names {
+        font-size: clamp(4.2rem, 2.7vw, 6.5rem);
+    }
+
+    html.recording-mode .tpl-top-photo-bottom-text .text-bottom .tb-script {
+        font-size: clamp(2.35rem, 1.45vw, 3.5rem);
+    }
+
+    html.recording-mode .tpl-top-photo-bottom-text .text-bottom .tb-detail {
+        font-size: 1.65rem;
+        margin-top: 2rem;
+    }
+
+    html.recording-mode .tpl-full-overlay .overlay-text {
+        max-width: 980px;
+    }
+
+    html.recording-mode .tpl-full-overlay .overlay-text .ot-quote {
+        font-size: clamp(3.45rem, 2.02vw, 4.9rem);
+        line-height: 1.55;
+        -webkit-text-stroke-width: 0.7px;
+        text-shadow:
+            0 3px 5px rgba(20, 14, 10, 0.9),
+            0 14px 32px rgba(20, 14, 10, 0.66),
+            0 32px 72px rgba(20, 14, 10, 0.48);
+    }
+
+    html.recording-mode .tpl-full-overlay .overlay-text .ot-names {
+        font-size: clamp(3.5rem, 2.4vw, 5.75rem);
+        margin-top: 3rem;
+        -webkit-text-stroke-width: 0.6px;
+        text-shadow:
+            0 3px 5px rgba(20, 14, 10, 0.92),
+            0 14px 34px rgba(20, 14, 10, 0.68),
+            0 32px 74px rgba(20, 14, 10, 0.5);
+    }
+
+    html.recording-mode .tpl-polaroid .polaroid-frame {
+        padding: 24px 24px 100px;
+        box-shadow: 0 30px 100px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    html.recording-mode .tpl-polaroid .polaroid-caption {
+        font-size: 3rem;
+        margin-top: 16px;
+    }
+
+    html.recording-mode .tpl-asym-duo .ad-text {
+        padding: 3rem;
+    }
+
+    html.recording-mode .tpl-asym-duo .ad-text .adt-quote,
+    html.recording-mode .tpl-cinematic .cine-text .cin-quote {
+        font-size: 4.2rem;
+        line-height: 1.45;
+    }
+
+    html.recording-mode .tpl-cinematic .cine-text .cin-quote {
+        -webkit-text-stroke-width: 0.7px;
+        text-shadow:
+            0 3px 5px rgba(20, 14, 10, 0.92),
+            0 14px 32px rgba(20, 14, 10, 0.68),
+            0 32px 72px rgba(20, 14, 10, 0.5);
+    }
+
+    html.recording-mode .tpl-asym-duo .ad-text .adt-names {
+        font-size: 3.35rem;
+    }
+
+    html.recording-mode .tpl-collage-1L2S .col-text {
+        padding: 4rem;
+    }
+
+    html.recording-mode .tpl-collage-1L2S .col-text .ct-heading {
+        font-size: clamp(3.5rem, 2.4vw, 5.75rem);
+        margin-bottom: 2rem;
+    }
+
+    html.recording-mode .tpl-collage-1L2S .col-text .ct-sub,
+    html.recording-mode .tpl-mosaic .mos-text .mt-sub {
+        font-size: 1.8rem;
+    }
+
+    html.recording-mode .tpl-mosaic .mos-text {
+        padding: 2rem;
+    }
+
+    html.recording-mode .tpl-mosaic .mos-text .mt-names {
+        font-size: clamp(2.85rem, 1.72vw, 4.15rem);
+        margin-bottom: 1rem;
+    }
+
+    html.recording-mode .tpl-collage-1L2S,
+    html.recording-mode .tpl-asym-duo {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    html.recording-mode .tpl-three-row {
+        gap: 12px;
+    }
+
+    html.recording-mode .tpl-mosaic {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    html.recording-mode .tpl-bg-trio .bgt-card {
+        padding: 16px;
+        border-radius: 6px;
+        box-shadow: 0 16px 70px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    html.recording-mode .tpl-duo-equal,
+    html.recording-mode .tpl-vert-duo {
+        gap: 10px;
+    }
+
+    html.recording-mode .tpl-framed .frame-outer {
+        padding: 30px;
+        border-width: 2px;
+    }
+
+    html.recording-mode .tpl-framed .frame-outer::before {
+        inset: 10px;
+        border-width: 2px;
+    }
+
+    html.recording-mode .tpl-framed .frame-caption {
+        bottom: -70px;
+        font-size: 1.9rem;
+    }
 }
