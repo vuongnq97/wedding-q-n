@@ -57,7 +57,7 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Khoảnh khắc hiện tại',
+                title: '',
                 quote: '"Hôm nay,\nhai trái tim chính thức\nnắm tay bước vào\nchặng đường mới của cuộc đời.\nNhưng trước đó...\nhãy cùng nhìn lại\nnhững tháng năm đã qua."',
                 slides: [
                     { template: 'portraitBlur', images: ['RIN_2670 copy 2 (1) (1).jpg'] },
@@ -69,7 +69,7 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Bắt đầu từ giảng đường',
+                title: '',
                 quote: '"9 năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nhành trình yêu thương\nđã bắt đầu như thế."',
                 slides: [
                     { template: 'splitLeftText', images: ['1784817768836_1844566805844982206_122909637720525971_3658652e6f718a27edbdbf864752313e.jpg'], quote: '"Có những ngày rất trẻ,\nmình đã vô tình\nđi cạnh đời nhau."' },
@@ -88,7 +88,7 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Thanh xuân rực rỡ',
+                title: '',
                 quote: '"Thanh xuân là khoảng thời gian\nđẹp nhất của mỗi người.\nVà thanh xuân ấy càng ý nghĩa hơn\nkhi có một người cùng sẻ chia."',
                 slides: [
                     { template: 'auto', images: ['72766678_956583084690608_1486030440711061504_n.jpg'], quote: '"Hạnh phúc đơn giản là được ở bên nhau mỗi ngày."' },
@@ -115,7 +115,7 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Những chuyến đi',
+                title: '',
                 quote: '"Suốt 9 năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
                 slides: [
 
@@ -205,7 +205,7 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Cùng nhau chinh phục',
+                title: '',
                 quote: '"Nắm tay nhau\nvượt qua mọi giới hạn.\nCùng nhau chinh phục\nmọi cung đường cuộc đời.\nBởi vì bên nhau,\nkhông có gì là không thể."',
                 slides: [
                     // ── Quote mở đầu ──
@@ -238,12 +238,11 @@
             // ═══════════════════════════════════════════
             {
                 chapter: '',
-                title: 'Ngày hôm nay',
+                title: '',
                 quote: '"Hôm nay,\ntrước sự chứng kiến\ncủa gia đình và người thân,\nhai con người đã cùng nhau\nđi qua gần một thập kỷ\nchính thức bước vào\nchặng đường mới của cuộc đời."',
                 slides: [
                     // ── Quote tri ân ──
-                    { template: 'quoteOnly', quoteText: '"Cảm ơn Ba Mẹ đã nuôi dạy chúng con,\ncho chúng con tình yêu thương vô bờ.\nCảm ơn gia đình, bạn bè, quan khách\nđã đồng hành và chúc phúc\ncho hành trình yêu thương của chúng tôi."', quoteAuthor: 'Tri ân' },
-
+                    { template: 'quoteOnly', quoteText: '"Cảm ơn Ba Mẹ đã nuôi dạy chúng con,\ncho chúng con tình yêu thương vô bờ.\nCảm ơn gia đình, bạn bè, quan khách\nđã đồng hành và chúc phúc\ncho hành trình yêu thương của chúng con."', quoteAuthor: 'Tri ân' },
                     { template: 'auto', images: ['RIN_2239 copy (1).jpg'] },
                     { template: 'auto', images: ['Jul 29, 2026, 08_37_43 PM.jpg'] },
                     { template: 'auto', images: ['RIN_2179.jpg', 'RIN_2197.jpg', 'RIN_2198.jpg'] },
@@ -637,10 +636,9 @@
             };
         },
 
-        // --- 8. Full Bleed + Text Overlay ---
-        fullOverlay(images, slideData) {
+        // --- 8. Full Bleed Photo ---
+        fullOverlay(images) {
             const img = images[0];
-            const quote = slideData?.quote || '';
             const bg = pickBG();
             return {
                 classes: ['tpl-full-overlay', bg, pickAnim()],
@@ -648,11 +646,6 @@
                 html: `
                     <div class="slide-inner">
                         <div class="photo-full"><img src="${img}" alt="Wedding"></div>
-                        <div class="overlay-gradient"></div>
-                        <div class="overlay-text">
-                            <div class="ot-quote stagger-1">${quote}</div>
-                            <div class="ot-names stagger-2">${COUPLE}</div>
-                        </div>
                     </div>
                 `
             };
@@ -763,9 +756,8 @@
         },
 
         // --- 15. Cinematic Widescreen ---
-        cinematic(images, slideData) {
+        cinematic(images) {
             const img = images[0];
-            const quote = slideData?.quote || '';
             const bg = pickBG();
             return {
                 classes: ['tpl-cinematic', bg, pickAnim()],
@@ -774,9 +766,6 @@
                     <div class="cine-bar"></div>
                     <div class="cine-photo">
                         <img src="${img}" alt="Wedding">
-                        <div class="cine-text">
-                            <div class="cin-quote stagger-1">${quote}</div>
-                        </div>
                     </div>
                     <div class="cine-bar"></div>
                 `
@@ -886,7 +875,7 @@
     const TPL_TRIO = ['threeRow', 'collage1L2S'];
     // Templates requiring 4 images
     const TPL_QUAD = ['bgTrio', 'mosaic'];
-    const TPL_NEEDS_QUOTE = new Set(['splitLeftText', 'splitRightText', 'fullOverlay', 'asymDuo', 'cinematic']);
+    const TPL_NEEDS_QUOTE = new Set(['splitLeftText', 'splitRightText', 'asymDuo']);
     const TPL_NEEDS_CAPTION = new Set(['polaroid']);
     const TPL_NEEDS_SECTION = new Set(['collage1L2S']);
 

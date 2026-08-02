@@ -2256,10 +2256,10 @@ body {
 
 .tpl-collage-1L2S .col-text .ct-sub {
     font-family: var(--font-serif);
-    font-size: 0.85rem;
+    font-size: clamp(1.2rem, 1.65vw, 1.8rem);
     font-style: italic;
     color: var(--color-text-light);
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 .tpl-collage-1L2S img {
@@ -2404,55 +2404,6 @@ body {
     height: 100%;
     object-fit: contain;
     object-position: center;
-}
-
-
-
-.tpl-full-overlay .overlay-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to top,
-            rgba(58, 48, 40, 0.6) 0%,
-            rgba(58, 48, 40, 0.2) 50%,
-            transparent 100%);
-    z-index: 1;
-}
-
-.tpl-full-overlay .overlay-text {
-    position: absolute;
-    left: 5%;
-    bottom: 8%;
-    z-index: 2;
-    max-width: 520px;
-}
-
-.tpl-full-overlay .overlay-text .ot-quote {
-    font-family: var(--font-serif);
-    font-size: clamp(1.45rem, 3vw, 2.3rem);
-    font-style: italic;
-    font-weight: 300;
-    color: var(--color-cream);
-    line-height: 1.65;
-    -webkit-text-stroke: 0.25px rgba(58, 48, 40, 0.55);
-    text-shadow:
-        0 1px 2px rgba(20, 14, 10, 0.85),
-        0 6px 16px rgba(20, 14, 10, 0.58),
-        0 16px 34px rgba(20, 14, 10, 0.42);
-}
-
-.tpl-full-overlay .overlay-text .ot-names {
-    font-family: var(--font-script);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: var(--color-gold-light);
-    margin-top: 1.5rem;
-    -webkit-text-stroke: 0.2px rgba(58, 48, 40, 0.45);
-    text-shadow:
-        0 1px 2px rgba(20, 14, 10, 0.9),
-        0 6px 18px rgba(20, 14, 10, 0.62),
-        0 14px 32px rgba(20, 14, 10, 0.45);
 }
 
 /* ===== TEMPLATE 9: Polaroid on Colored BG ===== */
@@ -2788,25 +2739,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-.tpl-cinematic .cine-text {
-    position: absolute;
-    bottom: 15%;
-    left: 8%;
-    z-index: 2;
-}
-
-.tpl-cinematic .cine-text .cin-quote {
-    font-family: var(--font-serif);
-    font-size: clamp(1.35rem, 2.3vw, 2rem);
-    font-style: italic;
-    color: rgba(255, 253, 248, 0.94);
-    -webkit-text-stroke: 0.25px rgba(58, 48, 40, 0.55);
-    text-shadow:
-        0 1px 2px rgba(20, 14, 10, 0.88),
-        0 6px 16px rgba(20, 14, 10, 0.62),
-        0 16px 34px rgba(20, 14, 10, 0.42);
 }
 
 /* ===== TEMPLATE 16: Quote-Only (text slide) ===== */
@@ -4292,30 +4224,6 @@ html.recording-mode .progress-bar-track {
         margin-top: 2rem;
     }
 
-    html.recording-mode .tpl-full-overlay .overlay-text {
-        max-width: 980px;
-    }
-
-    html.recording-mode .tpl-full-overlay .overlay-text .ot-quote {
-        font-size: clamp(3.45rem, 2.02vw, 4.9rem);
-        line-height: 1.55;
-        -webkit-text-stroke-width: 0.7px;
-        text-shadow:
-            0 3px 5px rgba(20, 14, 10, 0.9),
-            0 14px 32px rgba(20, 14, 10, 0.66),
-            0 32px 72px rgba(20, 14, 10, 0.48);
-    }
-
-    html.recording-mode .tpl-full-overlay .overlay-text .ot-names {
-        font-size: clamp(3.5rem, 2.4vw, 5.75rem);
-        margin-top: 3rem;
-        -webkit-text-stroke-width: 0.6px;
-        text-shadow:
-            0 3px 5px rgba(20, 14, 10, 0.92),
-            0 14px 34px rgba(20, 14, 10, 0.68),
-            0 32px 74px rgba(20, 14, 10, 0.5);
-    }
-
     html.recording-mode .tpl-polaroid .polaroid-frame {
         padding: 24px 24px 100px;
         box-shadow: 0 30px 100px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -4330,18 +4238,9 @@ html.recording-mode .progress-bar-track {
         padding: 3rem;
     }
 
-    html.recording-mode .tpl-asym-duo .ad-text .adt-quote,
-    html.recording-mode .tpl-cinematic .cine-text .cin-quote {
+    html.recording-mode .tpl-asym-duo .ad-text .adt-quote {
         font-size: 4.2rem;
         line-height: 1.45;
-    }
-
-    html.recording-mode .tpl-cinematic .cine-text .cin-quote {
-        -webkit-text-stroke-width: 0.7px;
-        text-shadow:
-            0 3px 5px rgba(20, 14, 10, 0.92),
-            0 14px 32px rgba(20, 14, 10, 0.68),
-            0 32px 72px rgba(20, 14, 10, 0.5);
     }
 
     html.recording-mode .tpl-asym-duo .ad-text .adt-names {
@@ -4359,7 +4258,8 @@ html.recording-mode .progress-bar-track {
 
     html.recording-mode .tpl-collage-1L2S .col-text .ct-sub,
     html.recording-mode .tpl-mosaic .mos-text .mt-sub {
-        font-size: 1.8rem;
+        font-size: 3rem;
+        line-height: 1.45;
     }
 
     html.recording-mode .tpl-mosaic .mos-text {
