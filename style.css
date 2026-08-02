@@ -2130,6 +2130,45 @@ body {
     color: var(--color-gold);
 }
 
+/* Fallback icon used when a quote template has no explicit quote text */
+.tpl-split-left-text .text-panel .panel-quote.is-fallback-icon,
+.tpl-split-right-text .text-panel .panel-quote.is-fallback-icon,
+.tpl-asym-duo .ad-text .adt-quote.is-fallback-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(78%, 340px);
+    min-height: clamp(165px, 15vw, 270px);
+    max-width: none;
+    margin-bottom: 1.4rem;
+    line-height: 1;
+}
+
+.fallback-icon-wrap {
+    width: min(100%, 320px);
+    margin: 0;
+    animation: fallback-icon-float 5s ease-in-out infinite;
+}
+
+.fallback-icon-img {
+    display: block;
+    width: 100%;
+    max-height: clamp(150px, 15vw, 270px);
+    object-fit: contain;
+    filter: drop-shadow(0 16px 24px rgba(80, 58, 38, 0.18));
+}
+
+@keyframes fallback-icon-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
 /* ===== TEMPLATE 4: Top Photo + Bottom Text ===== */
 .tpl-top-photo-bottom-text {
     display: flex;
@@ -4188,6 +4227,22 @@ html.recording-mode .progress-bar-track {
         font-size: clamp(2.9rem, 1.62vw, 3.9rem);
         line-height: 1.62;
         margin-bottom: 4rem;
+    }
+
+    html.recording-mode .tpl-split-left-text .text-panel .panel-quote.is-fallback-icon,
+    html.recording-mode .tpl-split-right-text .text-panel .panel-quote.is-fallback-icon,
+    html.recording-mode .tpl-asym-duo .ad-text .adt-quote.is-fallback-icon {
+        width: min(78%, 560px);
+        min-height: 360px;
+        margin-bottom: 3rem;
+    }
+
+    html.recording-mode .fallback-icon-wrap {
+        width: min(100%, 520px);
+    }
+
+    html.recording-mode .fallback-icon-img {
+        max-height: 420px;
     }
 
     html.recording-mode .tpl-split-left-text .text-panel .panel-names,

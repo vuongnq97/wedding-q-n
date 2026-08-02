@@ -58,7 +58,6 @@
             {
                 chapter: '',
                 title: '',
-                quote: '"Hôm nay,\nhai trái tim chính thức\nnắm tay bước vào\nchặng đường mới của cuộc đời.\nNhưng trước đó...\nhãy cùng nhìn lại\nnhững tháng năm đã qua."',
                 slides: [
                     { template: 'portraitBlur', images: ['RIN_2670 copy 2 (1) (1).jpg'] },
                 ],
@@ -70,7 +69,6 @@
             {
                 chapter: '',
                 title: '',
-                quote: '"9 năm trước,\nhai cô cậu sinh viên\nvô tình gặp nhau.\nTừ những ngày tình nguyện,\nđến ngày tốt nghiệp rạng ngời –\nhành trình yêu thương\nđã bắt đầu như thế."',
                 slides: [
                     { template: 'splitLeftText', images: ['1784817768836_1844566805844982206_122909637720525971_3658652e6f718a27edbdbf864752313e.jpg'], quote: '"Có những ngày rất trẻ,\nmình đã vô tình\nđi cạnh đời nhau."' },
                     {
@@ -95,16 +93,16 @@
                     {
                         template: 'auto', images: [
                             '1783957752083_8088849262297663590_8088849262297663590_4d0b5c2f5e9b616ce20b0331709a9809.jpg',
-                            '1783954087096_8088849262297663590_8088849262297663590_3580d560897832a5ecf3f4bcdf55e054.jpg'], quote: '"Yêu em là điều tuyệt vời nhất anh từng làm."'
+                            '1783954087096_8088849262297663590_8088849262297663590_3580d560897832a5ecf3f4bcdf55e054.jpg']
                     },
                     // ── Quy Nhơn & các chuyến đi đầu ──
                     { template: 'auto', images: ['49028206_776187262730192_141684124917170176_n.jpg'], quote: '"Mỗi chuyến đi bên em đều là một kỷ niệm đẹp."' },
                     { template: 'auto', images: ['1783957744615_8088849262297663590_8088849262297663590_b41b5494221561ed2586a1aa181f7a0c.jpg'] },
                     { template: 'auto', images: ['DSCF1130.JPG'] },
-                    { template: 'auto', images: ['DSCF1396.JPG', 'DSCF1463.JPG', 'DSCF1309.JPG'], quote: '"Cùng nhau chinh phục mọi cung đường cuộc đời."' },
+                    { template: 'auto', images: ['DSCF1396.JPG', 'DSCF1463.JPG', 'DSCF1309.JPG'] },
                     { template: 'auto', images: ['DSCF1536.JPG'] },
                     { template: 'auto', images: ['DSCF1589.JPG', 'DSCF1638.JPG', 'DSCF1772.JPG', 'DSCF1851.JPG'] },
-                    { template: 'auto', images: ['DSCF1932.JPG'], quote: '"Bên em, anh tìm thấy ý nghĩa của cuộc đời."' },
+                    { template: 'auto', images: ['DSCF1932.JPG'] },
                     { template: 'filmStrip', images: ['DSCF1963.JPG', 'DSCF1984.JPG', 'DSCF1997.JPG', 'DSCF2049.JPG', 'DSCF2071.JPG', 'DSCF2076.JPG'] },
 
                 ],
@@ -118,10 +116,6 @@
                 title: '',
                 quote: '"Suốt 9 năm,\nmỗi chuyến đi là một kỷ niệm.\nMỗi hành trình là một bước trưởng thành.\nVà điều quý giá nhất\nkhông phải là đã đi được bao xa,\nmà là luôn có nhau\ntrên mọi chặng đường."',
                 slides: [
-
-                    // ── Quote chuyển tiếp ──
-                    { template: 'quoteOnly', quoteText: '"Mỗi chuyến đi bên em\nđều là một kỷ niệm đẹp.\nMỗi cung đường là một câu chuyện,\nmỗi điểm đến là một lời hứa."', quoteAuthor: 'Những chuyến đi' },
-
                     // ── Tiếp tục hành trình ──
                     { template: 'auto', images: ['1783957751326_8088849262297663590_8088849262297663590_9379779fca83cb4038bd459852cc4980.jpg'] },
                     { template: 'auto', images: ['166048388_1385823598433219_5417758899403869636_n.jpg'], quote: '"Anh muốn nắm tay em, đi qua mọi mùa trong đời."' },
@@ -164,7 +158,6 @@
                             '1785424251054_8088849262297663590_8088849262297663590_8ab40985a0f5fa10de758ef71815f9f5.jpg',
                             'ahhhh.jpg'
                         ],
-                        quote: '"Từ khi gặp em, mọi con đường đều dẫn về nhà."'
                     },
                     { template: 'auto', images: ['DSCF3943.JPG'] },
                     { template: 'auto', images: ['DSCF3992.JPG', 'DSCF4006.JPG'] },
@@ -183,7 +176,7 @@
 
                     // ── Bè tre & dòng sông ──
                     { template: 'auto', images: ['DSCF4089.JPG', 'DSCF4074.JPG', 'DSCF4129.JPG'] },
-                    { template: 'auto', images: ['IMG_2238.JPG'], quote: '"Nơi nào có em, nơi đó là nhà."' },
+                    { template: 'auto', images: ['IMG_2238.JPG'] },
 
                     // ── Camping & Glamping ──
                     { template: 'auto', images: ['IMG_2855.JPG', 'IMG_4109.JPG', 'IMG_4183.JPG', 'IMG_4189.JPG'] },
@@ -206,7 +199,6 @@
             {
                 chapter: '',
                 title: '',
-                quote: '"Nắm tay nhau\nvượt qua mọi giới hạn.\nCùng nhau chinh phục\nmọi cung đường cuộc đời.\nBởi vì bên nhau,\nkhông có gì là không thể."',
                 slides: [
                     // ── Quote mở đầu ──
                     { template: 'auto', images: ['TK_01396.JPG'], quote: '"Có em bên cạnh, chặng đường nào cũng hóa nhẹ nhàng."' },
@@ -239,18 +231,17 @@
             {
                 chapter: '',
                 title: '',
-                quote: '"Hôm nay,\ntrước sự chứng kiến\ncủa gia đình và người thân,\nhai con người đã cùng nhau\nđi qua gần một thập kỷ\nchính thức bước vào\nchặng đường mới của cuộc đời."',
                 slides: [
                     // ── Quote tri ân ──
                     { template: 'quoteOnly', quoteText: '"Cảm ơn Ba Mẹ đã nuôi dạy chúng con,\ncho chúng con tình yêu thương vô bờ.\nCảm ơn gia đình, bạn bè, quan khách\nđã đồng hành và chúc phúc\ncho hành trình yêu thương của chúng con."', quoteAuthor: 'Tri ân' },
                     { template: 'auto', images: ['RIN_2239 copy (1).jpg'] },
                     { template: 'auto', images: ['Jul 29, 2026, 08_37_43 PM.jpg'] },
                     { template: 'auto', images: ['RIN_2179.jpg', 'RIN_2197.jpg', 'RIN_2198.jpg'] },
-                    { template: 'auto', images: ['RIN_2204.jpg'], quote: '"Anh muốn nắm tay em, đi qua mọi mùa trong đời."' },
+                    { template: 'auto', images: ['RIN_2204.jpg'], quote: '"Từ hôm nay, mình cùng bước vào một hành trình mới."' },
                     { template: 'auto', images: ['RIN_2165-3.jpg', 'RIN_2250 copy (3).jpg', 'RIN_2303.png'] },
                     { template: 'auto', images: ['RIN_2314.jpg'] },
                     { template: 'auto', images: ['RIN_2338 copy (1).jpg', 'RIN_2349.jpg', 'RIN_2364.jpg', 'RIN_2704.jpg'] },
-                    { template: 'auto', images: ['RIN_2714 copy (1).jpg'], quote: '"Nơi nào có em, nơi đó là nhà."' },
+                    { template: 'auto', images: ['RIN_2714 copy (1).jpg'] },
                     { template: 'filmStrip', images: ['RIN_2725.jpg', 'RIN_2751.jpg', 'RIN_2833.jpg', 'RIN_2769 copy (1).jpg', 'RIN_2798.jpg', 'RIN_2802.jpg'] },
                     { template: 'auto', images: ['RIN_2775 copy 2 (1) (1).jpg'] },
                     { template: 'auto', images: ['RIN_2323.png', 'ChatGPT Image Jul 29, 2026, 08_58_15 PM.png'] },
@@ -279,7 +270,7 @@
     const AUTO_DUO = ['asymDuo', 'vertDuo', 'duoEqual'];
     const AUTO_TRIO = ['threeRow', 'collage1L2S'];
     const AUTO_QUAD = ['bgTrio', 'mosaic'];
-    const _autoCounters = { sp: 0, sl: 0, d: 0, t: 0, q: 0 };
+    const _autoCounters = { sp: 0, sl: 0, d: 0, t: 0, q: 0, qt: 0 };
 
     function autoPickTemplate(images) {
         const count = images.length;
@@ -296,22 +287,21 @@
     }
 
     // ─── Context-neutral fallback data (used when slide config doesn't provide explicit values) ───
-    const FALLBACK_QUOTES = [
-        '"Có những yêu thương không cần gọi tên, chỉ cần cùng nhau đi tiếp."',
-        '"Một ánh mắt, một nụ cười, đủ làm ngày hôm ấy dịu dàng hơn."',
-        '"Thời gian đi qua, tình yêu ở lại trong từng điều nhỏ bé."',
-        '"Giữa rất nhiều đổi thay, mình vẫn chọn nắm tay nhau."',
-        '"Hạnh phúc là khi có một người để trở về."',
-        '"Mỗi ngày bên nhau là một trang mới của yêu thương."',
-        '"Chúng ta đã lớn lên cùng tình yêu này."',
-        '"Từ những điều giản dị, tình yêu viết nên câu chuyện rất riêng."',
-        '"Có người ở bên, mọi khoảnh khắc đều trở nên ấm áp."',
-        '"Điều đẹp nhất không phải là hoàn hảo, mà là luôn có nhau."',
-        '"Yêu thương không ồn ào, nhưng bền bỉ qua từng năm tháng."',
-        '"Mỗi kỷ niệm là một lời nhắc rằng mình đã thương nhau thật nhiều."',
-        '"Khi hai người cùng nhìn về một hướng, mọi ngày đều có ý nghĩa."',
-        '"Bình yên đôi khi chỉ là được đứng cạnh người mình thương."',
-        '"Tình yêu đẹp nhất là tình yêu được vun đắp mỗi ngày."',
+    const FALLBACK_ICONS = [
+        'fallbackic/%E2%80%94Pngtree%E2%80%94concept%20of%20romantic%20couple%20in_4099740.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94couple%20back-to-back%20hand%20sketch%20and_7184040.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94couple%20hands%20making%20heart%20with_5721390.PNG',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94couple%20love%20love%20heart_3860234.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94cute%20beautiful%20cartoon%20couple%20avatar_5676332.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94cute%20cartoon%20kissing%20couple%20valentine_21394532.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94holding%20hands%20love%20red%20line_5891675.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94line%20drawing%20loving%20couple%20kissing_6699585.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94sketch%20of%20couple%20line_5729149.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94together%20on%20a%20blanket%20cute_19568566.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94valentine%20s%20day%20line%20drawing_6974500%20(1).png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94valentine%20s%20day%20line%20drawing_6974500.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94valentines%20day%20couple%20holding%20hands_7263213.png',
+        'fallbackic/%E2%80%94Pngtree%E2%80%94wedding%20line%20drawing%20on%20one_6690412.png',
     ];
     const FALLBACK_SECTIONS = [
         { heading: 'Our Story', sub: 'Câu chuyện của chúng mình' },
@@ -352,7 +342,7 @@
     let progressTimer = null;
     let progressStart = 0;
     let slides = [];
-    let _fbQuoteIdx = 0;
+    let _fbIconIdx = 0;
     let _fbSectionIdx = 0;
     let _fbCaptionIdx = 0;
     let lastTransition = '';
@@ -373,7 +363,11 @@
     const pickBG = () => { const v = BG_THEMES[_bgIdx % BG_THEMES.length]; _bgIdx++; return v; };
     const pickAnim = () => { const v = ENTRY_ANIMS[_animIdx % ENTRY_ANIMS.length]; _animIdx++; return v; };
     // Fallback pickers — only used when slide config doesn't specify explicit values
-    const fallbackQuote = () => { const q = FALLBACK_QUOTES[_fbQuoteIdx % FALLBACK_QUOTES.length]; _fbQuoteIdx++; return q; };
+    const fallbackIcon = () => {
+        const src = FALLBACK_ICONS[_fbIconIdx % FALLBACK_ICONS.length];
+        _fbIconIdx++;
+        return renderFallbackIcon(src);
+    };
     const fallbackSection = () => { const s = FALLBACK_SECTIONS[_fbSectionIdx % FALLBACK_SECTIONS.length]; _fbSectionIdx++; return s; };
     const fallbackCaption = () => { const p = FALLBACK_CAPTIONS[_fbCaptionIdx % FALLBACK_CAPTIONS.length]; _fbCaptionIdx++; return p; };
 
@@ -381,6 +375,14 @@
         const t = TRANSITIONS[_transIdx % TRANSITIONS.length];
         _transIdx++;
         return t;
+    }
+
+    function renderFallbackIcon(src) {
+        return `
+            <figure class="fallback-icon-wrap" aria-hidden="true">
+                <img class="fallback-icon-img" src="${src}" alt="">
+            </figure>
+        `;
     }
 
     // ─── DOM ───
@@ -406,11 +408,20 @@
     let fullscreenHintTimer = null;
     let orientationPausedSlideshow = false;
     let activeNetflixLogoVideo = null;
+    let introFlowId = 0;
+    let endingFlowId = 0;
+    let introForceTimer = null;
     const orientationWaiters = [];
 
     function shouldBlockForOrientation() {
-        return window.matchMedia &&
-            window.matchMedia('(max-width: 1024px) and (orientation: portrait)').matches;
+        const viewport = window.visualViewport || window;
+        const width = viewport.width || window.innerWidth || 0;
+        const height = viewport.height || window.innerHeight || 0;
+        const ua = navigator.userAgent || '';
+        const isTouchDevice = navigator.maxTouchPoints > 0 ||
+            /Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+
+        return isTouchDevice && width <= 1024 && height > width;
     }
 
     function waitForAllowedOrientation() {
@@ -435,6 +446,14 @@
                 remaining -= Date.now() - started;
             }
         }
+        await waitForAllowedOrientation();
+    }
+
+    async function stageDelay(ms) {
+        await Promise.race([
+            orientationAwareDelay(ms),
+            new Promise(resolve => setTimeout(resolve, ms + 2500)),
+        ]);
         await waitForAllowedOrientation();
     }
 
@@ -527,12 +546,13 @@
             const img = images[0];
             const bg = pickBG();
             const quote = slideData?.quote || '';
+            const quoteClass = slideData?.quoteIsFallback ? ' is-fallback-icon' : '';
             return {
                 classes: ['tpl-split-left-text', pickAnim()],
                 topBarMode: 'dark',
                 html: `
                     <div class="text-panel ${bg} stagger-1">
-                        <div class="panel-quote stagger-2">${quote}</div>
+                        <div class="panel-quote${quoteClass} stagger-2">${quote}</div>
                         <div class="panel-ornament stagger-3"></div>
                         <div class="panel-names stagger-4">${COUPLE}</div>
                         <div class="panel-sub stagger-5">Special Day</div>
@@ -549,6 +569,7 @@
             const img = images[0];
             const bg = pickBG();
             const quote = slideData?.quote || '';
+            const quoteClass = slideData?.quoteIsFallback ? ' is-fallback-icon' : '';
             return {
                 classes: ['tpl-split-right-text', pickAnim()],
                 topBarMode: 'dark',
@@ -557,7 +578,7 @@
                         <img src="${img}" alt="Wedding" class="${pickKB()}">
                     </div>
                     <div class="text-panel ${bg} stagger-1">
-                        <div class="panel-quote stagger-2">${quote}</div>
+                        <div class="panel-quote${quoteClass} stagger-2">${quote}</div>
                         <div class="panel-ornament stagger-3"></div>
                         <div class="panel-names stagger-4">${COUPLE}</div>
                         <div class="panel-sub stagger-5">Forever</div>
@@ -676,6 +697,7 @@
         asymDuo(images, slideData) {
             const bg = pickBG();
             const quote = slideData?.quote || '';
+            const quoteClass = slideData?.quoteIsFallback ? ' is-fallback-icon' : '';
             return {
                 classes: ['tpl-asym-duo', bg, pickAnim()],
                 topBarMode: 'dark',
@@ -683,7 +705,7 @@
                     <div class="ad-large stagger-1"><img src="${images[0]}" alt="Wedding" class="${pickKB()}"></div>
                     <div class="ad-small stagger-2"><img src="${images[1]}" alt="Wedding" class="${pickKB()}"></div>
                     <div class="ad-text">
-                        <div class="adt-quote stagger-3">${quote}</div>
+                        <div class="adt-quote${quoteClass} stagger-3">${quote}</div>
                         <div class="adt-names stagger-4">${COUPLE}</div>
                     </div>
                 `
@@ -821,15 +843,18 @@
 
         // --- 18. Chapter Intro (chapter title card before each chapter) ---
         chapterIntro(chapterData) {
+            const chapter = chapterData?.chapter || '';
+            const title = chapterData?.title || '';
+            const quote = chapterData?.quote || '';
             return {
                 classes: ['tpl-chapter-intro', 'theme-dark', 'anim-fade-in'],
                 topBarMode: 'light',
                 html: `
                     <div class="slide-inner">
-                        ${chapterData.chapter ? `<div class="ci-chapter stagger-1">${chapterData.chapter}</div>` : ''}
-                        <div class="ci-title stagger-2">${chapterData.title}</div>
-                        <div class="ci-ornament stagger-3"></div>
-                        <div class="ci-quote stagger-4">${chapterData.quote.replace(/\n/g, '<br>')}</div>
+                        ${chapter ? `<div class="ci-chapter stagger-1">${chapter}</div>` : ''}
+                        ${title ? `<div class="ci-title stagger-2">${title}</div>` : ''}
+                        ${title || quote ? '<div class="ci-ornament stagger-3"></div>' : ''}
+                        ${quote ? `<div class="ci-quote stagger-4">${quote.replace(/\n/g, '<br>')}</div>` : ''}
                     </div>
                 `
             };
@@ -882,7 +907,7 @@
     // ─── Build Slides ───
     function buildSlides() {
         slides = [];
-        _fbQuoteIdx = 0;
+        _fbIconIdx = 0;
         _fbSectionIdx = 0;
         _fbCaptionIdx = 0;
         _autoCounters.sp = 0;
@@ -890,6 +915,7 @@
         _autoCounters.d = 0;
         _autoCounters.t = 0;
         _autoCounters.q = 0;
+        _autoCounters.qt = 0;
 
         const config = SLIDESHOW_CONFIG;
         const chapters = config.chapters;
@@ -899,9 +925,10 @@
         const firstChapter = chapters[0];
         const firstSlide = firstChapter.slides[0];
         const openingImages = firstSlide.images.map(f => `${IMAGE_BASE_PATH}${f}`);
-        const openingTemplate = firstSlide.template === 'auto'
+        let openingTemplate = firstSlide.template === 'auto'
             ? autoPickTemplate(firstSlide.images)
             : firstSlide.template;
+        openingTemplate = preferQuoteTemplate(firstSlide, openingTemplate);
         const openingFallbacks = resolveFallbacksForTemplate(firstSlide, openingTemplate);
 
         // Slide 0: Opening image
@@ -921,16 +948,8 @@
             images: [],
         });
 
-        // Slide 2: First chapter intro
-        slides.push({
-            type: 'chapterIntro',
-            chapterData: {
-                chapter: firstChapter.chapter,
-                title: firstChapter.title,
-                quote: firstChapter.quote,
-            },
-            images: [],
-        });
+        // Slide 2: First chapter intro, only when there is text to show.
+        pushChapterIntro(firstChapter);
 
         // Remaining slides from first chapter (skip first slide, already used)
         for (let s = 1; s < firstChapter.slides.length; s++) {
@@ -941,16 +960,8 @@
         for (let c = 1; c < chapters.length; c++) {
             const chapter = chapters[c];
 
-            // Chapter intro slide
-            slides.push({
-                type: 'chapterIntro',
-                chapterData: {
-                    chapter: chapter.chapter,
-                    title: chapter.title,
-                    quote: chapter.quote,
-                },
-                images: [],
-            });
+            // Chapter intro slide, only when there is text to show.
+            pushChapterIntro(chapter);
 
             // All slides in this chapter
             for (const slide of chapter.slides) {
@@ -959,6 +970,24 @@
         }
 
         // ── Helper: push a single slide from config ──
+        function pushChapterIntro(chapter) {
+            const chapterData = {
+                chapter: chapter.chapter || '',
+                title: chapter.title || '',
+                quote: chapter.quote || '',
+            };
+
+            if (!chapterData.chapter.trim() && !chapterData.title.trim() && !chapterData.quote.trim()) {
+                return;
+            }
+
+            slides.push({
+                type: 'chapterIntro',
+                chapterData,
+                images: [],
+            });
+        }
+
         function pushSlide(slideCfg) {
             // Quote-only slide (no images)
             if (slideCfg.template === 'quoteOnly') {
@@ -975,15 +1004,17 @@
 
             // Image slide
             const imageUrls = (slideCfg.images || []).map(f => `${IMAGE_BASE_PATH}${f}`);
-            const template = slideCfg.template === 'auto'
+            let template = slideCfg.template === 'auto'
                 ? autoPickTemplate(slideCfg.images)
                 : slideCfg.template;
+            template = preferQuoteTemplate(slideCfg, template);
             const fallbacks = resolveFallbacksForTemplate(slideCfg, template);
 
             slides.push({
                 type: template,
                 images: imageUrls,
                 quote: fallbacks.quote,
+                quoteIsFallback: fallbacks.quoteIsFallback,
                 caption: fallbacks.caption,
                 heading: fallbacks.heading,
                 sub: fallbacks.sub,
@@ -994,13 +1025,15 @@
         function resolveFallbacksForTemplate(slideCfg, template) {
             const resolved = {
                 quote: slideCfg.quote,
+                quoteIsFallback: false,
                 caption: slideCfg.caption,
                 heading: slideCfg.heading,
                 sub: slideCfg.sub,
             };
 
             if (!resolved.quote && TPL_NEEDS_QUOTE.has(template)) {
-                resolved.quote = fallbackQuote();
+                resolved.quote = fallbackIcon();
+                resolved.quoteIsFallback = true;
             }
 
             if (!resolved.caption && TPL_NEEDS_CAPTION.has(template)) {
@@ -1015,6 +1048,23 @@
 
             return resolved;
         }
+
+        function preferQuoteTemplate(slideCfg, template) {
+            const hasExplicitQuote = Boolean(slideCfg.quote && String(slideCfg.quote).trim());
+            if (!hasExplicitQuote || TPL_NEEDS_QUOTE.has(template)) return template;
+
+            // Keep quote text off the image: switch only auto slides to text-panel layouts.
+            if (slideCfg.template !== 'auto') return template;
+
+            const count = (slideCfg.images || []).length;
+            if (count === 1) {
+                const textTemplates = ['splitLeftText', 'splitRightText'];
+                return textTemplates[_autoCounters.qt++ % textTemplates.length];
+            }
+            if (count === 2) return 'asymDuo';
+
+            return template;
+        }
     }
 
     // ─── Preload ───
@@ -1024,9 +1074,20 @@
         return new Promise(resolve => {
             if (imageCache[src]) return resolve();
             const img = new Image();
+            let done = false;
+            const finish = () => {
+                if (done) return;
+                done = true;
+                clearTimeout(timer);
+                resolve();
+            };
+            const timer = setTimeout(finish, 5000);
             img.decoding = 'async';
-            img.onload = () => { imageCache[src] = true; resolve(); };
-            img.onerror = () => resolve();
+            img.onload = () => {
+                imageCache[src] = true;
+                finish();
+            };
+            img.onerror = finish;
             img.src = src;
         });
     }
@@ -1034,21 +1095,35 @@
     async function detectAllOrientations() {
         let loaded = 0;
         const total = ALL_IMAGES.length;
+        if (!total) {
+            preloaderBar.style.width = '100%';
+            return;
+        }
+
+        const markLoaded = (src, orientation) => {
+            imageOrientations[src] = orientation;
+            loaded++;
+            preloaderBar.style.width = `${Math.min((loaded / total) * 100, 100)}%`;
+        };
+
         const promises = ALL_IMAGES.map(src => new Promise(resolve => {
             const img = new Image();
+            let done = false;
+            const finish = (orientation) => {
+                if (done) return;
+                done = true;
+                clearTimeout(timer);
+                markLoaded(src, orientation);
+                resolve();
+            };
+            const timer = setTimeout(() => finish('landscape'), 7000);
+
             img.onload = () => {
-                imageOrientations[src] = img.naturalHeight > img.naturalWidth ? 'portrait' : 'landscape';
+                const orientation = img.naturalHeight > img.naturalWidth ? 'portrait' : 'landscape';
                 imageCache[src] = true;
-                loaded++;
-                preloaderBar.style.width = `${(loaded / total) * 100}%`;
-                resolve();
+                finish(orientation);
             };
-            img.onerror = () => {
-                imageOrientations[src] = 'landscape';
-                loaded++;
-                preloaderBar.style.width = `${(loaded / total) * 100}%`;
-                resolve();
-            };
+            img.onerror = () => finish('landscape');
             img.src = src;
         }));
         await Promise.all(promises);
@@ -1155,6 +1230,7 @@
 
     function startProgress() {
         const slideData = slides[currentSlideIndex];
+        const slideIndex = currentSlideIndex;
         const duration = getSlideDuration(slideData);
         progressStart = Date.now();
         progressBar.style.transition = 'none';
@@ -1165,7 +1241,11 @@
             const elapsed = Date.now() - progressStart;
             const pct = Math.min((elapsed / duration) * 100, 100);
             progressBar.style.width = `${pct}%`;
-            if (pct < 100) progressTimer = requestAnimationFrame(tick);
+            if (pct >= 100) {
+                advancePlayback(slideIndex);
+                return;
+            }
+            progressTimer = requestAnimationFrame(tick);
         }
         progressTimer = requestAnimationFrame(tick);
     }
@@ -1190,21 +1270,27 @@
         stopProgress();
     }
 
+    function advancePlayback(expectedIndex = currentSlideIndex) {
+        if (!isPlaying || expectedIndex !== currentSlideIndex) return;
+        clearTimeout(slideTimer);
+
+        if (currentSlideIndex < slides.length - 1) {
+            showSlide(currentSlideIndex + 1);
+            startProgress();
+            scheduleNext();
+            return;
+        }
+
+        // Show ending screen, then auto-restart
+        showEnding();
+    }
+
     function scheduleNext() {
         clearTimeout(slideTimer);
         const slideData = slides[currentSlideIndex];
+        const slideIndex = currentSlideIndex;
         const duration = getSlideDuration(slideData);
-        slideTimer = setTimeout(() => {
-            if (!isPlaying) return;
-            if (currentSlideIndex < slides.length - 1) {
-                showSlide(currentSlideIndex + 1);
-                startProgress();
-                scheduleNext();
-            } else {
-                // Show ending screen, then auto-restart
-                showEnding();
-            }
-        }, duration);
+        slideTimer = setTimeout(() => advancePlayback(slideIndex), duration);
     }
 
     function goNext() {
@@ -1223,47 +1309,88 @@
         }
     }
 
+    function clearIntroForceTimer() {
+        if (!introForceTimer) return;
+        clearTimeout(introForceTimer);
+        introForceTimer = null;
+    }
+
+    function enterSlideshowFromIntro(flowId, rebuildSlides) {
+        if (flowId !== introFlowId || shouldBlockForOrientation()) return false;
+        clearIntroForceTimer();
+
+        try {
+            introScreen.style.display = 'none';
+            introScreen.style.opacity = '1';
+            introScreen.style.transition = '';
+            endingScreen.style.display = 'none';
+            slideshowEl.style.display = 'block';
+
+            if (rebuildSlides) buildSlides();
+            slideContainer.innerHTML = '';
+            showSlide(0);
+
+            if (CONFIG.autoPlay) {
+                isPlaying = false;
+                clearTimeout(slideTimer);
+                stopProgress();
+                play();
+            }
+            return true;
+        } catch (error) {
+            console.error('[slideshow] Failed to enter slideshow from intro:', error);
+            return false;
+        }
+    }
+
     async function startIntroThenSlideshow({ rebuildSlides = false } = {}) {
+        const flowId = ++introFlowId;
+        clearIntroForceTimer();
         await waitForAllowedOrientation();
+        if (flowId !== introFlowId) return;
         introScreen.style.display = 'flex';
         introScreen.style.opacity = '1';
         introScreen.style.transition = '';
         createParticles($('#introParticles'), 25);
+        introForceTimer = setTimeout(() => {
+            enterSlideshowFromIntro(flowId, rebuildSlides);
+        }, 6500);
 
-        await orientationAwareDelay(3000);
+        await stageDelay(3000);
+        if (flowId !== introFlowId) return;
         introScreen.style.opacity = '0';
         introScreen.style.transition = 'opacity 1.2s ease';
 
-        await orientationAwareDelay(1200);
-        introScreen.style.display = 'none';
-        introScreen.style.transition = '';
-        slideshowEl.style.display = 'block';
-        if (rebuildSlides) buildSlides();
-        slideContainer.innerHTML = '';
-        showSlide(0);
-
-        await orientationAwareDelay(500);
-        play();
+        await stageDelay(1200);
+        if (flowId !== introFlowId) return;
+        enterSlideshowFromIntro(flowId, rebuildSlides);
     }
 
     // ─── Ending + Auto Restart ───
     async function showEnding() {
+        const flowId = ++endingFlowId;
         pause();
         slideshowEl.style.display = 'none';
+        introScreen.style.display = 'none';
         endingScreen.style.display = 'flex';
+        endingScreen.style.opacity = '1';
+        endingScreen.style.transition = '';
         createParticles($('#endingParticles'), 30);
 
         // Auto-restart after 8 seconds from the Netflix logo intro.
-        await orientationAwareDelay(8000);
+        await stageDelay(8000);
+        if (flowId !== endingFlowId) return;
         endingScreen.style.opacity = '0';
         endingScreen.style.transition = 'opacity 1.2s ease';
 
-        await orientationAwareDelay(1200);
+        await stageDelay(1200);
+        if (flowId !== endingFlowId) return;
         endingScreen.style.display = 'none';
         endingScreen.style.opacity = '1';
         endingScreen.style.transition = '';
 
         await runNetflixIntro();
+        if (flowId !== endingFlowId) return;
         startIntroThenSlideshow({ rebuildSlides: true });
     }
 

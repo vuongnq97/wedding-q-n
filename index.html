@@ -11,7 +11,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="V & Q Wedding">
-    <link rel="manifest" href="manifest.webmanifest">
+    <script>
+        if (location.protocol === 'http:' || location.protocol === 'https:') {
+            const manifestLink = document.createElement('link');
+            manifestLink.rel = 'manifest';
+            manifestLink.href = 'manifest.webmanifest';
+            document.head.appendChild(manifestLink);
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -46,7 +53,7 @@
             <div class="nf-bg-photo" style="background-image: url('images/RIN_2670 copy 2 (1) (1).jpg')"></div>
             <div class="nf-bg-overlay"></div>
 
-            <div class="nf-logo">NETFLIX</div>
+            <div class="nf-logo">N3TFLIX</div>
             <div class="nf-channel">VUONG & QUYNH WEDDING</div>
             <h1 class="nf-title">Ai đang xem?</h1>
 
@@ -83,7 +90,7 @@
             <!-- Navbar -->
             <nav class="nf-navbar">
                 <div class="nf-nav-left">
-                    <span class="nf-nav-logo">NETFLIX</span>
+                    <span class="nf-nav-logo">N3TFLIX</span>
                     <a class="nf-nav-link nf-nav-active">Trang Chủ</a>
                     <a class="nf-nav-link">TV</a>
                     <a class="nf-nav-link">Phim</a>
@@ -287,7 +294,7 @@
         </div>
     </div>
 
-    <script src="slideshow.js?v=28"></script>
+    <script src="slideshow.js?v=40"></script>
 </body>
 
 </html>
